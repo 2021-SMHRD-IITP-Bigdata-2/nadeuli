@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
+        <meta charset="euc-kr">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GARO ESTATE | Register page</title>
         <meta name="description" content="GARO is a real-estate template">
@@ -86,15 +87,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
-                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">ë¡œê·¸ì¸/íšŒì›ê°€ì…</button>
+                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">·Î±×ÀÎ/È¸¿ø°¡ÀÔ</button>
                         <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">ë§ì¶¤ ì—¬í–‰ í…ŒìŠ¤íŠ¸</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">ì•ˆì‹¬ì—¬í–‰ì§€</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">ì•ˆì‹¬ìˆ™ì†Œ</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">ì•ˆì‹¬ì‹ë‹¹</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">ê²Œì‹œíŒ</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">¸ÂÃã ¿©Çà Å×½ºÆ®</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">¾È½É¿©ÇàÁö</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">¾È½É¼÷¼Ò</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">¾È½É½Ä´ç</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">°Ô½ÃÆÇ</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -184,7 +185,7 @@
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title">íšŒì›ê°€ì… ë° ë¡œê·¸ì¸</h1>               
+                        <h1 class="page-title">È¸¿ø°¡ÀÔ ¹× ·Î±×ÀÎ</h1>               
                     </div>
                 </div>
             </div>
@@ -194,34 +195,36 @@
         <!-- register-area -->
         <div class="register-area" style="background-color: rgb(249, 249, 249);">
             <div class="container">
-<!-- íšŒì›ê°€ì… ë¡œê·¸ì¸ ì¸í’‹íƒœê·¸ -->
+<!-- È¸¿ø°¡ÀÔ ·Î±×ÀÎ ÀÎÇ²ÅÂ±× -->
                 <div class="col-md-6">
                     <div class="box-for overflow">
                         <div class="col-md-12 col-xs-12 register-blocks">
-                            <h2>íšŒì›ê°€ì… : </h2> 
-                            <form action="" method="post">
+                            <h2>È¸¿ø°¡ÀÔ : </h2> 
+                            <form action="JoinCon" method="post">
                                 <div class="form-group">
-                                    <label for="email">ì´ë©”ì¼</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <label for="email">ÀÌ¸ŞÀÏ</label>
+                                    <input type="text" class="form-control" id="email" name = "email">
+                                    <input type="button" value="IDÁßº¹Ã¼Å©" onclick="idCheck()">
+                                    <span id="sp"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">ì´ë¦„</label>
-                                    <input type="text" class="form-control" id="name">
+                                    <label for="name">ÀÌ¸§</label>
+                                    <input type="text" class="form-control" id="name" name = "name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="name">ë‹‰ë„¤ì„</label>
-                                    <input type="text" class="form-control" id="nickname">
+                                    <label for="name">´Ğ³×ÀÓ</label>
+                                    <input type="text" class="form-control" id="nickname" name = "nickname">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">ë¹„ë°€ë²ˆí˜¸</label>
-                                    <input type="password" class="form-control" id="password">
+                                    <label for="password">ºñ¹Ğ¹øÈ£</label>
+                                    <input type="password" class="form-control" id="password" name = "pw">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">ì „í™”ë²ˆí˜¸</label>
-                                    <input type="text" class="form-control" id="tel">
+                                    <label for="password">ÀüÈ­¹øÈ£</label>
+                                    <input type="text" class="form-control" id="tel" name = "tel">
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" value="join" class="btn btn-default">íšŒì›ê°€ì…</button>
+                                    <button type="submit" value="join" class="btn btn-default">È¸¿ø°¡ÀÔ</button>
                                 </div>
                             </form>
                         </div>
@@ -231,18 +234,18 @@
                 <div class="col-md-6">
                     <div class="box-for overflow">                         
                         <div class="col-md-12 col-xs-12 login-blocks">
-                            <h2>ë¡œê·¸ì¸ : </h2> 
-                            <form action="" method="post">
+                            <h2>·Î±×ÀÎ : </h2> 
+                            <form action="LoginCon" method="post">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <input type="text" class="form-control" id="email" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">ë¹„ë°€ë²ˆí˜¸</label>
-                                    <input type="password" class="form-control" id="password">
+                                    <label for="password">ºñ¹Ğ¹øÈ£</label>
+                                    <input type="password" class="form-control" id="password" name="pw">
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit" value="login" class="btn btn-default">ë¡œê·¸ì¸</button>
+                                    <button type="submit" value="login" class="btn btn-default">·Î±×ÀÎ</button>
                                 </div>
                             </form>
                             <br>
@@ -268,10 +271,10 @@
                                 <!-- <div class="footer-title-line"></div> -->
 
                                 <img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <!-- <p>ì‚¬íšŒì´ìŠˆë¥¼ ë°˜ì˜í•œ ì—¬í–‰ì¶”ì²œ ì„œë¹„ìŠ¤</p> -->
+                                <!-- <p>»çÈ¸ÀÌ½´¸¦ ¹İ¿µÇÑ ¿©ÇàÃßÃµ ¼­ºñ½º</p> -->
                                 <!-- <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> ìŠ¤ë§ˆíŠ¸ì¸ì¬ê°œë°œì›</li>
-                                    <li><i class="pe-7s-mail strong"> </i> ë‚˜ë“œë¦¬@yourcompany.com</li>
+                                    <li><i class="pe-7s-map-marker strong"> </i> ½º¸¶Æ®ÀÎÀç°³¹ß¿ø</li>
+                                    <li><i class="pe-7s-mail strong"> </i> ³ªµå¸®@yourcompany.com</li>
                                     <li><i class="pe-7s-call strong"> </i> 010-0000-0000</li>
                                 </ul> -->
                             </div>
@@ -410,6 +413,36 @@
         <script src="assets/js/price-range.js"></script>
 
         <script src="assets/js/main.js"></script>
+        
+        <script>
+				function idCheck(){
+					var email = document.getElementById("email");
+					//alert(input.value);
+					$.ajax({
+						// type = µ¥ÀÌÅÍ Àü¼Û ¹æ½Ä
+						type : "post",
+						// Àü¼ÛÇÒ µ¥ÀÌÅÍ
+						data : {"id":email.value},
+						// ¾îµğ·Î º¸³¾Áö
+						url : "idCheckCon",
+						// ÀÀ´ä µ¥ÀÌÅÍ Å¸ÀÔ
+						dataType : "text",
+						success : function(res){
+							//alert(res);
+							var sp = document.getElementById("sp");
+							if(res=="true"){
+								sp.innerHTML = "ºÒ°¡´ÉÇÑ IDÀÔ´Ï´Ù."
+							}else{
+								sp.innerHTML = "°¡´ÉÇÑ IDÀÔ´Ï´Ù."
+							}
+							
+						},
+						error : function(){
+							alert("½ÇÆĞ.")
+						}
+					});
+				}
+			</script>
 
     </body>
 </html>
