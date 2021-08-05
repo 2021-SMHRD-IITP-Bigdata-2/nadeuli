@@ -17,9 +17,9 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 2. 데이터베이스 연동
-			String url = "jdbc:oracle:thin:@172.30.1.16:1521:xe";
-			String user = "hr";
-			String password = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "cgi_3_2";
+			String password = "smhrd2";
 
 			conn = DriverManager.getConnection(url, user, password);
 
