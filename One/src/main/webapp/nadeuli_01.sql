@@ -13,10 +13,12 @@ CREATE TABLE members (
 
 select * from MEMBERS
 
+select email from members where email='test1'
+
 CREATE TABLE city (
    city_name varchar2(10) NOT NULL,
-   introduce varchar2(100) not NULL,
-   img varchar2(500) not null,
+   c_introduce varchar2(100) not NULL,
+   c_img varchar2(500) not null,
    constraint city_pk primary key(city_name)
 );
 
