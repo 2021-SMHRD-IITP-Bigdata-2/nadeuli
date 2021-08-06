@@ -2,6 +2,7 @@ create sequence mem_num
 start with 1
 increment by 1;
 
+--만들었음
 CREATE TABLE members (
    email varchar2(50) NOT NULL,
    pw varchar2(50) NOT NULL,
@@ -14,7 +15,7 @@ CREATE TABLE members (
 select * from MEMBERS
 
 select email from members where email='test1'
-
+--만들었음
 CREATE TABLE city (
    city_name varchar2(20) NOT NULL,
    c_introduce varchar2(100),
@@ -25,6 +26,7 @@ CREATE TABLE city (
 
 select * from CITY
 
+-- 조회수는 어떻게 해야하나...?
 create table community(
 	commu_no number(10) not null constraint commu_pk primary key,
 	title varchar2(50) not null,
@@ -41,6 +43,7 @@ create table community(
 
 select * from community
 
+--만들었음
 create table member_trip(
 	email varchar2(50) NOT NULL,
 	city_name varchar2(20) not null,
@@ -50,11 +53,11 @@ create table member_trip(
 
 select * from member_trip
 
+--만들었음
 create table sns_data(
-	data_number number(10) not null constraint sns_pk primary key,
 	city_name varchar2(20) not null,
-	tags varchar2(500) not null,
-	sns_date varchar2(10) not null,
+	tags varchar2(2000) not null,
+	sns_date varchar2(50) not null,
 	constraint sns_city_fk foreign key(city_name) references city(city_name)
 )
 
@@ -69,16 +72,17 @@ create table comments (
 
 select from comments
 
+-- 만들었음
 create table place (
-	p_name varchar2(10) not null constraint place_pk primary key,
-	p_address varchar2(20) not null,
-	p_tel varchar2(20),
-	p_introduce varchar2(20) not null,
-	p_img varchar2(500) not null,
 	city_name varchar2(20) not null,
+	p_name varchar2(50) not null constraint place_pk primary key,
+	p_address varchar2(100) not null,
+	p_tel varchar2(50),
+	p_url varchar2(300),
+	p_img varchar2(500) not null,
 	constraint p_fk foreign key(city_name) references city(city_name)
 )
-
+drop table place
 select * from place
 
 create table domitory (
