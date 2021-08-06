@@ -417,7 +417,6 @@
         <script>
 				function idCheck(){
 					var email = document.getElementById("email");
-					//alert(input.value);
 					$.ajax({
 						// type = 데이터 전송 방식
 						type : "post",
@@ -428,7 +427,7 @@
 						// 응답 데이터 타입
 						dataType : "text",
 						success : function(res){
-							//alert(res);
+							// alert(res);
 							var sp = document.getElementById("sp");
 							if(res=="true"){
 								sp.innerHTML = "불가능한 ID입니다."

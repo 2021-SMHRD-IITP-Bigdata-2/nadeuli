@@ -17,9 +17,9 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			// 2. 데이터베이스 연동
-			String url = "jdbc:oracle:thin:@172.30.1.16:1521:xe";
-			String user = "hr";
-			String password = "hr";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "cgi_3_2";
+			String password = "smhrd2";
 
 			conn = DriverManager.getConnection(url, user, password);
 
@@ -86,7 +86,7 @@ public class MemberDAO {
 
 			connection();
 
-			String sql = "Select email from members where email=?";
+			String sql = "select email from members where email=?";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, email);
@@ -117,7 +117,7 @@ public class MemberDAO {
 			connection();
 
 			// 3. 쿼리문 실행
-			String sql = "Select email from members where email=? and pw =? ";
+			String sql = "Select email, nickname from members where email=? and pw =? ";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, email);
@@ -128,8 +128,9 @@ public class MemberDAO {
 			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
 			if (rs.next()) {
 				String getEmail = rs.getString(1);
+				String getNickname = rs.getString(2);
 				// 회원정보를 저장할 수 있는 객체 생성
-				member = new MemberDTO(email, null, null, null, null);
+				member = new MemberDTO(email, null, null, null, getNickname);
 			} else {
 				System.out.println("정보 조회 실패");
 			}
