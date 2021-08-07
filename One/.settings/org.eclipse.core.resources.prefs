@@ -3,3 +3,7 @@
 >>>>>>>=branch 'master' of https\://github.com/2021-SMHRD-IITP-Bigdata-2/nadeuli.git
 eclipse.preferences.version=1
 encoding//src/main/webapp/assets/css/style.css=UTF-8
+encoding//src/main/webapp/traveltest/js/fileRead.js=euc-kr
+encoding//src/main/webapp/traveltest/js/finishPageScript.js=euc-kr
+encoding//src/main/webapp/traveltest/js/mainPageScript.js=euc-kr
+encoding//src/main/webapp/traveltest/js/script.js=euc-kr
