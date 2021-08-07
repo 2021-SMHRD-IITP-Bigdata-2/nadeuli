@@ -25,7 +25,7 @@ public class LoginCon extends HttpServlet {
 			// 회원정보를 저장할 수 있는 객체 생성
 			HttpSession session = request.getSession();
 			session.setAttribute("login_member", member);
-			response.sendRedirect("index-2.html");
+			response.sendRedirect("main.jsp");
 		} else {
 			System.out.println("로그인실패");
 			response.sendRedirect("register.html");

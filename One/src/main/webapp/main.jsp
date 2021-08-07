@@ -1,12 +1,17 @@
+<%@page import="Model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%
+	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+
+	
+%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html>
+<head class="no-js">
+<meta charset="EUC-KR">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GARO ESTATE | Home page</title>
         <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
@@ -38,10 +43,9 @@
         <noscript>
         <link rel="stylesheet" type="text/css" href="assets/css/styleNoJS.css" />
         </noscript>
-    </head>
-    <body>
-
-        <div id="preloader">
+</head>
+<body>
+	<div id="preloader">
             <div id="status">&nbsp;</div>
         </div>
         <!-- Body content -->
@@ -90,15 +94,18 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
-                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">ë¡œê·¸ì¸/íšŒì›ê°€ìž…</button>
-                        <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+                    	<%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">·Î±×ÀÎ/È¸¿ø°¡ÀÔ</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">·Î±×¾Æ¿ô</button>
+                        <% } %>
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">ë§žì¶¤ ì—¬í–‰ í…ŒìŠ¤íŠ¸</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">ì•ˆì‹¬ì—¬í–‰ì§€</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">ì•ˆì‹¬ìˆ™ì†Œ</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">ì•ˆì‹¬ì‹ë‹¹</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">ê²Œì‹œíŒ</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">¸ÂÃã ¿©Çà Å×½ºÆ®</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">¾È½É¿©ÇàÁö</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">¾È½É¼÷¼Ò</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">¾È½É½Ä´ç</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">°Ô½ÃÆÇ</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -209,8 +216,8 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property.html">ì•ˆì‹¬ ì—¬í–‰ì§€</a></cite>
-                                <p>ê´‘ì£¼Â·ì „ë‚¨ì˜ ì•ˆì „í•œ ì—¬í–‰ì§€ë¥¼ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+                            <blockquote><cite><a href="property.html">¾È½É ¿©ÇàÁö</a></cite>
+                                <p>±¤ÁÖ¡¤Àü³²ÀÇ ¾ÈÀüÇÑ ¿©ÇàÁö¸¦ º¼ ¼ö ÀÖ½À´Ï´Ù.
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 250,000</span>
@@ -228,8 +235,8 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property-1.html">ì•ˆì‹¬ìˆ™ì†Œ</a></cite>
-                                <p>ê´‘ì£¼Â·ì „ë‚¨ì˜ ì•ˆì „í•œ ì—¬í–‰ì§€ì˜ ìˆ™ì†Œë¥¼ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+                            <blockquote><cite><a href="property-1.html">¾È½É¼÷¼Ò</a></cite>
+                                <p>±¤ÁÖ¡¤Àü³²ÀÇ ¾ÈÀüÇÑ ¿©ÇàÁöÀÇ ¼÷¼Ò¸¦ º¼ ¼ö ÀÖ½À´Ï´Ù.
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 360,000</span>
@@ -248,8 +255,8 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property-2.html">ì•ˆì‹¬ì‹ë‹¹</a></cite>
-                                <p>ê´‘ì£¼Â·ì „ë‚¨ì˜ ì•ˆì „í•œ ì—¬í–‰ì§€ì˜ ì‹ë‹¹ì„ ë³¼ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
+                            <blockquote><cite><a href="property-2.html">¾È½É½Ä´ç</a></cite>
+                                <p>±¤ÁÖ¡¤Àü³²ÀÇ ¾ÈÀüÇÑ ¿©ÇàÁöÀÇ ½Ä´çÀ» º¼ ¼ö ÀÖ½À´Ï´Ù.
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 360,000</span>
@@ -646,10 +653,10 @@
                                 <!-- <div class="footer-title-line"></div> -->
 
                                 <img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <p>ì‚¬íšŒì´ìŠˆë¥¼ ë°˜ì˜í•œ ì—¬í–‰ì¶”ì²œ ì„œë¹„ìŠ¤</p>
+                                <p>»çÈ¸ÀÌ½´¸¦ ¹Ý¿µÇÑ ¿©ÇàÃßÃµ ¼­ºñ½º</p>
                                 <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> ìŠ¤ë§ˆíŠ¸ì¸ìž¬ê°œë°œì›</li>
-                                    <li><i class="pe-7s-mail strong"> </i> ë‚˜ë“œë¦¬@mycompany.com</li>
+                                    <li><i class="pe-7s-map-marker strong"> </i> ½º¸¶Æ®ÀÎÀç°³¹ß¿ø</li>
+                                    <li><i class="pe-7s-mail strong"> </i> ³ªµå¸®@mycompany.com</li>
                                     <li><i class="pe-7s-call strong"> </i> 010-1234-5678</li>
                                 </ul>
                             </div>
@@ -859,8 +866,6 @@
 
                             });
         </script>
-    </body>
-
 
 </body>
 </html>

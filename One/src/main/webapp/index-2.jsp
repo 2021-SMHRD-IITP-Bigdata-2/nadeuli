@@ -1,11 +1,19 @@
+<%@page import="Model.PlaceDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.PlaceDAO"%>
+<%@page import="Model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%
+	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+
+	
+%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
+<html class="no-js">
+<head>
+<meta charset="EUC-KR">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GARO ESTATE | Home page</title>
         <meta name="description" content="GARO is a real-estate template">
@@ -38,10 +46,10 @@
         <noscript>
         <link rel="stylesheet" type="text/css" href="assets/css/styleNoJS.css" />
         </noscript>
-    </head>
-    <body>
-
-        <div id="preloader">
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="preloader">
             <div id="status">&nbsp;</div>
         </div>
         <!-- Body content -->
@@ -90,15 +98,19 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
-                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">ë¡œê·¸ì¸/íšŒì›ê°€ì…</button>
-                        <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+                    	<%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">·Î±×ÀÎ/È¸¿ø°¡ÀÔ</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">·Î±×¾Æ¿ô</button>
+                        <% } %>
+                        
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">ë§ì¶¤ ì—¬í–‰ í…ŒìŠ¤íŠ¸</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">ì•ˆì‹¬ì—¬í–‰ì§€</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">ì•ˆì‹¬ìˆ™ì†Œ</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">ì•ˆì‹¬ì‹ë‹¹</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">ê²Œì‹œíŒ</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">¸ÂÃã ¿©Çà Å×½ºÆ®</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">¾È½É¿©ÇàÁö</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">¾È½É¼÷¼Ò</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">¾È½É½Ä´ç</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">°Ô½ÃÆÇ</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -190,9 +202,10 @@
                     <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
                         <div class="sl-slide-inner ">
 
-                            <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/main1.png);"></div>                             
-                            <blockquote><cite><a href="properties.html">START!!</a></cite>
-                                <p></p>
+                            <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
+                            <blockquote><cite><a href="properties.html">³ª¸¸ÀÇ ¸ÂÃã À¯Çü Å×½ºÆ®</a></cite>
+                                <p>³ª´Â ¾î¶² ¿©ÇàÀ» ÁÁ¾ÆÇÏ´Â »ç¶÷ÀÏ±î ¾Ë¾Æº¼±î¿ä?
+                                </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 300,000</span>
                                 <div class="property-icon">
@@ -204,21 +217,22 @@
                         </div>
                     </div> 
 
-                    <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                    <!-- <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
 
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property.html">ì•ˆì‹¬ ì—¬í–‰ì§€</a></cite>
-                                <p>ê´‘ì£¼Â·ì „ë‚¨ì˜ ì•ˆì „í•œ ì—¬í–‰ì§€ë¥¼ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+                            <blockquote><cite><a href="property.html">Kyoto hows villa</a></cite>
+                                <p>You have just dined, and however scrupulously the slaughterhouse 
+                                    is concealed in the graceful distance of miles, there is complicity.
                                 </p>
-                                <!-- <span class="pull-left"><b> Area :</b> 120m </span>
+                                <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 250,000</span>
                                 <div class="property-icon">
                                     <img src="assets/img/icon/bed.png">(5)|
                                     <img src="assets/img/icon/shawer.png">(2)|
                                     <img src="assets/img/icon/cars.png">(1)  
-                                </div> -->
+                                </div>
                             </blockquote>
                         </div>
                     </div>    
@@ -228,16 +242,17 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property-1.html">ì•ˆì‹¬ìˆ™ì†Œ</a></cite>
-                                <p>ê´‘ì£¼Â·ì „ë‚¨ì˜ ì•ˆì „í•œ ì—¬í–‰ì§€ì˜ ìˆ™ì†Œë¥¼ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+                            <blockquote><cite><a href="property.html">New Waldo villa</a></cite>
+                                <p>You have just dined, and however scrupulously the slaughterhouse 
+                                    is concealed in the graceful distance of miles, there is complicity.
                                 </p>
-                                <!-- <span class="pull-left"><b> Area :</b> 120m </span>
+                                <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 360,000</span>
                                 <div class="property-icon">
                                     <img src="assets/img/icon/bed.png">(5)|
                                     <img src="assets/img/icon/shawer.png">(2)|
                                     <img src="assets/img/icon/cars.png">(1)  
-                                </div> -->
+                                </div>
                             </blockquote>
                         </div>
                     </div>
@@ -248,20 +263,21 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property-2.html">ì•ˆì‹¬ì‹ë‹¹</a></cite>
-                                <p>ê´‘ì£¼Â·ì „ë‚¨ì˜ ì•ˆì „í•œ ì—¬í–‰ì§€ì˜ ì‹ë‹¹ì„ ë³¼ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+                            <blockquote><cite><a href="property.html">New Waldo villa</a></cite>
+                                <p>You have just dined, and however scrupulously the slaughterhouse 
+                                    is concealed in the graceful distance of miles, there is complicity.
                                 </p>
-                                <!-- <span class="pull-left"><b> Area :</b> 120m </span>
+                                <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 360,000</span>
                                 <div class="property-icon">
                                     <img src="assets/img/icon/bed.png">(5)|
                                     <img src="assets/img/icon/shawer.png">(2)|
                                     <img src="assets/img/icon/cars.png">(1)  
-                                </div> -->
+                                </div>
                             </blockquote>
                         </div>
                     </div>
-                </div><!-- /sl-slider -->
+                </div> --><!-- /sl-slider -->
 
                 <nav id="nav-dots" class="nav-dots">
                     <span class="nav-dot-current"></span>
@@ -406,7 +422,7 @@
 
 
         <!--Welcome area -->
-        <!-- <div class="Welcome-area">
+        <div class="Welcome-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 Welcome-entry  col-sm-12">
@@ -414,7 +430,7 @@
                             <div class="welcome_text wow fadeInLeft" data-wow-delay="0.3s" data-wow-offset="100">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
-                                        /.feature title
+                                        <!-- /.feature title -->
                                         <h2>GARO ESTATE </h2>
                                     </div>
                                 </div>
@@ -468,7 +484,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!--TESTIMONIALS -->
         <!-- <div class="testimonial-area recent-property" style="background-color: #FCFCFC; padding-bottom: 15px;">
@@ -529,11 +545,11 @@
         </div> -->
 
         <!-- Count area -->
-        <!-- <div class="count-area">
+        <div class="count-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
-                        /.feature title
+                        <!-- /.feature title -->
                         <h2>You can trust Us </h2> 
                     </div>
                 </div>
@@ -589,7 +605,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!-- boy-sale area -->
         <!-- <div class="boy-sale-area">
@@ -646,12 +662,12 @@
                                 <!-- <div class="footer-title-line"></div> -->
 
                                 <img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <p>ì‚¬íšŒì´ìŠˆë¥¼ ë°˜ì˜í•œ ì—¬í–‰ì¶”ì²œ ì„œë¹„ìŠ¤</p>
-                                <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> ìŠ¤ë§ˆíŠ¸ì¸ì¬ê°œë°œì›</li>
-                                    <li><i class="pe-7s-mail strong"> </i> ë‚˜ë“œë¦¬@mycompany.com</li>
-                                    <li><i class="pe-7s-call strong"> </i> 010-1234-5678</li>
-                                </ul>
+                                <!-- <p>»çÈ¸ÀÌ½´¸¦ ¹İ¿µÇÑ ¿©ÇàÃßÃµ ¼­ºñ½º</p> -->
+                                <!-- <ul class="footer-adress">
+                                    <li><i class="pe-7s-map-marker strong"> </i> ½º¸¶Æ®ÀÎÀç°³¹ß¿ø</li>
+                                    <li><i class="pe-7s-mail strong"> </i> ³ªµå¸®@yourcompany.com</li>
+                                    <li><i class="pe-7s-call strong"> </i> 010-0000-0000</li>
+                                </ul> -->
                             </div>
                         </div>
                         <!-- <div class="col-md-3 col-sm-6 wow fadeInRight animated">
@@ -859,8 +875,6 @@
 
                             });
         </script>
-    </body>
-
 
 </body>
 </html>
