@@ -1,0 +1,117 @@
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#discription li  {
+  text-align: left;
+  margin-bottom : 20px;
+  font-size : 18px;
+  color : #1C2833;
+}
+
+#text1{
+  margin-top : 70px;
+  margin-bottom : 50px;
+  font-size : 24px;
+  text-align: center;
+  color : #ff9900;
+}
+#text2{
+  margin : 0;
+  margin-top : 30px;
+  margin-bottom : 20px;
+  font-size : 32px;
+  text-align: center;
+  color : #cc6600;
+}
+#text3{
+  margin : 0px;
+  font-size : 18px;
+  margin-bottom : 80px;
+  text-align: center;
+  color : #6E2C00;
+}
+#resultImage{
+  max-width : 100%;
+  max-height: 320px;
+}
+#harmonyWrapper{
+  margin-top : 70px;
+  width : 100%;
+  margin-bottom : 70px;
+  text-align: center;
+}
+.harmony{
+  //position : relative;
+  //display:inline-block;
+  width : 60%;
+  margin:auto;
+  //height : 200px;
+  //max-height : 200px;
+  text-align: center;
+  margin-bottom : 40px;
+
+}
+.harmony img{
+  margin-top : 10px;
+  max-width : 100%;
+  max-height:200px;
+}
+.harmony p{
+  margin : 0;
+  font-size : 20px;
+}
+#badPower, #goodPower{
+  font-size: 24px;
+  color : #cc6600;
+}
+#badText{
+  color : #E74C3C;
+}
+#goodText{
+  color : #239B56;
+}
+
+#startText,#copyText{
+color : #6E2C00;
+  text-align: center;
+  margin : 0;
+  margin-bottom : 10px;
+  font-size : 20px;
+}
+
+#startButton,#copyButton{
+  display:block;
+  width : 60%;
+  margin : auto;
+    margin-bottom : 50px;
+  font-size : 24px;
+  height : 65px;
+  font-family: "Cafe24Ssurround";
+  background-color: white;
+  /* border-color : #EDBB99; */
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  /* border-width: 5px; */
+  color : #6E2C00;
+}
+#filler{
+  height : 200px;
+
+}
+.scrollAnim {
+  opacity : 0;
+  transition : all 1s ease;
+  -webkit-transition : all 1s ease;
+}
+
+#dev{
+  margin-top : 60px;
+  color : #CCD1D1;
+  font-size : 14px;
+  text-align: center;
+}

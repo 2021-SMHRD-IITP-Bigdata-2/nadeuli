@@ -1,0 +1,56 @@
+#bgcontainer{
+  width  :100%;
+  text-align: center;
+  position : relative;
+}
+#titleImg{
+  width:100%;
+}
+#titleText{
+  display:none;
+  color:white;
+  position : absolute;
+  text-align: center;
+  top: 45%;
+  left: 50%;
+  font-size : 18px;
+  transform: translate(-50%, -50%);
+}
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#startButton{
+  width : 60%;
+  margin : auto;
+    margin-top : 50px;
+  font-size : 25px;
+  height : 65px;
+  font-family: "Cafe24Ssurround";
+  background-color: white;
+  /* border-color : #EDBB99; */
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  /* border-width: 5px; */
+  color : #6E2C00;
+}
+#introText{
+  padding : 15px;
+  font-size: 18px;
+  line-height : 1.6;
+  word-wrap:keep-all;
+  color: rgb(39, 38, 38);
+  width : 100%;
+    margin-left : 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+}
+
+//https://nykim.work/84
+@media (max-width:600px)  {
+
+}
