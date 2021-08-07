@@ -1,24 +1,31 @@
+<%@page import="Model.CommuDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.CommuDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+<%
+	CommuDAO c_dao = new CommuDAO();
+	ArrayList<CommuDTO> commulist = c_dao.commu_list();   
+
+%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html class="no-js" >
+<head>
+<meta charset="EUC-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GARO ESTATE | Property  page</title>
         <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
-
 
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -38,12 +45,9 @@
         <link rel="stylesheet" href="assets/css/responsive.css">
         <html lang="ko">
 
-   
-
-    </head>
-    <body>
-
-        <div id="preloader">
+</head>
+<body>
+ <div id="preloader">
             <div id="status">&nbsp;</div>
         </div>
         <!-- Body content -->
@@ -96,11 +100,11 @@
                         <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">ÎßûÏ∂§ Ïó¨Ìñâ ÌÖåÏä§Ìä∏</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">ÏïàÏã¨Ïó¨ÌñâÏßÄ</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">ÏïàÏã¨ÏàôÏÜå</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">ÏïàÏã¨ÏãùÎãπ</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">Í≤åÏãúÌåê</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">∏¬√„ ø©«‡ ≈◊Ω∫∆Æ</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">æ»Ω…ø©«‡¡ˆ</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">æ»Ω…º˜º“</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">æ»Ω…Ωƒ¥Á</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">∞‘Ω√∆«</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -195,50 +199,175 @@
                 </div>
             </div>
         </div>
+        <!-- End page header -->
+
+        <!-- property area -->
+      <!--    <div class="content-area single-property" style="background-color: #FFF;">&nbsp;
+            <div class="container">   
+
+                <div class="clearfix padding-top-40" >
+                    <div class="col-md-12 single-property-content">
+                        <div class="row">
+                            <div class="light-slide-item full-width-sld">            
+                                <div class="clearfix">
+                                    <div class="favorite-and-print">
+                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
+                                            <i class="fa fa-star-o"></i>
+                                        </a>
+                                        <a class="printer-icon " href="javascript:window.print()">
+                                            <i class="fa fa-print"></i> 
+                                        </a>
+                                    </div> 
+
+                                    <ul id="fullWidth-gallery" class="gallery list-unstyled cS-hidden">
+                                        <li data-thumb="assets/img/property-1/property1.jpg"> 
+                                            <img src="assets/img/property-1/property1.jpg" />
+                                        </li>
+                                        <li data-thumb="assets/img/property-1/property2.jpg"> 
+                                            <img src="assets/img/property-1/property3.jpg" />
+                                        </li>
+                                        <li data-thumb="assets/img/property-1/property3.jpg"> 
+                                            <img src="assets/img/property-1/property3.jpg" />
+                                        </li>
+                                        <li data-thumb="assets/img/property-1/property4.jpg"> 
+                                            <img src="assets/img/property-1/property4.jpg" />
+                                        </li>                                         
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8" style="background-color: rgb(251, 251, 251);">
+                        <div class="">
+
+                            <div class="single-property-wrapper">-->
+
+                                                                <!-- End description area  -->
+
+                                <div class="section additional-details">
+
+                                    <h4 class="s-property-title"></h4>
+
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Í≤åÏãúÌåê</title>
+    <title>∞‘Ω√∆«</title>
     <link rel="stylesheet" href="assets/css/css.css">
 </head>
 <body>
     <div class="board_wrap">
         <div class="board_title">
-            <strong>Í≤åÏãúÌåê</strong>
-            <h4>Í∏ÄÏì∞Í∏∞</h4>
+            <strong>∞‘Ω√∆«</strong>
+            <h4>±§¡÷§˝¿¸≥≤ ¡ˆø™ ø©«‡ »ƒ±‚∏¶ ≥≤∞‹¡÷ººø‰.</h4>
         </div>
-        <div class="board_write_wrap">
-            <div class="board_write">
-                <div class="title">
-                    <dl>
-                <form action="" method = "post" id="formArea">
-                        <dt>Ï†úÎ™©</dt>
-                        <dd><input type="text" placeholder="Ï†úÎ™© ÏûÖÎ†•" name="title"></dd>
-                    </dl>
+        <div class="board_list_wrap">
+            <div class="board_list">
+                <div class="top">
+                    <div class="num">π¯»£</div>
+                    <div class="area">¡ˆø™</div>
+                    <div class="title">¡¶∏Ò</div>
+                    <div class="writer">±€æ¥¿Ã</div>
+                    <div class="date">¿€º∫¿œ</div>
+                    <div class="count">¡∂»∏</div>
                 </div>
-                <div class="info">
-                   <dl>
-                        <dt>ÏßÄÏó≠</dt>
-                        <dd><input type="text" placeholder="ÏßÄÏó≠ ÏûÖÎ†•" name = "city"></dd>
-                    </dl>
-                 <!--     <dl>
-                        <dt>ÎπÑÎ∞ÄÎ≤àÌò∏</dt>
-                        <dd><input type="password" placeholder="ÎπÑÎ∞ÄÎ≤àÌò∏ ÏûÖÎ†•"></dd>
-                    </dl
-                </div>--> 
-                <div class="cont">
-                    <textarea form = "formArea" placeholder="ÎÇ¥Ïö© ÏûÖÎ†•" name = "contents"></textarea>
+                <div>
+                    <div class="num">5</div>
+                    <div class="area">ø©ºˆ</div>
+                    <div class="title"><a href="board_view.html"> ≥™µÂ∏Æø°º≠ √ﬂ√µ«ÿ¡ÿ ø©ºˆø©«‡ »ƒ±‚ ≥≤∞‹ø‰~</a></div>
+                    <div class="writer">±ËµŒ»Ø</div>
+                    <div class="date">2021.8.2</div>
+                    <div class="count">36</div>
+                </div>
+                <div>
+                    <div class="num">4</div>
+                    <div class="area">º¯√µ</div>
+                    <div class="title"><a href="board_view.html">º¯√µø°º≠ ∞°¡∑µÈ∞˙ «‘≤≤</a></div>
+                    <div class="writer">¿Ãº¯Ω≈</div>
+                    <div class="date">2021.8.1</div>
+                    <div class="count">33</div>
+                </div>
+                <div>
+                    <div class="num">3</div>
+                    <div class="area">∞Óº∫</div>
+                    <div class="title"><a href="board_view.html">∞Óº∫±‚¬˜∏∂¿ª ¥Ÿ≥‡ø‘æÓø‰!</a></div>
+                    <div class="writer">¿Ø∞¸º¯</div>
+                    <div class="date">2021.7.30</div>
+                    <div class="count">28</div>
+                </div>
+                <div>
+                    <div class="num">2</div>
+                    <div class="area">±§¡÷</div>
+                    <div class="title"><a href="board_view.html">±§¡÷ π´µÓªÍ µÓπ›</a></div>
+                    <div class="writer">¿ÂøµøÏ</div>
+                    <div class="date">2021.7.28</div>
+                    <div class="count">75</div>
+                </div>
+                <div>
+                    <div class="num">1</div>
+                    <div class="area">∏Ò∆˜</div>
+                    <div class="title"><a href="board_view.html">∏Ò∆˜«ÿªÛ ƒ…¿Ã∫Ìƒ´ √º«Ë»ƒ±‚ </a></div>
+                    <div class="writer">π⁄≥™∑°</div>
+                    <div class="date">2021.7.15</div>
+                    <div class="count">88</div>
                 </div>
             </div>
+            <div class="board_page">
+                <a href="#" class="bt first"><<</a>
+                <a href="#" class="bt prev"><</a>
+                <a href="#" class="num on">1</a>
+                <a href="#" class="num">2</a>
+                <a href="#" class="num">3</a>
+                <a href="#" class="num">4</a>
+                <a href="#" class="num">5</a>
+                <a href="#" class="bt next">></a>
+                <a href="#" class="bt last">>></a>
+            </div>
             <div class="bt_wrap">
-                <input type="submit"  href="board_view.html" class="on" value ="Îì±Î°ù">
-                <a href="property-3.html">Ï∑®ÏÜå</a>
-             </form>
+                <a href="board_write.html" class="on">±€æ≤±‚</a>
+                <!--<a href="#">ºˆ¡§</a>-->
             </div>
         </div>
     </div>
- <!-- Footer area-->
+
+                                <!--     <ul class="additional-details-list clearfix">
+                                        <li>
+                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">∏Ò∑œ</span>
+                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Yes</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Built In</span>
+                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2003</span>
+                                        </li>
+                                        <li>
+                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Parking</span>
+                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2 Or More Spaces,Covered Parking,Valet Parking</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront</span>
+                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Yes</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">View</span>
+                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Intracoastal View,Direct ew</span>
+                                        </li>
+
+                                        <li>
+                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront Description:</span>
+                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Intracoastal Front,Ocean Access</span>
+                                        </li> 
+
+                                    </ul>
+                                </div>   -->
+                             
+
+
+
+        <!-- Footer area-->
         <div class="footer-area">
 
             <div class=" footer">
@@ -251,10 +380,10 @@
                                 <!-- <div class="footer-title-line"></div> -->
 
                                 <img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <!-- <p>ÏÇ¨ÌöåÏù¥ÏäàÎ•º Î∞òÏòÅÌïú Ïó¨ÌñâÏ∂îÏ≤ú ÏÑúÎπÑÏä§</p> -->
+                                <!-- <p>ªÁ»∏¿ÃΩ¥∏¶ π›øµ«— ø©«‡√ﬂ√µ º≠∫ÒΩ∫</p> -->
                                 <!-- <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> Ïä§ÎßàÌä∏Ïù∏Ïû¨Í∞úÎ∞úÏõê</li>
-                                    <li><i class="pe-7s-mail strong"> </i> ÎÇòÎìúÎ¶¨@yourcompany.com</li>
+                                    <li><i class="pe-7s-map-marker strong"> </i> Ω∫∏∂∆Æ¿Œ¿Á∞≥πﬂø¯</li>
+                                    <li><i class="pe-7s-mail strong"> </i> ≥™µÂ∏Æ@yourcompany.com</li>
                                     <li><i class="pe-7s-call strong"> </i> 010-0000-0000</li>
                                 </ul> -->
                             </div>
@@ -406,5 +535,5 @@
                             });
         </script>
 
-    </body>
+</body>
 </html>

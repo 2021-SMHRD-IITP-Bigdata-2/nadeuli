@@ -1,0 +1,94 @@
+package Model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class CommuDAO {
+	
+	private Connection conn;
+	private PreparedStatement psmt;;
+	private ResultSet rs;
+	private int cnt;
+	
+	public void connection() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// 2. 데이터베이스 연동
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "cgi_3_2";
+			String password = "smhrd2";
+
+			conn = DriverManager.getConnection(url, user, password);
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void close() {
+
+		try {
+			if (rs != null)
+				rs.close();
+			if (psmt != null)
+				psmt.close();
+			if (conn != null)
+				conn.close();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public ArrayList<CommuDTO> commu_list(){
+		
+		ArrayList<CommuDTO> commulist =  new ArrayList<>();
+		
+		try {
+
+			connection();
+
+			// 3. 쿼리문 실행
+			String sql = "Select * from community";
+
+			psmt = conn.prepareStatement(sql);
+
+			rs = psmt.executeQuery();
+
+			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+			while (rs.next()) {
+
+				int getNum = rs.getInt(1);
+				String getTitle = rs.getString(2);
+				String getContents = rs.getString(3);
+				String getDate = rs.getString(4);
+				String getImg = rs.getString(5);
+				String getCity = rs.getString(6);
+				String getEmail =  rs.getString(7);
+				int getCnt = rs.getInt(8);
+
+				CommuDTO commu = new CommuDTO(getNum, getTitle, getContents, getDate, getImg, getCity, getEmail, getCnt);
+				commulist.add(commu);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+
+		}
+		
+		
+		return commulist;
+	}
+	
+
+}

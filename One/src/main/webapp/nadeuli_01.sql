@@ -35,6 +35,7 @@ create table community(
 	img_rink varchar2(500) null,
 	city_name varchar2(20) not null,
 	email varchar2(50) not null,
+	cnt number(10),
 	constraint commu_city_fk foreign key(city_name) references city(city_name),
 	constraint commu_email_fk foreign key(email) references members(email)
 );
