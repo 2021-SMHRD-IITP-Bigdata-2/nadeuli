@@ -82,7 +82,7 @@ create table place (
 	p_img varchar2(500) not null,
 	constraint p_fk foreign key(city_name) references city(city_name)
 )
-drop table place
+
 select * from place
 
 create table domitory (
@@ -116,8 +116,4 @@ create table corona(
 	confirmed_number number(5) not null,
 )
 
-
-drop table domitory
-
-
-drop table members
+desc user_table
