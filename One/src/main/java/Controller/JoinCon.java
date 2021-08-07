@@ -32,7 +32,7 @@ public class JoinCon extends HttpServlet {
 	
 	if (cnt > 0) {
 		// forward 방식(내부서버에서만 가능)으로 페이지 이동
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index-2.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("main.jsp");
 		// request 영역에 데이터 저장
 		request.setAttribute("email", email);
 		// 페이지 이동시 request,response 객체를 전달(정보유지)
