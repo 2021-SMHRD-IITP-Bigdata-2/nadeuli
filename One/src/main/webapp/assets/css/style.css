@@ -2,17 +2,30 @@ html, body {
     width: 100%;
     overflow-x: hidden;
 }
+@font-face {
+    font-family: 'Recipekorea';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
     height:100%;
-    font-family: 'Open Sans', sans-serif; 
-    font-weight: 300;
+    font-family: 'Recipekorea'; 
+    /* font-weight: 300; */
     padding:0;
     margin:0;
     font-size:14px;
     line-height: 28px;
-    color: #777; 
+    color: #000000; 
     background: #fff; 
     position: relative;
+}
+/* iframe setting */
+iframe{
+	border: none;
+	padding: 40px;
+	margin : 0, auto;
+	position : relative;
 }
 /*           Font Smoothing      */
 
@@ -691,9 +704,10 @@ label small{
 
 
 .navbar-default .navbar-nav > li > a{
-    color: #929292;
+    color: #404040;
+    font-family: 'Recipekorea';
     font-size: 16px;
-    font-weight: 400;
+    /* font-weight: 400; */
     text-transform: capitalize;
     position: relative;
 
@@ -1349,7 +1363,7 @@ Asside widgets CSS
     font-size: 13px;
 }
 .panel.sidebar-menu.with-icons ul.nav li a:after {
-    font-family: 'FontAwesome';
+    font-family: 'Recipekorea';
     content: "\f105";
     position: relative;
     top: 0;
@@ -2702,7 +2716,7 @@ padding-bottom: 15px;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
-    font-family: "FontAwesome";
+    font-family: 'Recipekorea';
     margin-right: 16px;
     cursor: pointer;
 
