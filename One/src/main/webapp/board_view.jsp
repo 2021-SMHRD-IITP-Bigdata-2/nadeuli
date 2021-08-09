@@ -5,9 +5,8 @@
     
 <%
 	CommuDAO c_dao = new CommuDAO();
-	int commu_no = 0;
+	int commu_no = Integer.parseInt(request.getParameter("commu_no"));
 	CommuDTO commu = c_dao.get_data(commu_no);
-
 
 %>
 <!DOCTYPE html>
@@ -223,35 +222,33 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    나드리에서 추천해준 여수여행 후기 남겨요~
+                    <%=commu.getTitle() %>
                 </div>
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>1</dd>
+                        <dd><%=commu.getCommu_no() %></dd>
                     </dl>
                      <dl>
                         <dt>지역</dt>
-                        <dd>여수</dd>
+                        <dd><%=commu.getCity_name() %></dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>김두환</dd>
+                        <% String email = commu.getEmail(); %>
+                        <dd><%=c_dao.get_Nick(email) %></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2021.7.16</dd>
+                        <dd><%=commu.getCommu_date() %></dd>
                     </dl>
                     <dl>
                         <dt>조회</dt>
-                        <dd>63</dd>
+                        <dd><%=commu.getCnt() %></dd>
                     </dl>
                 </div>
                 <div class="cont">
-                   <strong>코로나19로 여행하기 불안 했었는데 <br>
-                   나드리에서 추천해준 안심숙소와 안심맛집 덕분에 정말 즐거운 휴가였어요~!!<br></strong>
-                  <img src="assets/img/images2.png"><br>
-                
+                   <strong><%=commu.getContents() %></strong>                
                 </div>
                 <div1 id="form-commentInfo"> <div id="comment-count">댓글 
   <span id="count">0</span></div> 

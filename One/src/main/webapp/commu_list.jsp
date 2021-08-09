@@ -280,9 +280,10 @@
                 		for(int i = 0 ; i <commulist.size();i++){
                 			out.print("<div>");
                 				String email= commulist.get(i).getEmail();
+                				int num = commulist.get(i).getCommu_no();
                 				out.print("<div class='num'>"+commulist.get(i).getCommu_no()+"</div>");
                 				out.print("<div class='area'>"+commulist.get(i).getCity_name()+"</div>");
-                				out.print("<div class='title'><a href='board_view.html'>"+commulist.get(i).getTitle()+"</a></div>");
+                				out.print("<div class='title'><a href='board_view.jsp?commu_no="+num+"'</a>"+commulist.get(i).getTitle()+"</div>");
                 				out.print("<div class='writer'>"+c_dao.get_Nick(email)+"</div>");
                 				out.print("<div class='date'>"+commulist.get(i).getCommu_date()+"</div>");
                 				out.print("<div class='count'>"+commulist.get(i).getCnt()+"</div>");
