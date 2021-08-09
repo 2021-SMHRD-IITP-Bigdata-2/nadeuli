@@ -107,9 +107,9 @@
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="property.html">안심여행지</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">안심숙소</a></li>
+						href="property-1.html">안심식당</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">안심식당</a></li>
+						href="property-2.html">안심숙소</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="commu_list.jsp">게시판</a></li>
 					<!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">

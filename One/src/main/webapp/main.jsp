@@ -13,7 +13,7 @@
 <head class="no-js">
 <meta charset="EUC-KR">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GARO ESTATE | Home page</title>
+        <title>nadeuli | Main</title>
         <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
@@ -42,7 +42,7 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
         <noscript>
-        <link rel="stylesheet" type="text/css" href="assets/css/styleNoJS.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/styleNoJS.css" >
         </noscript>
 </head>
 <body>
@@ -89,7 +89,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index-2.html"><img src="assets/img/nadeuli-logo.png" alt=""></a>
+                    <a class="navbar-brand" href="index-2.html">나드리</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
