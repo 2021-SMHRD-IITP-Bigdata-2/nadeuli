@@ -57,7 +57,7 @@ public class CommuDAO {
 			connection();
 
 			// 3. 쿼리문 실행
-			String sql = "Select * from community";
+			String sql = "Select * from community order by commu_no desc";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -88,6 +88,108 @@ public class CommuDAO {
 		
 		
 		return commulist;
+	}
+	
+	public int commu_upload(CommuDTO commu) {
+
+		try {
+
+			connection();
+
+			// 3. 쿼리문 실행
+			String sql = "insert into community values(comm_num.nextval,?,?,to_char(sysdate,'yyyy.mm.dd'),null,?,?,0)";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, commu.getTitle());
+			psmt.setString(2, commu.getContents());
+			psmt.setString(3, commu.getCity_name());
+			psmt.setString(4, commu.getEmail());
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+
+	}
+	
+	public String get_Nick(String email) {
+
+		String getNick = null;
+		try {
+
+			connection();
+
+			// 3. 쿼리문 실행
+			String sql = "Select nickname from members where email=?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+
+			rs = psmt.executeQuery();
+			
+
+			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+			if (rs.next()) {
+				getNick = rs.getString(1);
+				// 회원정보를 저장할 수 있는 객체 생성
+			} else {
+				System.out.println("정보 조회 실패");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// 데이터 베이스 연결 종료
+			close();
+
+		}
+		return getNick;
+	}
+	
+	
+	public CommuDTO get_data(int commu_no ) {
+		CommuDTO commu = null;
+
+		try {
+
+			connection();
+
+			// 3. 쿼리문 실행
+			String sql = "Select * from community where commu_no=? ";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, commu_no);
+
+			rs = psmt.executeQuery();
+
+			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+			if (rs.next()) {
+				int getNum = rs.getInt(1);
+				String getTitle = rs.getString(2);
+				String getContents = rs.getString(3);
+				String getDate = rs.getString(4);
+				String getImg = rs.getString(5);
+				String getCity = rs.getString(6);
+				String getEmail =  rs.getString(7);
+				int getCnt = rs.getInt(8);
+
+				commu = new CommuDTO(getNum, getTitle, getContents, getDate, getImg, getCity, getEmail, getCnt);
+				
+			} else {
+				System.out.println("정보 조회 실패");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// 데이터 베이스 연결 종료
+			close();
+
+		}
+		return commu;
 	}
 	
 

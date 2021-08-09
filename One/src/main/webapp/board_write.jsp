@@ -1,34 +1,25 @@
-<%@page import="Model.MemberDTO"%>
-<%@page import="Model.CommuDTO"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="Model.CommuDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    
-<%
-	CommuDAO c_dao = new CommuDAO();
-	ArrayList<CommuDTO> commulist = c_dao.commu_list();
-	
-	
-
-%>
 <!DOCTYPE html>
-<html class="no-js" >
+<html class="no-js">
 <head>
 <meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>GARO ESTATE | Property  page</title>
+        <style type="text/css">
+        #textarea_contents {font-size:16px;}
+        </style>
         <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link rel="icon" href="favicon.ico" type="image/x-icon">
+
 
         <link rel="stylesheet" href="assets/css/normalize.css">
         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -48,6 +39,7 @@
         <link rel="stylesheet" href="assets/css/responsive.css">
         <html lang="ko">
 
+<title>Insert title here</title>
 </head>
 <body>
  <div id="preloader">
@@ -104,10 +96,10 @@
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">안심여행지</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심숙소</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심식당</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">게시판</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">게시판</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -197,61 +189,11 @@
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title">COMMUNITY </h1>               
+                        <h1 class="page-title">게시판</h1>               
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End page header -->
-
-        <!-- property area -->
-      <!--    <div class="content-area single-property" style="background-color: #FFF;">&nbsp;
-            <div class="container">   
-
-                <div class="clearfix padding-top-40" >
-                    <div class="col-md-12 single-property-content">
-                        <div class="row">
-                            <div class="light-slide-item full-width-sld">            
-                                <div class="clearfix">
-                                    <div class="favorite-and-print">
-                                        <a class="add-to-fav" href="#login-modal" data-toggle="modal">
-                                            <i class="fa fa-star-o"></i>
-                                        </a>
-                                        <a class="printer-icon " href="javascript:window.print()">
-                                            <i class="fa fa-print"></i> 
-                                        </a>
-                                    </div> 
-
-                                    <ul id="fullWidth-gallery" class="gallery list-unstyled cS-hidden">
-                                        <li data-thumb="assets/img/property-1/property1.jpg"> 
-                                            <img src="assets/img/property-1/property1.jpg" />
-                                        </li>
-                                        <li data-thumb="assets/img/property-1/property2.jpg"> 
-                                            <img src="assets/img/property-1/property3.jpg" />
-                                        </li>
-                                        <li data-thumb="assets/img/property-1/property3.jpg"> 
-                                            <img src="assets/img/property-1/property3.jpg" />
-                                        </li>
-                                        <li data-thumb="assets/img/property-1/property4.jpg"> 
-                                            <img src="assets/img/property-1/property4.jpg" />
-                                        </li>                                         
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-8" style="background-color: rgb(251, 251, 251);">
-                        <div class="">
-
-                            <div class="single-property-wrapper">-->
-
-                                                                <!-- End description area  -->
-
-                                <div class="section additional-details">
-
-                                    <h4 class="s-property-title"></h4>
-
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -263,90 +205,39 @@
     <div class="board_wrap">
         <div class="board_title">
             <strong>게시판</strong>
-            <h4>광주ㆍ전남 지역 여행 후기를 남겨주세요.</h4>
+            <h4>글쓰기</h4>
         </div>
-        <div class="board_list_wrap">
-            <div class="board_list">
-                <div class="top">
-                    <div class="num">번호</div>
-                    <div class="area">지역</div>
-                    <div class="title">제목</div>
-                    <div class="writer">글쓴이</div>
-                    <div class="date">작성일</div>
-                    <div class="count">조회</div>
+        <div class="board_write_wrap">
+            <div class="board_write">
+                <div class="title">
+                    <dl>
+                <form action="CommuUpload" method = "post" id="formArea">
+                        <dt>제목</dt>
+                        <dd><input type="text" placeholder="제목 입력" name="title"></dd>
+                    </dl>
                 </div>
-                <% 
-                	if(!commulist.isEmpty()){
-                		for(int i = 0 ; i <commulist.size();i++){
-                			out.print("<div>");
-                				String email= commulist.get(i).getEmail();
-                				out.print("<div class='num'>"+commulist.get(i).getCommu_no()+"</div>");
-                				out.print("<div class='area'>"+commulist.get(i).getCity_name()+"</div>");
-                				out.print("<div class='title'><a href='board_view.html'>"+commulist.get(i).getTitle()+"</a></div>");
-                				out.print("<div class='writer'>"+c_dao.get_Nick(email)+"</div>");
-                				out.print("<div class='date'>"+commulist.get(i).getCommu_date()+"</div>");
-                				out.print("<div class='count'>"+commulist.get(i).getCnt()+"</div>");
-                			out.print("</div>");
-                		}
-                	}
-                %>
-                
-            </div>
-            <div class="board_page">
-                <a href="#" class="bt first"><<</a>
-                <a href="#" class="bt prev"><</a>
-                <a href="#" class="num on">1</a>
-                <a href="#" class="num">2</a>
-                <a href="#" class="num">3</a>
-                <a href="#" class="num">4</a>
-                <a href="#" class="num">5</a>
-                <a href="#" class="bt next">></a>
-                <a href="#" class="bt last">>></a>
+                <div class="info">
+                   <dl>
+                        <dt>지역</dt>
+                        <dd><input type="text" placeholder="지역 입력" name = "city"></dd>
+                    </dl>
+                 <!--     <dl>
+                        <dt>비밀번호</dt>
+                        <dd><input type="password" placeholder="비밀번호 입력"></dd>
+                    </dl
+                </div>--> 
+                <div class="cont">
+                    <textarea form = "formArea" id="textarea_contents" placeholder="내용 입력" name = "contents"></textarea>
+                </div>
             </div>
             <div class="bt_wrap">
-                <a href="board_write.jsp" class="on">글쓰기</a>
-                <!--<a href="#">수정</a>-->
+                <input type="submit"  href="board_view.html" class="on" value ="등록">
+                <a href="property-3.html">취소</a>
+             </form>
             </div>
         </div>
     </div>
-
-                                <!--     <ul class="additional-details-list clearfix">
-                                        <li>
-                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">목록</span>
-                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Yes</span>
-                                        </li>
-
-                                        <li>
-                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Built In</span>
-                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2003</span>
-                                        </li>
-                                        <li>
-                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Parking</span>
-                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">2 Or More Spaces,Covered Parking,Valet Parking</span>
-                                        </li>
-
-                                        <li>
-                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront</span>
-                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Yes</span>
-                                        </li>
-
-                                        <li>
-                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">View</span>
-                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Intracoastal View,Direct ew</span>
-                                        </li>
-
-                                        <li>
-                                            <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Waterfront Description:</span>
-                                            <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">Intracoastal Front,Ocean Access</span>
-                                        </li> 
-
-                                    </ul>
-                                </div>   -->
-                             
-
-
-
-        <!-- Footer area-->
+ <!-- Footer area-->
         <div class="footer-area">
 
             <div class=" footer">
@@ -513,6 +404,5 @@
                                 });
                             });
         </script>
-
 </body>
 </html>

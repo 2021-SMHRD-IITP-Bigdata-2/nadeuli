@@ -40,9 +40,26 @@ create table community(
 	constraint commu_email_fk foreign key(email) references members(email)
 );
 
+ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD'
+
+commit
+drop table community
+delete from COMMUNITY where commu_no = 1;
+
+insert into COMMUNITY
+values(comm_num.nextval,'빛고을 광주로 놀러오세요.','영미오리탕 맛있어요',To_Char(sysdate,'yyyymmdd'),null,'광주광역시','test1',0);
 	-- insert into community values(comm_seq.nextval, 'test','1','테스트입니다.',sysdate);
+	
+insert into community values(comm_num.nextval,'하이','하이',To_Char(sysdate,'yyyymmdd'),null,?,?,0)
+insert into community values(comm_num.nextval,'하이','하이',to_char(sysdate,'yyyy.mm.dd'),null,'여수시','test1',0)
+select * from community
+
+alter table community modify commu_date varchar(20)
+
+delete from community where city_name = '광주광역시' 
 
 select * from community
+
 
 --만들었음
 create table member_trip(
@@ -118,3 +135,15 @@ create table corona(
 )
 
 desc user_table
+
+drop sequence comm_num
+
+
+create sequence comm_num
+start with 1
+increment by 1
+	
+
+	
+	
+	

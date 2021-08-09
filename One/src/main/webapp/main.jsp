@@ -4,6 +4,7 @@
     
 <%
 	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+	
 
 	
 %>

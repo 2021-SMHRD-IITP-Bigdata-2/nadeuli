@@ -4,7 +4,7 @@ public class CommuDTO {
 	
 	private int commu_no;
 	private String title ;
-	private String contesnts;
+	private String contents;
 	private String commu_date;
 	private String img_link;
 	private String city_name;
@@ -18,12 +18,19 @@ public class CommuDTO {
 			String email, int cnt) {
 		this.commu_no = commu_no;
 		this.title = title;
-		this.contesnts = contesnts;
+		this.contents = contesnts;
 		this.commu_date = commu_date;
 		this.img_link = img_link;
 		this.city_name = city_name;
 		this.email = email;
 		this.cnt = cnt;
+	}
+	
+	public CommuDTO(String title, String contesnts,String city_name,String email) {
+		this.title = title;
+		this.contents = contesnts;
+		this.city_name = city_name;
+		this.email = email;
 	}
 
 
@@ -47,13 +54,13 @@ public class CommuDTO {
 	}
 
 
-	public String getContesnts() {
-		return contesnts;
+	public String getContents() {
+		return contents;
 	}
 
 
 	public void setContesnts(String contesnts) {
-		this.contesnts = contesnts;
+		this.contents = contesnts;
 	}
 
 
@@ -109,10 +116,13 @@ public class CommuDTO {
 
 	@Override
 	public String toString() {
-		return "CommuDTO [commu_no=" + commu_no + ", title=" + title + ", contesnts=" + contesnts + ", commu_date="
+		return "CommuDTO [commu_no=" + commu_no + ", title=" + title + ", contents=" + contents + ", commu_date="
 				+ commu_date + ", img_link=" + img_link + ", city_name=" + city_name + ", email=" + email + ", cnt="
 				+ cnt + "]";
 	}
+
+
+	
 	
 	
 	
