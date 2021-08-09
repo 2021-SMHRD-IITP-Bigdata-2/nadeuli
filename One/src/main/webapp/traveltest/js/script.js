@@ -4,8 +4,6 @@ var answerData=[];
 var widthOfItem = 350;
 var currentCard = 0;
 //누적할 키워드
-var mbtiData = {'E':0, 'I':0, 'S':0, 'N':0, 'T':0, 'F':0, 'J':0,  'P':0};
-var mbti = "";
 var testResults = [];
 
 var slider = null;
@@ -44,7 +42,7 @@ window.addEventListener('DOMContentLoaded', function(){
     }
   }
 
-  //make all li's
+  //make all li's 문제와 답 출력
   for(var i=0; i<quizData.length; i++)
   {
     var htmlData = "<li><div id=\"question\">"+
@@ -94,26 +92,12 @@ function moveSlider(dir)
     progressText.innerHTML = "";
     mainContents.style.opacity = "0";
     setTimeout(finish,400);
-    //답 앞에 적어둔 키워드가 누적됨
-    // for(var i=0; i<answerData.length; i++)
-    // {
-    //   // 키워드들이 누적됨
-    //   mbtiData[ quizData[i][answerData[i]+1][1] ] ++;
-    // }
-    // mbti += compMBTI('E','I') + compMBTI('S','N') + compMBTI('T','F') + compMBTI('J','P');
     return;
   }
   updateProgressBar();
 }
-// 상반되는 데이터 키워드 중에 더 많이 누적된거를 비교해서 큰거를 남긴다.
-// function compMBTI(a,b)
-// {
-//   if(mbtiData[a] > mbtiData[b])
-//     return a;
-//   else
-//     return b;
-// }
-//결과 보여주기
+
+//결과페이지로 보내기
 function finish(){
   window.location.href = "test-finish.jsp";
 }
