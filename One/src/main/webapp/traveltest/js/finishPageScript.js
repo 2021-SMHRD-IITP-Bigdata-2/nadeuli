@@ -2,16 +2,10 @@ var mainContents = null;
 var features = [];
 var powerName = ["","",""];
 var powerDisc = ["","",""];
-var harmony=[];
 var text2 = null;
 var text3 = null;
 var discription = null;
 var resultImage = null;
-var goodImage = null;
-var badImage = null;
-var goodPower = null;
-var badPower = null;
-
 var winH = window.innerHeight;
 var scrollY = window.scrollY;
 var animElements = [];
@@ -24,20 +18,13 @@ function initElements()
     text3 = document.getElementById("text3");
     discription = document.getElementById("discription");
     resultImage = document.getElementById("resultImage");
-    goodImage = document.getElementById("goodImage");
-    badImage = document.getElementById("badImage");
-    goodPower = document.getElementById("goodPower");
-    badPower = document.getElementById("badPower");
  }
+ 
 //유형에 맞는 자료 가져오기
 window.addEventListener('DOMContentLoaded', function(){
   initElements();
-  //#에 명시된 값을 url에 반환한다.
   var type = window.location.hash.slice(1);
-  //var rawData = loadFile("results/"+type+".txt");
   var featuresRaw = loadFile("results/"+type+".txt");
-//   var harmonyRaw = loadFile("harmonyData.txt");
-//   var powersRaw = loadFile("MBTItoPowerData.txt");
 
   var sentances = featuresRaw.split('\n');
   for (var i =0; i<sentances.length; i++) {
@@ -88,9 +75,6 @@ window.addEventListener('DOMContentLoaded', function(){
    discription.innerHTML = tstr;
 
    resultImage.src = "traveltest/images/test-main.png";
-//   goodImage.src = "images/results/"+harmony[0]+".jpg";
-//   badImage.src = "images/results/"+harmony[1]+".jpg";
-
    animElements = Array.prototype.slice.call( document.getElementsByClassName("scrollAnim") );
 
  });
@@ -116,14 +100,6 @@ function checkScroll()  {
   }
 }
 
-
-// function loadImage(path, id)
-// {
-//   var img = document.createElement("img");
-//   img.setAttribute("src",path);
-//   img.id = id;
-//   return img;
-// }
 window.onload = function(){
 
   mainContents.style.opacity = "1";

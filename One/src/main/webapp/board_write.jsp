@@ -91,14 +91,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
-                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">Login</button>
+                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
                         <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심숙소</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심식당</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심식당</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심숙소</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">게시판</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
@@ -231,7 +231,7 @@
                 </div>
             </div>
             <div class="bt_wrap">
-                <input type="submit"  href="board_view.html" class="on" value ="등록">
+            	<input type="submit"  href="board_view.html" class="on" value ="등록">
                 <a href="property-3.html">취소</a>
              </form>
             </div>
