@@ -16,7 +16,7 @@ var winH = window.innerHeight;
 var scrollY = window.scrollY;
 var animElements = [];
 
-//ê²°ê³¼í™”ë©´ì˜ ë‚´ìš© ê°€ì ¸ì˜¤ê¸°
+//°á°úÈ­¸éÀÇ ³»¿ë °¡Á®¿À±â
 function initElements()
 {
     mainContents = document.getElementById("main_contents");
@@ -28,16 +28,16 @@ function initElements()
     badImage = document.getElementById("badImage");
     goodPower = document.getElementById("goodPower");
     badPower = document.getElementById("badPower");
-}
-//ìœ í˜•ì— ë§ëŠ” ìë£Œ ê°€ì ¸ì˜¤ê¸°
+ }
+//À¯Çü¿¡ ¸Â´Â ÀÚ·á °¡Á®¿À±â
 window.addEventListener('DOMContentLoaded', function(){
   initElements();
-  //#ì— ëª…ì‹œëœ ê°’ì„ urlì— ë°˜í™˜í•œë‹¤.
+  //#¿¡ ¸í½ÃµÈ °ªÀ» url¿¡ ¹İÈ¯ÇÑ´Ù.
   var type = window.location.hash.slice(1);
-  //var rawData = loadFile("trip-test/data/results/"+type+".txt");
-  var featuresRaw = loadFile("trip-test/data/results/"+type+".txt");
-  var harmonyRaw = loadFile("harmonyData.txt");
-  var powersRaw = loadFile("MBTItoPowerData.txt");
+  //var rawData = loadFile("results/"+type+".txt");
+  var featuresRaw = loadFile("results/"+type+".txt");
+//   var harmonyRaw = loadFile("harmonyData.txt");
+//   var powersRaw = loadFile("MBTItoPowerData.txt");
 
   var sentances = featuresRaw.split('\n');
   for (var i =0; i<sentances.length; i++) {
@@ -45,55 +45,55 @@ window.addEventListener('DOMContentLoaded', function(){
       continue;
       features.push(sentances[i].slice(1));
   }
-  sentances = harmonyRaw.split('\n');
-  for(var i=0; i<sentances.length; i++) {
-    if(sentances[i]=='')
-      continue;
-    var words = sentances[i].split('#');
-    if(words[0] == type)
-    {
-      harmony.push(words[1]);
-      harmony.push(words[2]);
-    }
-  }
-  sentances = powersRaw.split('\n');
-  for(var i=0; i<sentances.length; i++) {
-    if(sentances[i]=='')
-      continue;
-    var words = sentances[i].split('#');
-    if(words[0] == type)
-    {
-      powerName[0] = words[1];
-      powerDisc[0] = words[2];
-    }
-    else if(words[0] == harmony[0])
-    {
-      powerName[1] = words[1];
-      powerDisc[1] = words[2];
-    }
-    else if(words[0] == harmony[1])
-    {
-      powerName[2] = words[1];
-      powerDisc[2] = words[2];
-    }
-  }
+//  sentances = harmonyRaw.split('\n');
+//   for(var i=0; i<sentances.length; i++) {
+//     if(sentances[i]=='')
+//       continue;
+//     var words = sentances[i].split('#');
+//     if(words[0] == type)
+//     {
+//       harmony.push(words[1]);
+//       harmony.push(words[2]);
+//     }
+//   }
+//   sentances = powersRaw.split('\n');
+//   for(var i=0; i<sentances.length; i++) {
+//     if(sentances[i]=='')
+//       continue;
+//     var words = sentances[i].split('#');
+//     if(words[0] == type)
+//     {
+//       powerName[0] = words[1];
+//       powerDisc[0] = words[2];
+//     }
+//     else if(words[0] == harmony[0])
+//     {
+//       powerName[1] = words[1];
+//       powerDisc[1] = words[2];
+//     }
+//     else if(words[0] == harmony[1])
+//     {
+//       powerName[2] = words[1];
+//       powerDisc[2] = words[2];
+//     }
+//   }
 
-  text2.innerHTML = powerName[0];
-  text3.innerHTML = powerDisc[0];
-  goodPower.innerHTML = powerName[1];
-  badPower.innerHTML = powerName[2];
-  var tstr = "";
-  for(var i=0; i<features.length; i++)
-    tstr += "<li class=\"scrollAnim\">"+features[i]+"</li>";
-  discription.innerHTML = tstr;
+//   text2.innerHTML = powerName[0];
+//   text3.innerHTML = powerDisc[0];
+//   goodPower.innerHTML = powerName[1];
+//   badPower.innerHTML = powerName[2];
+   var tstr = "";
+   for(var i=0; i<features.length; i++)
+     tstr += "<li class=\"scrollAnim\">"+features[i]+"</li>";
+   discription.innerHTML = tstr;
 
-  resultImage.src = "trip-test/images/results/"+type+".jpg";
-  goodImage.src = "trip-test/images/results/"+harmony[0]+".jpg";
-  badImage.src = "trip-test/images/results/"+harmony[1]+".jpg";
+   resultImage.src = "traveltest/images/test-main.png";
+//   goodImage.src = "images/results/"+harmony[0]+".jpg";
+//   badImage.src = "images/results/"+harmony[1]+".jpg";
 
-  animElements = Array.prototype.slice.call( document.getElementsByClassName("scrollAnim") );
+   animElements = Array.prototype.slice.call( document.getElementsByClassName("scrollAnim") );
 
-});
+ });
 
 document.addEventListener('scroll',checkScroll);
 var check = true;
@@ -117,13 +117,13 @@ function checkScroll()  {
 }
 
 
-function loadImage(path, id)
-{
-  var img = document.createElement("img");
-  img.setAttribute("src",path);
-  img.id = id;
-  return img;
-}
+// function loadImage(path, id)
+// {
+//   var img = document.createElement("img");
+//   img.setAttribute("src",path);
+//   img.id = id;
+//   return img;
+// }
 window.onload = function(){
 
   mainContents.style.opacity = "1";
@@ -136,7 +136,7 @@ function start() {
 }
 
 function quiz(){
-  window.location.href = "test-main.jsp";
+  window.location.href = "test-contents.jsp";
 }
 
 function copy(){
@@ -146,5 +146,5 @@ function copy(){
   tempElem.select();
   document.execCommand('copy');
   document.body.removeChild(tempElem);
-  alert("ì£¼ì†Œê°€ ë³µì‚¬ ëìŠµë‹ˆë‹¤. ì¹œêµ¬ì—ê²Œ ê³µìœ í•´ë³´ì„¸ìš”!");
+  alert("ÁÖ¼Ò°¡ º¹»ç µÆ½À´Ï´Ù. Ä£±¸¿¡°Ô °øÀ¯ÇØº¸¼¼¿ä!");
 }

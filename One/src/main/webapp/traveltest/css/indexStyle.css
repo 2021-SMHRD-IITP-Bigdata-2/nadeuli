@@ -1,3 +1,4 @@
+@charset "EUC-KR";
 #bgcontainer{
   width  :100%;
   text-align: center;
@@ -50,7 +51,7 @@
     text-align: center;
 }
 
-//https://nykim.work/84
+/* //https://nykim.work/84 */
 @media (max-width:600px)  {
 
 }

@@ -7,11 +7,11 @@
 <meta name="viewport" content="width=device-width" user-scalable="no">
 <title>나만의 맞춤 여행 추천!</title>
 
-<link rel="stylesheet" href="trip-test/css/commonStyle.css">
-  <link rel="stylesheet" href="trip-test/css/quizStyle.css">
+<link rel="stylesheet" href="traveltest/css/commonStyle.css">
+  <link rel="stylesheet" href="traveltest/css/quizStyle.css">
 
-  <script type="text/javascript" src="trip-test/js/fileRead.js?version=2"></script>
-  <script type="text/javascript" src="trip-test/js/script.js?version=2"></script>
+  <script type="text/javascript" src="traveltest/js/fileRead.js?version=2"></script>
+  <script type="text/javascript" src="traveltest/js/script.js?version=2"></script>
 </head>
 <body>
 	<div id="main_contents">

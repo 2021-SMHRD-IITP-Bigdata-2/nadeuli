@@ -3,9 +3,10 @@ var numOfQuiz = 0;
 var answerData=[];
 var widthOfItem = 350;
 var currentCard = 0;
-//ëˆ„ì í•  í‚¤ì›Œë“œ
+//´©ÀûÇÒ Å°¿öµå
 var mbtiData = {'E':0, 'I':0, 'S':0, 'N':0, 'T':0, 'F':0, 'J':0,  'P':0};
 var mbti = "";
+var testResults = [];
 
 var slider = null;
 var progressText = null;
@@ -16,24 +17,25 @@ var backButton = null;
 
 
 window.addEventListener('DOMContentLoaded', function(){
-  //ì§ˆë¬¸ê³¼ ë‹µì´ ìˆëŠ” í…ìŠ¤íŠ¸ íŒŒì¼ì„ ê°€ì ¸ì˜´
-  var rawData = loadFile("quizData.txt");
-  //var rawData = qdata;
-  //ë°‘ì— ìˆëŠ” ê¸°ëŠ¥ ê°€ì ¸ì˜´ í‹€ ë³´ì—¬ì£¼ëŠ”ê±° 
+  //Áú¹®°ú ´äÀÌ ÀÖ´Â ÅØ½ºÆ® ÆÄÀÏÀ» °¡Á®¿È
+  //var rawData = loadFile("quizData.txt");
+  var rawData = qdata;
+  //¹Ø¿¡ ÀÖ´Â ±â´É °¡Á®¿È Æ² º¸¿©ÁÖ´Â°Å 
   initElements();
 
   //init quizData & answerData & numOfQuiz
-  var sentances = rawData.split('\n'); //ì—”í„°ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì˜ë¼ ë„£ìŒ
-  //console.log(sentances);  í•´ë³´ë©´ ë°°ì—´ë¡œ ë“¤ì–´ê°„ë‹¤.
+  var sentances = rawData.split('\n'); //¿£ÅÍ¸¦ ±âÁØÀ¸·Î Àß¶ó ³ÖÀ½
+  //console.log(sentances);  ÇØº¸¸é ¹è¿­·Î µé¾î°£´Ù.
+
   for (var i =0; i<sentances.length; i++) {
     let text = sentances[i];
     if(text =='')
       continue;
-    //ë°ì´í„°ì— #ë¡œ ì‹œì‘í•˜ë©´ ì§ˆë¬¸ìœ¼ë¡œ ì¸ì‹í•œë‹¤.
+    //µ¥ÀÌÅÍ¿¡ #·Î ½ÃÀÛÇÏ¸é Áú¹®À¸·Î ÀÎ½ÄÇÑ´Ù.
     else if(text[0]=='#')  {
-      //ì§ˆë¬¸ ë°ì´í„°ë¥¼ ì¸ì‹í–ˆìœ¼ë©´ ì§ˆë¬¸ ë°ì´í„° ë°°ì—´ì— í•˜ë‚˜ì”© ì˜ë¼ì„œ ë„£ì–´ì¤€ë‹¤.
+      //Áú¹® µ¥ÀÌÅÍ¸¦ ÀÎ½ÄÇßÀ¸¸é Áú¹® µ¥ÀÌÅÍ ¹è¿­¿¡ ÇÏ³ª¾¿ Àß¶ó¼­ ³Ö¾îÁØ´Ù.
       quizData.push([text.slice(1)]);
-      //ì§ˆë¬¸ ìˆ˜ 1ëˆ„ì í•œë‹¤.
+      //Áú¹® ¼ö 1´©ÀûÇÑ´Ù.
       numOfQuiz++;
       answerData.push(-1);
     }
@@ -41,6 +43,7 @@ window.addEventListener('DOMContentLoaded', function(){
       quizData[numOfQuiz-1].push( [text.slice(1),text[0]]);
     }
   }
+
   //make all li's
   for(var i=0; i<quizData.length; i++)
   {
@@ -66,7 +69,10 @@ function updateProgressBar()
   progressText.innerHTML = ""+(currentCard+1)+"/"+numOfQuiz;
   progressBar.style.width = ""+(100*(currentCard+1)/numOfQuiz)+"%";
 }
-// ì´ì „ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì´ì „ ë‚´ìš©ìœ¼ë¡œ ëŒì•„ê°€ëŠ”ê²ƒ
+
+
+
+// ÀÌÀü¹öÆ°À» ´©¸£¸é ÀÌÀü ³»¿ëÀ¸·Î µ¹¾Æ°¡´Â°Í
 function moveSlider(dir)
 {
   var player = slider.animate([
@@ -88,30 +94,30 @@ function moveSlider(dir)
     progressText.innerHTML = "";
     mainContents.style.opacity = "0";
     setTimeout(finish,400);
-    //ë‹µ ì•ì— ì ì–´ë‘” í‚¤ì›Œë“œê°€ ëˆ„ì ë¨
-    for(var i=0; i<answerData.length; i++)
-    {
-      // í‚¤ì›Œë“œë“¤ì´ ëˆ„ì ë¨
-      mbtiData[ quizData[i][answerData[i]+1][1] ] ++;
-    }
-    mbti += compMBTI('E','I') + compMBTI('S','N') + compMBTI('T','F') + compMBTI('J','P');
+    //´ä ¾Õ¿¡ Àû¾îµĞ Å°¿öµå°¡ ´©ÀûµÊ
+    // for(var i=0; i<answerData.length; i++)
+    // {
+    //   // Å°¿öµåµéÀÌ ´©ÀûµÊ
+    //   mbtiData[ quizData[i][answerData[i]+1][1] ] ++;
+    // }
+    // mbti += compMBTI('E','I') + compMBTI('S','N') + compMBTI('T','F') + compMBTI('J','P');
     return;
   }
   updateProgressBar();
 }
-// ìƒë°˜ë˜ëŠ” ë°ì´í„° í‚¤ì›Œë“œ ì¤‘ì— ë” ë§ì´ ëˆ„ì ëœê±°ë¥¼ ë¹„êµí•´ì„œ í°ê±°ë¥¼ ë‚¨ê¸´ë‹¤.
-function compMBTI(a,b)
-{
-  if(mbtiData[a] > mbtiData[b])
-    return a;
-  else
-    return b;
-}
-//ê²°ê³¼ ë³´ì—¬ì£¼ê¸°
+// »ó¹İµÇ´Â µ¥ÀÌÅÍ Å°¿öµå Áß¿¡ ´õ ¸¹ÀÌ ´©ÀûµÈ°Å¸¦ ºñ±³ÇØ¼­ Å«°Å¸¦ ³²±ä´Ù.
+// function compMBTI(a,b)
+// {
+//   if(mbtiData[a] > mbtiData[b])
+//     return a;
+//   else
+//     return b;
+// }
+//°á°ú º¸¿©ÁÖ±â
 function finish(){
-  window.location.href = "test-finish.jsp#"+mbti;
+  window.location.href = "test-finish.jsp";
 }
-//ë‚´ìš© ë³´ì—¬ì£¼ëŠ”ê²ƒ
+//³»¿ë º¸¿©ÁÖ´Â°Í
 function initElements()
 {
   slider = document.getElementById("qna_slider");
@@ -121,7 +127,7 @@ function initElements()
   progressBar = document.getElementById("progressValue");
   backButton = document.getElementById("prevButton");
 }
-//ì„ íƒí•œ ë‹µë³€ì€ ê³„ì† ì²´í¬ ë˜ê²Œë”
+//¼±ÅÃÇÑ ´äº¯Àº °è¼Ó Ã¼Å© µÇ°Ô²û
 function answerSelected(question,answer)
 {
   var but = document.getElementById(""+question+"_"+answerData[question]);
@@ -136,5 +142,6 @@ function answerSelected(question,answer)
   but.classList.add("selected");
 
   moveSlider(+1);
-
+  testResults.push(but.innerText);
 }
+console.log(testResults);

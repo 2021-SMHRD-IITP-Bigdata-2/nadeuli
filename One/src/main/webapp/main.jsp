@@ -104,8 +104,8 @@
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심숙소</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심식당</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심식당</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심숙소</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">게시판</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
@@ -236,7 +236,7 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property-1.html">안심숙소</a></cite>
+                            <blockquote><cite><a href="property-2.html">안심숙소</a></cite>
                                 <p>광주·전남의 안전한 여행지의 숙소를 볼 수 있습니다.
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
@@ -256,7 +256,7 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/1.jpg);"></div>                             
-                            <blockquote><cite><a href="property-2.html">안심식당</a></cite>
+                            <blockquote><cite><a href="property-1.html">안심식당</a></cite>
                                 <p>광주·전남의 안전한 여행지의 식당을 볼 수 있습니다.
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>

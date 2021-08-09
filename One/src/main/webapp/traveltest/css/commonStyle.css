@@ -1,3 +1,4 @@
+@charset "EUC-KR";
 * {   box-sizing : border-box; }
 
 @font-face {
@@ -8,7 +9,7 @@
 }
 
 html {
-//overflow-x: hidden;
+/* overflow-x: hidden; */
    height:100%;
    width : 100%;
    word-break : keep-all;
@@ -18,10 +19,10 @@ html {
 }
 
 body {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
-  //align-items: center;
+  align-items: center;
   height:100%;
   width : 100%;
   margin : 0;

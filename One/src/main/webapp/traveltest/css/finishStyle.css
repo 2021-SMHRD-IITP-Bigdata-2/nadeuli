@@ -1,3 +1,5 @@
+@charset "EUC-KR";
+
 @font-face {
   font-family: 'Cafe24Ssurround';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
@@ -45,12 +47,12 @@
   text-align: center;
 }
 .harmony{
-  //position : relative;
-  //display:inline-block;
+  /* //position : relative;
+  //display:inline-block; */
   width : 60%;
   margin:auto;
-  //height : 200px;
-  //max-height : 200px;
+  /* //height : 200px;
+  //max-height : 200px; */
   text-align: center;
   margin-bottom : 40px;
 
