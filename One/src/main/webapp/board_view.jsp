@@ -1,3 +1,4 @@
+<%@page import="Model.MemberDTO"%>
 <%@page import="Model.CommuDTO"%>
 <%@page import="Model.CommuDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -7,6 +8,10 @@
 	CommuDAO c_dao = new CommuDAO();
 	int commu_no = Integer.parseInt(request.getParameter("commu_no"));
 	CommuDTO commu = c_dao.get_data(commu_no);
+	
+	c_dao.updateBoardCnt(commu_no);
+	
+	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
 
 %>
 <!DOCTYPE html>
@@ -103,8 +108,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
-                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
-                        <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+                       <%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">로그아웃</button>
+                        <% } %>
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>

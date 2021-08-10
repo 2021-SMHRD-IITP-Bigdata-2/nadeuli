@@ -75,11 +75,13 @@ select * from member_trip
 create table sns_data(
 	city_name varchar2(20) not null,
 	tags varchar2(2000) not null,
-	sns_date varchar2(50) not null,
+	s_date varchar2(50) not null,
 	constraint sns_city_fk foreign key(city_name) references city(city_name)
 )
 
 select * from sns_data
+
+drop table sns_data
 
 create table comments (
 	comment_no number(10) not null constraint comm_pk primary key,
@@ -142,7 +144,14 @@ drop sequence comm_num
 create sequence comm_num
 start with 1
 increment by 1
+
+select * from community
 	
+update community set cnt = 1 where commu_no = 3
+
+update community set cnt = (select cnt from community where commu_no= 3 )+1 where commu_no = 3
+
+select * from domitory
 
 	
 	
