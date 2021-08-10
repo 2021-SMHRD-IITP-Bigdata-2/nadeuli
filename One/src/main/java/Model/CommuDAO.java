@@ -192,5 +192,28 @@ public class CommuDAO {
 		return commu;
 	}
 	
+	
+	public void updateBoardCnt(int commu_no) {
+		
+		try {
+			
+			connection();
+			
+			String sql = "update community set cnt = (select cnt from community where commu_no= ? )+1 where commu_no = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, commu_no);
+			psmt.setInt(2,commu_no);
+
+			rs = psmt.executeQuery();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// 데이터 베이스 연결 종료
+			close();
+		}
+	}
+	
 
 }
