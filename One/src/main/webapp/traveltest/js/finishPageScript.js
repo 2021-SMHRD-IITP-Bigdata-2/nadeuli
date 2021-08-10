@@ -32,43 +32,7 @@ window.addEventListener('DOMContentLoaded', function(){
       continue;
       features.push(sentances[i].slice(1));
   }
-//  sentances = harmonyRaw.split('\n');
-//   for(var i=0; i<sentances.length; i++) {
-//     if(sentances[i]=='')
-//       continue;
-//     var words = sentances[i].split('#');
-//     if(words[0] == type)
-//     {
-//       harmony.push(words[1]);
-//       harmony.push(words[2]);
-//     }
-//   }
-//   sentances = powersRaw.split('\n');
-//   for(var i=0; i<sentances.length; i++) {
-//     if(sentances[i]=='')
-//       continue;
-//     var words = sentances[i].split('#');
-//     if(words[0] == type)
-//     {
-//       powerName[0] = words[1];
-//       powerDisc[0] = words[2];
-//     }
-//     else if(words[0] == harmony[0])
-//     {
-//       powerName[1] = words[1];
-//       powerDisc[1] = words[2];
-//     }
-//     else if(words[0] == harmony[1])
-//     {
-//       powerName[2] = words[1];
-//       powerDisc[2] = words[2];
-//     }
-//   }
 
-//   text2.innerHTML = powerName[0];
-//   text3.innerHTML = powerDisc[0];
-//   goodPower.innerHTML = powerName[1];
-//   badPower.innerHTML = powerName[2];
    var tstr = "";
    for(var i=0; i<features.length; i++)
      tstr += "<li class=\"scrollAnim\">"+features[i]+"</li>";
@@ -78,6 +42,11 @@ window.addEventListener('DOMContentLoaded', function(){
    animElements = Array.prototype.slice.call( document.getElementsByClassName("scrollAnim") );
 
  });
+ 
+ //선택된 답변의 값 가져오기
+let results = localStorage.getItem('results');
+	//console.log(results); 하면 확인할 수 있음
+
 
 document.addEventListener('scroll',checkScroll);
 var check = true;
@@ -101,7 +70,6 @@ function checkScroll()  {
 }
 
 window.onload = function(){
-
   mainContents.style.opacity = "1";
   checkScroll();
 };
@@ -124,3 +92,4 @@ function copy(){
   document.body.removeChild(tempElem);
   alert("주소가 복사 됐습니다. 친구에게 공유해보세요!");
 }
+

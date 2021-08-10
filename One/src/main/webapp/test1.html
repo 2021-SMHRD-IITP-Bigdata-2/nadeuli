@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<button id="arr-btn" onclick="go()">배열 보낼거야!!!</button>
+	<script>
+		let arr = ["왜","안","됨"];
+		
+		localStorage.setItem('item',arr);
+		
+		function go(){
+			location.href='test2.html';
+		}
+		//location.href='test2.html';
+	</script>
+</body>
+</html>

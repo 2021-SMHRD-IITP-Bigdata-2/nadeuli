@@ -99,6 +99,10 @@ function moveSlider(dir)
 
 //결과페이지로 보내기
 function finish(){
+	//선택한 답변을 담은 배열 finish.jsp로 보내기
+	let result = testResults;
+	console.log(result);
+	localStorage.setItem('results',result);
   window.location.href = "test-finish.jsp";
 }
 //내용 보여주는것
@@ -128,4 +132,5 @@ function answerSelected(question,answer)
   moveSlider(+1);
   testResults.push(but.innerText);
 }
-console.log(testResults);
+//console.log(testResults);
+

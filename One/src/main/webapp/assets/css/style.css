@@ -1744,7 +1744,7 @@ proerty-th
     background-color: #FFF; 
     margin: 10px;
 }
-.proerty-th .proerty-item .item-thumb{
+.proerty-th .proerty-item .item-thumb.list1{
     position: relative;
 }
 .proerty-th .proerty-item:hover  .item-thumb img{
