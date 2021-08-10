@@ -30,9 +30,9 @@ slider 2
     font-size: 28px;
     padding-top: 10px;
     font-weight: 300;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+    text-shadow: 0 -1px 0 rgb(255, 255, 128);
     margin-top: 16%;
-    background-color: rgba(0, 0, 0, 0.23);
+    background-color: solid rgb(125, 125, 125);
     border-left: 5px solid rgb(125, 125, 125);
 }
 
