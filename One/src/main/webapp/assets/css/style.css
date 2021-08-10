@@ -99,7 +99,7 @@ p {
     margin:0;
 }
 a {
-    color: #d27e04;
+    color: #383838;
     outline: 0;
     font-weight: bold;
     -webkit-transition: all .8s ease;
@@ -121,7 +121,10 @@ img {
     vertical-align: middle;
     border: 0px none; 
 }
-
+.item-menu-img{
+	width : 300px;
+	height: 200px;
+}
 input {
     outline: 0;
     border: none;
@@ -233,8 +236,8 @@ input[type="search"]::-webkit-search-decoration {
     border-color: #05AE0E;
 }
 .btn-warning{
-    color: #FDC600;
-    border-color: #FDC600;
+    color: #1ABC9C;
+    border-color: #1ABC9C;
 }
 .btn-danger{
     color: #FF3B30;
@@ -303,7 +306,7 @@ input[type="search"]::-webkit-search-decoration {
 }
 .btn-warning.disabled, .btn-warning[disabled], fieldset[disabled] .btn-warning, .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning.active[disabled], fieldset[disabled] .btn-warning.active {
     background-color: rgba(0, 0, 0, 0);
-    border-color: #FDC600;
+    border-color: #1ABC9C;
 }
 .input-group-addon {
     background-color: #FFFFFF;
@@ -312,14 +315,14 @@ input[type="search"]::-webkit-search-decoration {
 }
 .btn-primary {
     color: #FFF;
-    background-color: #FDC600;
-    border-color: #FDC600;
+    background-color: #1ABC9C;
+    border-color: #1ABC9C;
     border-radius: 1px;
     padding: 10px 20px;
     font-weight: 600;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active,.btn-primary:active:focus, .open > .dropdown-toggle.btn-primary {
-    color: #FDC600;
+    color: #1ABC9C;
     background-color: #313538;
     border-color: #282829;
     font-weight: 600;
@@ -327,16 +330,16 @@ input[type="search"]::-webkit-search-decoration {
 .btn-default {
     border-radius: 1px;
     padding: 10px 20px;
-    border: 1px solid #FDC600;
+    border: 1px solid #1ABC9C;
     color: #000;
-    background-color: #FDC600;
+    background-color: #1ABC9C;
     border-color: #F0F0F0;
     font-weight: 600;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
     color: #000;
-    background-color: #FDC600;
-    border-color: #F0F0F0;
+    background-color: #D5F1E7;
+    border-color: #979797;
     font-weight: 600;
 }
 .search-form {
@@ -377,7 +380,7 @@ input[type="search"]::-webkit-search-decoration {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
 .form-inline input[type=submit]{
-    background: #FDC600;
+    background: #1ABC9C;
     color: #fff;
     height: 40px;
     width: 90px;
@@ -468,7 +471,7 @@ input[type="search"]::-webkit-search-decoration {
     border-left: 0 none;
 }
 .search-btn ,.toggle-btn{
-    background-color: #FDC600;
+    background-color: #1ABC9C;
     color: #333;
     font-size: 16px;
     border: 1px solid #EAE9E9;
@@ -527,8 +530,8 @@ input[type="search"]::-webkit-search-decoration {
     color: #05AE0E;
 }
 .label-warning{
-    border-color: #FDC600;
-    color: #FDC600;
+    border-color: #1ABC9C;
+    color: #1ABC9C;
 }
 .label-danger{
     border-color: #FF3B30;
@@ -558,7 +561,7 @@ label small{
     background-color: #05AE0E;
 }
 .label-warning.label-fill, .progress-bar-warning{
-    background-color: #FDC600;
+    background-color: #1ABC9C;
 }
 .label-danger.label-fill, .progress-bar-danger{
     background-color: #FF3B30;
@@ -641,7 +644,7 @@ label small{
 .pagination.ct-orange > .active > a, .pagination.ct-orange > .active > span, .pagination.ct-orange > .active > a:hover,
 
 .pagination.ct-orange > .active > span:hover, .pagination.ct-orange > .active > a:focus, .pagination.ct-orange > .active > span:focus{
-    background-color: #FDC600;
+    background-color: #1ABC9C;
 }
 .nav-pills.ct-red > li.active > a, .nav-pills.ct-red > li.active > a:hover, .nav-pills.ct-red > li.active > a:focus,
 .pagination.ct-red > .active > a, .pagination.ct-red > .active > span, .pagination.ct-red > .active > a:hover,
@@ -661,8 +664,8 @@ label small{
     color: #05AE0E;
 }
 .nav-pills.ct-orange > li > a {
-    border: 1px solid #FDC600;
-    color: #FDC600;
+    border: 1px solid #1ABC9C;
+    color: #1ABC9C;
 }
 .nav-pills.ct-red > li > a {
     border: 1px solid #FF3B30;
@@ -765,7 +768,11 @@ label small{
     margin-right: 20px
 }
 .navbar-brand {
-
+	float: right;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 34px;
+    line-height: 38px;
 }
 .main-nav {
     padding-top: 10px;
@@ -822,7 +829,7 @@ label small{
     border-width: 4px;
 }
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-    border-color: transparent transparent #FDC600;
+    border-color: transparent transparent #1ABC9C;
     border-style: solid;
     border-width: 4px;
     color: #666666;
@@ -924,7 +931,7 @@ label small{
     font-weight: 300;
 }
 .navbar .yamm-content ul li a:hover {
-    color: #FDC600;
+    color: #1ABC9C;
     text-decoration: none;
 }
 .navbar .yamm-content .banner {
@@ -1110,7 +1117,7 @@ font-weight: 500;
 
 }
 .header-social ul li a:hover{
-    color: #FDC600
+    color: #1ABC9C
 }
 
 
@@ -1144,20 +1151,21 @@ page-header
     color:#777;
 }
 .layout-switcher a:hover{     
-    color:#FDC600;
+    color:#1ABC9C;
 }
 .layout-switcher .active{
-    color:#FDC600;
+    color:#1ABC9C;
 }
 .layout-switcher {
     padding: 0px 10px;
     text-align: right;
 }
 .search-widget fieldset .largesearch-btn{
-    background-color: #FDC600;
+    background-color: #1ABC9C;
     font-size: 16px;
     border: 1px solid #EAE9E9;
     width: 100%;
+    border-radius : 10px;
     height: 40px;
     color: #FFF;
     transition: all 0.3s ease 0s;
@@ -1209,7 +1217,7 @@ Asside widgets CSS
 .panel.sidebar-menu .panel-heading h4,
 .panel.sidebar-menu .panel-heading h5 {
     display: inline-block;
-    border-bottom: solid 3px #FDC600;
+    border-bottom: solid 3px #1ABC9C;
     line-height: 1.1;
     margin-bottom: 0;
     padding-bottom: 10px;
@@ -1305,7 +1313,7 @@ Asside widgets CSS
     padding: 5px;
     border: solid 1px #eeeeee;
     border-radius: 0;
-    color: #FDC600;
+    color: #1ABC9C;
     margin: 5px 5px 5px 0;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -1313,9 +1321,9 @@ Asside widgets CSS
     font-size: 13px;
 }
 .panel.sidebar-menu ul.tag-cloud li a:hover {
-    color: #FDC600;
+    color: #1ABC9C;
     text-decoration: none;
-    border-color: #FDC600;
+    border-color: #1ABC9C;
 }
 .panel.sidebar-menu ul.popular,
 .panel.sidebar-menu ul.recent {
@@ -1415,6 +1423,7 @@ Asside widgets CSS
 .pagination {
     height: 40px;
     margin: 20px 10px;
+    text-align : center;
 }
 
 .pagination ul {
@@ -1436,13 +1445,20 @@ Asside widgets CSS
     display: inline;
 }
 
+.btn_more{
+	border : 0;
+	border-radius : 10px;
+	background-color: #1ABC9C;
+	color : white;
+	
+}
 .pagination a,
 .pagination span {
     float: left;
     padding: 0 14px;
     line-height: 38px;
     text-decoration: none;
-    background-color: #ffffff;
+    
     border: 1px solid #dddddd;
     border-left-width: 0;
 }
@@ -1554,7 +1570,7 @@ Asside widgets CSS
     border-radius: 50%;
 }
 .testimonial .owl-theme .owl-controls .owl-page span{
-    background: #FDC600
+    background: #1ABC9C
 }
 .client-text {
     border-radius: 2px;
@@ -1599,7 +1615,7 @@ padding: 0 0 0.5em;
 
     border: 1px solid #E6E6E6;
     box-sizing: border-box;
-
+	width : 300px;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 .dot-hr{
@@ -1752,7 +1768,7 @@ proerty-th
 }
 .properties-page .proerty-th .proerty-price{
     font-weight: 600;
-    color: #FDC600;
+    color: #1ABC9C;
 }
 .proerty-th .proerty-item  .item-entry h5{
     text-transform: uppercase;
@@ -1862,7 +1878,7 @@ proerty-th-list
 
 .proerty-th-list .proerty-price{
     font-weight: 600;
-    color: #FDC600;
+    color: #1ABC9C;
     font-size: 25px;
 }
 .property-icon {
@@ -1955,7 +1971,7 @@ recent-property-widget
     padding: 0px 6px;
 }
 .recent-property-widget ul li .property-seeker .b-2 {
-    background-color: #FDC600;
+    background-color: #1ABC9C;
     padding: 0px 6px;
 }
 
@@ -2019,8 +2035,8 @@ single property page
     padding: 10px 7px 4px 7px;
 }
 .favorite-and-print .add-to-fav:hover  ,.favorite-and-print  .printer-icon:hover  {
-    color:#FDC600;
-    border-color: #FDC600;
+    color:#1ABC9C;
+    border-color: #1ABC9C;
 }
 .favorite-and-print .add-to-fav i ,.favorite-and-print  .printer-icon i  { 
     font-size: 25px;
@@ -2180,7 +2196,7 @@ single property page
 }
 .property-features ul li a::after{
     content: "/";
-    color: #FDC600;
+    color: #1ABC9C;
     font-weight: bold;
     padding-left: 5px;
     font-size: 14px;
@@ -2241,7 +2257,7 @@ single property page
 }
 .dealer-action a::after{
     content: "/";
-    color: #FDC600;
+    color: #1ABC9C;
     font-weight: 700;
     font-size: 20px;
     margin: 4px;
@@ -2276,7 +2292,7 @@ Welcom
 .welcome-estate:hover .welcome-icon{
     color:#FFF;
     border: 2px solid transparent;
-    background-color: #FDC600;
+    background-color: #1ABC9C;
 }
 
 .welcome_text{
@@ -2378,8 +2394,8 @@ count-area
     padding: 2px 15px;
     text-transform: uppercase;
     margin: 0px;
-    border-left: 2px solid #FDC600;
-    border-right: 2px solid #FDC600;
+    border-left: 2px solid #1ABC9C;
+    border-right: 2px solid #1ABC9C;
     display: inline-block;
 }
 .boy-sale-area {
@@ -2519,12 +2535,12 @@ count-area
     letter-spacing: 0.5px;
 }
 .slider-selection { 
-    background: #FDC600;
+    background: #1ABC9C;
 }
 .search-form .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
     color: #FFF;
     text-decoration: none;
-    background-color: #FDC600;
+    background-color: #1ABC9C;
     outline: 0px none;
 }
 .search-form .dropdown-menu > li > a {
@@ -2650,7 +2666,7 @@ padding-bottom: 15px;
     text-transform: uppercase;
     margin-bottom: 15px;
     background: transparent none repeat scroll 0% 0%;
-    border-bottom: 2px solid #FDC600;
+    border-bottom: 2px solid #1ABC9C;
     font-size: 20px;
     line-height: 30px;
 }
@@ -2665,7 +2681,7 @@ padding-bottom: 15px;
     font-size: 23px;
 }
 .login-social:hover, .login-social:focus{
-    background-color: #FDC600;
+    background-color: #1ABC9C;
 }
 
 
@@ -2718,7 +2734,7 @@ padding-bottom: 15px;
 }
 .error-page .error-title{
     font-size: 11em;
-    color: #FDC600;
+    color: #1ABC9C;
 }
 
 .fqa-title::before {
@@ -2727,7 +2743,7 @@ padding-bottom: 15px;
     width: 24px;
     height: 24px;
     content: "�겎";
-    color: #FDC600;
+    color: #1ABC9C;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
@@ -2830,7 +2846,6 @@ padding-bottom: 15px;
 /*FOOOTER*/
 .footer-area{
 border-top: 1px solid #D1D1D1;
-background: #555 url("../../assets/img/bg-footer.jpg") repeat scroll 0% 0%;
 color: #535353;
 }
 .footer{
@@ -2874,7 +2889,7 @@ padding-top: 7px;
     letter-spacing: 2px;
 }
 .footer h4 span{
-    border-bottom: 3px solid #FDC600;
+    border-bottom: 3px solid #1ABC9C;
 }
 .footer-title-line {
     width: 100px;
@@ -2913,7 +2928,7 @@ text-transform: uppercase;
 font-size: 13px;
 }
 .footer ul li a:hover{
-    color: #FDC600;
+    color: #1ABC9C;
     text-decoration: none;
 }
 .footer-menu li{
@@ -3010,12 +3025,12 @@ ul.footer-blog li {
     padding-bottom: 0.3em;
 }
 .social  ul li a:hover {
-    color: #FDC600;
+    color: #1ABC9C;
 order-color: #868686;
 background-color: #868686;
 }
 .social  ul li a:hover i{
-   color: #FDC600;  
+   color: #1ABC9C;  
 }
 .social ul li a{
 display: block;

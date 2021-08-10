@@ -19,7 +19,8 @@
 	<div id="main_contents">
       <p id="text1" class="scrollAnim">당신에게 맞는 여행지는...!</p>
       <img id="resultImage" src="images/placeholder.jpg" class="scrollAnim">
-      <p id="text2" class="scrollAnim">어쩌구 저쩌구</p>
+      <p id="text2" class="scrollAnim">
+      </p>
       <p id="text3" class="scrollAnim">이ㅓㅁ니ㅏㅇㅎ알너 하는 능력</p>
       <ul id="discription" >
       </ul>

@@ -12,6 +12,7 @@
 
   <script type="text/javascript" src="traveltest/js/fileRead.js?version=2"></script>
   <script type="text/javascript" src="traveltest/js/script.js?version=2"></script>
+  <script type="text/javascript" src="traveltest/js/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 	<div id="main_contents">
@@ -25,5 +26,6 @@
       <button id="prevButton" onclick="moveSlider(-1)">ְְּü</button>
     </div>
   </div>
+  
 </body>
 </html>
