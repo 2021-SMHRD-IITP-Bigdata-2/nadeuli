@@ -135,7 +135,7 @@ public class DomitoryDAO {
 				psmt.setString(1, city_name);
 				psmt.setString(2, d_name1);
 				
-			}else if(!city_name.isEmpty() && !d_name.isEmpty() && d_type.isEmpty()) { // 도시이름 + 호텔유형 검색
+			}else if(!city_name.isEmpty() && d_name.isEmpty() && !d_type.isEmpty()) { // 도시이름 + 호텔유형 검색
 				String sql = "Select * from domitory where city_name = ? and d_type = ? ";
 				psmt = conn.prepareStatement(sql);
 				psmt.setString(1, city_name);

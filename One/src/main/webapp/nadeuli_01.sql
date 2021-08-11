@@ -44,6 +44,9 @@ ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD'
 
 commit
 drop table community
+
+
+
 delete from COMMUNITY where commu_no = 1;
 
 insert into COMMUNITY
@@ -165,3 +168,10 @@ select
 Select * from domitory where city_name = '광주광역시' and d_name like '%한성%' and d_type = '호텔'
 Select * from domitory where city_name = ? and d_type = '호텔' and d_name like '%한성%'
 	
+alter table sns_data
+drop column city_number
+
+select * from restaurant
+select * from restaurant
+
+select * from place
