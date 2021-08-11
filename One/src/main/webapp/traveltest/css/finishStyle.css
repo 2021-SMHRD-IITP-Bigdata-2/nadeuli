@@ -6,20 +6,23 @@
   font-weight: normal;
   font-style: normal;
 }
+body{
+	font-family: "Cafe24Ssurround";
+}
 
-#discription li  {
+/* #city-introduce li  {
   text-align: left;
   margin-bottom : 20px;
   font-size : 18px;
-  color : #1C2833;
-}
+  color : #2f3640;
+} */
 
 #text1{
   margin-top : 70px;
   margin-bottom : 50px;
   font-size : 24px;
   text-align: center;
-  color : #ff9900;
+  color : #60a3bc;
 }
 #text2{
   margin : 0;
@@ -27,26 +30,26 @@
   margin-bottom : 20px;
   font-size : 32px;
   text-align: center;
-  color : #cc6600;
+  color : #3c6382;
 }
-#text3{
+#city-introduce li{
   margin : 0px;
   font-size : 18px;
   margin-bottom : 80px;
   text-align: center;
-  color : #6E2C00;
+  color : #2f3640;
 }
 #resultImage{
   max-width : 100%;
   max-height: 320px;
 }
-#harmonyWrapper{
+#resultWrapper{
   margin-top : 70px;
   width : 100%;
   margin-bottom : 70px;
   text-align: center;
 }
-.harmony{
+.results{
   /* //position : relative;
   //display:inline-block; */
   width : 60%;
@@ -68,26 +71,26 @@
 }
 #badPower, #goodPower{
   font-size: 24px;
-  color : #cc6600;
+  color : #079992;
 }
-#badText{
-  color : #E74C3C;
+#corona{
+  color : #38ada9;
 }
-#goodText{
-  color : #239B56;
+#place, #restaurant, #domitory{
+  color : #78e08f;
 }
 
 #startText,#copyText{
-color : #6E2C00;
+color :#2f3640;
   text-align: center;
   margin : 0;
   margin-bottom : 10px;
   font-size : 20px;
 }
 
-#startButton,#copyButton{
+#startButton2,#copyButton{
   display:block;
-  width : 60%;
+  width : 30%;
   margin : auto;
     margin-bottom : 50px;
   font-size : 24px;
@@ -99,18 +102,35 @@ color : #6E2C00;
   border: 0;
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
   /* border-width: 5px; */
-  color : #6E2C00;
+  color :#2f3640;
+}
+
+#startButton1{
+  display:block;
+  width : 27%;
+  margin : auto;
+    margin-bottom : 50px;
+  font-size : 22px;
+  height : 63px;
+  font-family: "Cafe24Ssurround";
+  background-color: white;
+  /* border-color : #EDBB99; */
+  border-radius: 15px;
+  border: 0;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1);
+  /* border-width: 5px; */
+  color :#2f3640;
 }
 #filler{
   height : 200px;
 
 }
-.scrollAnim {
+/* .scrollAnim {
   opacity : 0;
   transition : all 1s ease;
   -webkit-transition : all 1s ease;
 }
-
+ */
 #dev{
   margin-top : 60px;
   color : #CCD1D1;
