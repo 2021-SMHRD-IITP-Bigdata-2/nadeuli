@@ -112,6 +112,7 @@ create table domitory (
 	d_tel varchar2(20),
 	d_type varchar2(20) not null,
 	d_url varchar2(100),
+	d_img varchar2(1000),
 	constraint d_fk foreign key(city_name) references city(city_name)
 )
 
@@ -153,6 +154,14 @@ update community set cnt = (select cnt from community where commu_no= 3 )+1 wher
 
 select * from domitory
 
+select count(*) from community
+
+select count(*) from community where title = '하이'
+
+drop table domitory
+select * from domitory
+select
 	
-	
+Select * from domitory where city_name = '광주광역시' and d_name like '%한성%' and d_type = '호텔'
+Select * from domitory where city_name = ? and d_type = '호텔' and d_name like '%한성%'
 	

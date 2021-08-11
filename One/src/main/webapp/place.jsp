@@ -5,7 +5,9 @@
     pageEncoding="EUC-KR"%>
 <%
 	PlaceDAO p_dao = new PlaceDAO();
-	ArrayList<PlaceDTO> plist = p_dao.p_all();   
+	ArrayList<PlaceDTO> plist = p_dao.p_all();  
+	
+	
 
 %>
 <!DOCTYPE html>
@@ -489,7 +491,7 @@
 
 			<div class="col-md-12 clear"> <!-- Á¤·Ä -->
 				<div id="list-type" class="proerty-th">
-	
+	<
 			<%
 				if(!plist.isEmpty()){
 					for(int i = 0; i <plist.size(); i++){ %>
