@@ -215,5 +215,68 @@ public class CommuDAO {
 		}
 	}
 	
+	public int getCount() {
+		
+		int cnt = 0;
+		
+		try {
+			
+			connection();
+			
+			String sql = "select count(*) from community";
+
+			psmt = conn.prepareStatement(sql);
+
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				cnt = rs.getInt(1);
+				System.out.println(cnt);
+				
+			} else {
+				System.out.println("정보 조회 실패");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// 데이터 베이스 연결 종료
+			close();
+		}
+		
+		
+		return cnt;
+	}
+	
+	public int getCount(String kwd) {
+		
+		int cnt = 0;
+		
+		try {
+			
+			connection();
+			
+			String sql = "select count(*) from community where title = ?";
+
+			psmt = conn.prepareStatement(sql);
+
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				cnt = rs.getInt(1);
+				System.out.println(cnt);
+				
+			} else {
+				System.out.println("정보 조회 실패");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			// 데이터 베이스 연결 종료
+			close();
+		}
+		
+		
+		return cnt;
+	}
 
 }

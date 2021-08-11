@@ -1,14 +1,63 @@
+<%@page import="javax.tools.Tool"%>
+<%@page import="Model.DomitoryDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.DomitoryDAO"%>
+<%@page import="Model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+	request.setCharacterEncoding("EUC-KR");
+	
+	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+	
+	DomitoryDAO d_dao = new DomitoryDAO();
+	String city_name = request.getParameter("city_name");;
+	String d_name = request.getParameter("d_name");
+	String d_type = request.getParameter("d_type");
+	System.out.println("isp city_name> "+city_name);
+	System.out.println("jsp d_name> "+ d_name);
+	System.out.println("jsp d_type> " + d_type);
+	
+	ArrayList<DomitoryDTO> d_list = d_dao.domitory_select(city_name, d_name, d_type);
+	System.out.println(d_list.size());
+	
+
+%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
 <head>
-<meta charset="utf-8">
+
+<script>
+        let num1 = 0;
+        let num2 = 6;
+        $(function () {
+            $(".list1").slice(num1, num2).attr("style", "display:flex");
+            $("#load123").click(function () {
+                num1 += 6;
+                num2 += 6;
+                if (num1 < $(".list1").length) {
+                    console.log("≈¨∏Øµ ");
+                    $(".list1").slice(num1, num2).attr("style", "display:flex");
+                }
+
+                else {
+                    alert("¥ı¿ÃªÛ æ¯Ω¿¥œ¥Ÿ !!! ");
+                }
+            });
+        });
+</script>
+
+<style>
+
+.list33{
+	display : none;
+}
+
+</style>
+<meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>ÎÇòÎìúÎ¶¨ | ÏïàÏã¨ÏãùÎãπ</title>
+<title>GARO ESTATE | Properties page</title>
+
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
 <meta name="keyword"
@@ -41,7 +90,6 @@
 <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-
 	<div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
@@ -64,7 +112,7 @@
 					<div class="header-half header-social">
 						<ul class="list-inline">
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<!-- ÏµúÏÉÅÎã® Î≤ÑÌäº -->
+							<!-- √÷ªÛ¥‹ πˆ∆∞ -->
 							<li><a href="#"><i class="fa fa-google"></i></a></li>
 							<li><a href="#"><i class="fa fa-comment"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -85,28 +133,31 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="main.jsp"><img
+				<a class="navbar-brand" href="index-2.html"><img
 					src="assets/img/nadeuli-logo.png" alt=""></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse yamm" id="navigation">
 				<div class="button navbar-right">
-					<button class="navbar-btn nav-button wow bounceInRight login"
-						onclick=" window.open('register.html')" data-wow-delay="0.4s">Î°úÍ∑∏Ïù∏/ÌöåÏõêÍ∞ÄÏûÖ</button>
-					<!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+						<%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">∑Œ±◊¿Œ/»∏ø¯∞°¿‘</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">∑Œ±◊æ∆øÙ</button>
+                        <% } %>
+					
 				</div>
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="properties.html">ÎßûÏ∂§ Ïó¨Ìñâ ÌÖåÏä§Ìä∏</a></li>
+						href="properties.html">∏¬√„ ø©«‡ ≈◊Ω∫∆Æ</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property.html">ÏïàÏã¨Ïó¨ÌñâÏßÄ</a></li>
+						href="place.jsp">æ»Ω…ø©«‡¡ˆ</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">ÏïàÏã¨ÏãùÎãπ</a></li>
+						href="property-1.html">æ»Ω…Ωƒ¥Á</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">ÏïàÏã¨ÏàôÏÜå</a></li>
+						href="property-2.html">æ»Ω…º˜º“</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-3.html">Í≤åÏãúÌåê</a></li>
+						href="commu_list.jsp">∞‘Ω√∆«</a></li>
 
 				</ul>
 			</div>
@@ -121,7 +172,7 @@
 			<div class="row">
 				<div class="page-head-content">
 					<div class="image-sky">
-						<h1 class="page-title">ÏïàÏã¨ ÏãùÎãπ</h1>
+						<h1 class="page-title">æ»Ω… º˜º“</h1>
 					</div>
 				</div>
 			</div>
@@ -135,11 +186,36 @@
 		<div class="container">
 			<div class="row">
 
-				<!--Í∞ÄÏö¥Îç∞ Î∞∞Ïπò, 	ÏúÑÏïÑÎûò Í∞ÑÍ≤© Ï°∞Ï†à	  -->
+				<!--∞°øÓµ• πËƒ°, 	¿ßæ∆∑° ∞£∞› ¡∂¿˝	  -->
 				<div class="col-md-12 pr0 padding-top-40 properties-page">
-					<div class="col-md-8 clear">
+					<div class="col-md-50 clear">
 						<div class="col-xs-10 page-subheader sorting pl0">
-							
+							<div
+								class="panel panel-default sidebar-menu wow fadeInRight animated">
+								<div class="panel-heading">
+									<h3 class="panel-title">¿Œ±‚ º˜º“</h3>
+								</div>
+
+								<div class="col-md-12 col-sm-3 col-xs-3 blg-thumb p0">
+									<a href="http://www.dearcresort.com/"><img
+										src="assets/img/dak.jpg" style="width: 300px; height: 200px;"><br>ø©ºˆ
+										µæ∆≈©∏Æ¡∂∆Æ</a>
+									<div class="property-icon">
+										<img src="assets/img/addr.png"
+											style="width: 20px; height: 20px;"> ¿¸≥≤ ø©ºˆΩ√ µπªÍ¿æ µπªÍ∑Œ
+										3169-30
+										<div class="property-icon">
+											<img src="assets/img/tell.png"
+												style="width: 20px; height: 20px;"> 061-643-6790
+											<div class="property-icon">
+												<img src="assets/img/shield.png"
+													style="width: 20px; height: 20px;"> æ»Ω… ø©«‡¡ˆ
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -155,53 +231,53 @@
 							<h3 class="panel-title">Smart search</h3>
 						</div>
 						<div class="panel-body search-widget">
-							<form action="" class=" form-inline">
+							<form action="domitoryS.jsp" class=" form-inline" method = "post">
 								<fieldset>
 									<div class="row">
 										<div class="col-xs-12">
-											<input type="text" class="form-control" placeholder="ÏßÅÏ†ë Í≤ÄÏÉâ">
+											<input type="text" class="form-control" placeholder="¡˜¡¢ ∞Àªˆ" name = "d_name">
 										</div>
 									</div>
 								</fieldset>
-
 								<fieldset>
 									<div class="row">
 										<div class="col-xs-6">
+										
 											<select id="lunchBegins" class="selectpicker"
 												data-live-search="true" data-live-search-style="begins"
-												title="ÎèÑÏãú ÏÑ†ÌÉù">
-												<option>Ï†ÑÏ≤¥Î≥¥Í∏∞</option>
-												<option>Í¥ëÏ£ºÍ¥ëÏó≠Ïãú</option>
-												<option>Ïó¨ÏàòÏãú</option>
-												<option>Î™©Ìè¨Ïãú</option>
-												<option>ÏàúÏ≤úÏãú</option>
-												<option>Í¥ëÏñëÏãú</option>
-												<option>Í∞ïÏßÑÍµ∞</option>
-												<option>Í≥†Ìù•Íµ∞</option>
-												<option>Í≥°ÏÑ±Íµ∞</option>
-												<option>Î≥¥ÏÑ±Íµ∞</option>
-												<option>ÏòÅÍ¥ëÍµ∞</option>
-												<option>ÏòÅÏïîÍµ∞</option>
-												<option>ÏôÑÎèÑÍµ∞</option>
-												<option>Ïû•ÏÑ±Íµ∞</option>
-												<option>Ïû•Ìù•Íµ∞</option>
-												<option>ÏßÑÎèÑÍµ∞</option>
-												<option>Ìï¥ÎÇ®Íµ∞</option>
+												title="µµΩ√ º±≈√" name = "city_name">
+												<option>¿¸√º∫∏±‚</option>
+												<option>±§¡÷±§ø™Ω√</option>
+												<option>ø©ºˆΩ√</option>
+												<option>∏Ò∆˜Ω√</option>
+												<option>º¯√µΩ√</option>
+												<option>±§æÁΩ√</option>
+												<option>∞≠¡¯±∫</option>
+												<option>∞Ì»Ô±∫</option>
+												<option>∞Óº∫±∫</option>
+												<option>∫∏º∫±∫</option>
+												<option>øµ±§±∫</option>
+												<option>øµæœ±∫</option>
+												<option>øœµµ±∫</option>
+												<option>¿Âº∫±∫</option>
+												<option>¿Â»Ô±∫</option>
+												<option>¡¯µµ±∫</option>
+												<option>«ÿ≥≤±∫</option>
 											</select>
 										</div>
 										<div class="col-xs-6">
 
-											<select id="lunchBegins" class="selectpicker"
+											<select id="lunchBegins" class="selectpicker" name="d_type"
 												data-live-search="true" data-live-search-style="begins"
-												title="ÏùåÏãù ÌÉÄÏûÖ">
-												<option>Ï†ÑÏ≤¥Î≥¥Í∏∞</option>
-												<option>ÌïúÏãù</option>
-												<option>ÏùºÏãù</option>
-												<option>ÏñëÏãù</option>
-												<option>Ï§ëÏãù</option>
-												<option>ÌîºÏûê</option>
-												<option>ÌöüÏßë</option>
-												<option>Ïπ¥Ìéò/ÎîîÏ†ÄÌä∏</option>
+												title="º˜π⁄ ≈∏¿‘">
+												<option>¿¸√º∫∏±‚</option>
+												<option>»£≈⁄</option>
+												<option>∏Æ¡∂∆Æ</option>
+												<option>∏≈⁄</option>
+												<option>»£Ω∫≈⁄</option>
+												<option>∆Êº«</option>
+												<option>∞‘Ω∫∆Æ«œøÏΩ∫</option>
+												<option>«—ø¡√º«Ë</option>
 											</select>
 										</div>
 									</div>
@@ -211,46 +287,68 @@
 								<fieldset>
 									<div class="row">
 										<div class="col-xs-12">
-											<input class="button btn largesearch-btn" value="Í≤ÄÏÉâ"
+											<input class="button btn largesearch-btn" value="∞Àªˆ"
 												type="submit">
 										</div>
 									</div>
 								</fieldset>
 							</form>
-
+							
 							<div class="item-entry overflow">
-								<h5>ÏùåÏãùÏ†ê List</h5>
-								<div class="col-sm-5 col-md-1 p0">
-									<div class="box-two proerty-item list1">
-										<div class="item-thumb">
-											<a href="https://blog.naver.com/fpdh0922/222127504722">
-											</a>
+								<h5>º˜π⁄Ω√º≥ List</h5>
+								
+								
+								<!-- ø©±‚º≠∫Œ≈Õ -->
+								
+								<%
+									if (!d_list.isEmpty()){
+										for (int i=0; i < d_list.size() ; i++){ %>
+								<div class="col-sm-6 col-md-4 p0 list1">
+									<div class="box-two proerty-item">
+										<div class="item-thumb ">		
+									<%
+										if(d_list.get(i).getD_url()!=null){
+											out.print("<a href="+d_list.get(i).getD_url()+">");
+										}
+										out.print("<img src="+d_list.get(i).getD_url()+" class='item-menu-img'>");
+									
+									%>
+										</a>
 										</div>
+										<div class="item-entry overflow">
+											<h5><%=d_list.get(i).getCity_name() %></h5>
+											<div class="dot-hr"></div>
+											<span class="pull-left"><b><%=d_list.get(i).getD_name() %></b> </span>
 
-										<h5>Ï†úÏ£º</h5>
-										<div class="dot-hr"></div>
-										<span class="pull-left"><b> Ïó∞Îèà </b></span>
-										<div class="property-icon">
-											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											Ï†úÏ£º ÏÑúÍ∑ÄÌè¨Ïãú ÏùºÏ£ºÏÑúÎ°ú 968-10
 											<div class="property-icon">
-												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"> 064-738-7060
+												<img src="assets/img/addr.png"
+													style="width: 20px; height: 20px;"><%=d_list.get(i).getD_address() %>
 												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> ÏïàÏã¨ÏãùÎãπ
+													<img src="assets/img/tell.png"
+														style="width: 20px; height: 20px;"><%=d_list.get(i).getD_tel() %>
+													<div class="property-icon">
+														<img src="assetss/img/shield.png"
+															style="width: 20px; height: 20px;"> æ»Ω… ø©«‡¡ˆ æ»Ω…ø©«‡¡ˆ
+													</div>
 												</div>
 											</div>
 										</div>
-
 									</div>
 								</div>
+										
+								<%			
+										}
+									}
+								
+								%>
+								<!-- ø©±‚±Ó¡ˆ -->
 							</div>
 						</div>
 					</div>
 					<div class="section">
 						<div class="pull-right">
 							<div class="pagination">
-								<a href="#" class="btn_more">ÎçîÎ≥¥Í∏∞</a>
+								<button id='load123'>¥ı∫∏±‚</button>
 							</div>
 						</div>
 					</div>
@@ -259,30 +357,28 @@
 		</div>
 	</div>
 
-
 	<!-- Footer area-->
-	<div class="footer-area">
+	 <div class="footer-area">
 
-		<div class=" footer">
-			<div class="container">
-				<div class="row">
+            <div class=" footer">
+                <div class="container">
+                    <div class="row">
 
-					<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-						<div class="single-footer">
-							<!-- <h4>About us </h4> -->
-							<!-- <div class="footer-title-line"></div> -->
+                        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                            <div class="single-footer">
+                                <!-- <h4>About us </h4> -->
+                                <!-- <div class="footer-title-line"></div> -->
 
-							<img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse"
-								data-wow-delay="1s">
-							<!-- <p>ÏÇ¨ÌöåÏù¥ÏäàÎ•º Î∞òÏòÅÌïú Ïó¨ÌñâÏ∂îÏ≤ú ÏÑúÎπÑÏä§</p> -->
-							<!-- <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> Ïä§ÎßàÌä∏Ïù∏Ïû¨Í∞úÎ∞úÏõê</li>
-                                    <li><i class="pe-7s-mail strong"> </i> ÎÇòÎìúÎ¶¨@yourcompany.com</li>
-                                    <li><i class="pe-7s-call strong"> </i> 010-0000-0000</li>
-                                </ul> -->
-						</div>
-					</div>
-					<!-- <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+                                <img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
+                                <p>ªÁ»∏¿ÃΩ¥∏¶ π›øµ«— ø©«‡√ﬂ√µ º≠∫ÒΩ∫</p>
+                                <ul class="footer-adress">
+                                    <li><i class="pe-7s-map-marker strong"> </i> Ω∫∏∂∆Æ¿Œ¿Á∞≥πﬂø¯</li>
+                                    <li><i class="pe-7s-mail strong"> </i> ≥™µÂ∏Æ@mycompany.com</li>
+                                    <li><i class="pe-7s-call strong"> </i> 010-1234-5678</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                             <div class="single-footer">
                                 <h4>Quick links </h4>
                                 <div class="footer-title-line"></div>
@@ -307,36 +403,43 @@
                                                 <img src="assets/img/demo/small-proerty-2.jpg">
                                             </a>
                                             <span class="blg-date">12-12-2016</span>
+
                                         </div>
                                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
                                             <h6> <a href="single.html">Add news functions </a></h6> 
                                             <p style="line-height: 17px; padding: 8px 2px;">Lorem ipsum dolor sit amet, nulla ...</p>
                                         </div>
                                     </li> 
+
                                     <li>
                                         <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
                                             <a href="single.html">
                                                 <img src="assets/img/demo/small-proerty-2.jpg">
                                             </a>
                                             <span class="blg-date">12-12-2016</span>
+
                                         </div>
                                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
                                             <h6> <a href="single.html">Add news functions </a></h6> 
                                             <p style="line-height: 17px; padding: 8px 2px;">Lorem ipsum dolor sit amet, nulla ...</p>
                                         </div>
                                     </li> 
+
                                     <li>
                                         <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
                                             <a href="single.html">
                                                 <img src="assets/img/demo/small-proerty-2.jpg">
                                             </a>
                                             <span class="blg-date">12-12-2016</span>
+
                                         </div>
                                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
                                             <h6> <a href="single.html">Add news functions </a></h6> 
                                             <p style="line-height: 17px; padding: 8px 2px;">Lorem ipsum dolor sit amet, nulla ...</p>
                                         </div>
                                     </li> 
+
+
                                 </ul>
                             </div>
                         </div>
@@ -345,6 +448,7 @@
                                 <h4>Stay in touch</h4>
                                 <div class="footer-title-line"></div>
                                 <p>Lorem ipsum dolor sit amet, nulla  suscipit similique quisquam molestias. Vel unde, blanditiis.</p>
+
                                 <form>
                                     <div class="input-group">
                                         <input class="form-control" type="text" placeholder="E-mail ... ">
@@ -353,9 +457,9 @@
                                         </span>
                                     </div>
                                     <!-- /input-group -->
-					<!-- </form>  -->
+                                <!-- </form>  -->
 
-					<!-- <div class="social pull-right"> 
+                                <!-- <div class="social pull-right"> 
                                     <ul>
                                         <li><a class="wow fadeInUp animated" href="https://twitter.com/kimarotec"><i class="fa fa-twitter"></i></a></li>
                                         <li><a class="wow fadeInUp animated" href="https://www.facebook.com/kimarotec" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
@@ -364,14 +468,14 @@
                                         <li><a class="wow fadeInUp animated" href="https://instagram.com/kimarotec" data-wow-delay="0.6s"><i class="fa fa-dribbble"></i></a></li>
                                     </ul> 
                                 </div> -->
-					<!-- </div>
+                            <!-- </div>
                         </div> -->
 
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
 
-		<!-- <div class="footer-copy text-center">
+            <!-- <div class="footer-copy text-center">
                 <div class="container">
                     <div class="row">
                         <div class="pull-left">
@@ -388,7 +492,6 @@
                     </div>
                 </div>
             </div> -->
-	</div>
 
 	<script src="assets/js/modernizr-2.6.2.min.js"></script>
 	<script src="assets/js/jquery-1.10.2.min.js"></script>
@@ -402,5 +505,7 @@
 	<script src="assets/js/icheck.min.js"></script>
 	<script src="assets/js/price-range.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+
 </body>
 </html>
