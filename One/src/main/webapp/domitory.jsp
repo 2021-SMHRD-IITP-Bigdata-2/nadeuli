@@ -19,13 +19,13 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-
+<script src="jquery-3.6.0.min.js"></script>
 <script>
         let num1 = 0;
         let num2 = 6;
         $(function () {
             $(".list1").slice(num1, num2).attr("style", "display:flex");
-            $("#load123").click(function () {
+            $("#load1").click(function () {
                 num1 += 6;
                 num2 += 6;
                 if (num1 < $(".list1").length) {
@@ -42,9 +42,10 @@
 
 <style>
 
-.list33{
+.list1{
 	display : none;
 }
+
 
 </style>
 <meta charset="EUC-KR">
@@ -146,9 +147,9 @@
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="place.jsp">안심여행지</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">안심식당</a></li>
+						href="restaurant.jsp">안심식당</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">안심숙소</a></li>
+						href="domitory.jsp">안심숙소</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="commu_list.jsp">게시판</a></li>
 
@@ -292,7 +293,6 @@
 								
 								
 								<!-- 여기서부터 -->
-								
 								<%
 									if (!d_list.isEmpty()){
 										for (int i=0; i < d_list.size() ; i++){ %>
@@ -303,7 +303,7 @@
 										if(d_list.get(i).getD_url()!=null){
 											out.print("<a href="+d_list.get(i).getD_url()+">");
 										}
-										out.print("<img src="+d_list.get(i).getD_url()+" class='item-menu-img'>");
+										out.print("<img src="+d_list.get(i).getD_img()+" class='item-menu-img'>");
 									
 									%>
 										</a>
@@ -341,7 +341,7 @@
 					<div class="section">
 						<div class="pull-right">
 							<div class="pagination">
-								<button id='load123'>더보기</button>
+								<a href="#" class="btn_more" id = 'load1'>더보기</a>
 							</div>
 						</div>
 					</div>

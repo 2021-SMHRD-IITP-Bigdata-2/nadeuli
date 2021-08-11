@@ -1,3 +1,4 @@
+<%@page import="Model.MemberDTO"%>
 <%@page import="Model.PlaceDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Model.PlaceDAO"%>
@@ -5,7 +6,8 @@
     pageEncoding="EUC-KR"%>
 <%
 	PlaceDAO p_dao = new PlaceDAO();
-	ArrayList<PlaceDTO> plist = p_dao.p_all();  
+	ArrayList<PlaceDTO> plist = p_dao.p_all(); 
+	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
 	
 	
 
@@ -99,9 +101,11 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse yamm" id="navigation">
 				<div class="button navbar-right">
-					<button class="navbar-btn nav-button wow bounceInRight login"
-						onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
-					<!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+					<%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">로그아웃</button>
+                        <% } %>
 				</div>
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""

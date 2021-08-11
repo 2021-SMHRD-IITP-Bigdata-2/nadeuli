@@ -26,7 +26,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-
+<script src="jquery-3.6.0.min.js"></script>
 <script>
         let num1 = 0;
         let num2 = 6;
@@ -49,7 +49,7 @@
 
 <style>
 
-.list33{
+.list1{
 	display : none;
 }
 
@@ -310,7 +310,7 @@
 										if(d_list.get(i).getD_url()!=null){
 											out.print("<a href="+d_list.get(i).getD_url()+">");
 										}
-										out.print("<img src="+d_list.get(i).getD_url()+" class='item-menu-img'>");
+										out.print("<img src="+d_list.get(i).getD_img()+" class='item-menu-img'>");
 									
 									%>
 										</a>
@@ -348,7 +348,7 @@
 					<div class="section">
 						<div class="pull-right">
 							<div class="pagination">
-								<button id='load123'>더보기</button>
+								<a href="#" class="btn_more" id = 'load1'>더보기</a>
 							</div>
 						</div>
 					</div>
