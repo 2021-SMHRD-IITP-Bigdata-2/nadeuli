@@ -3,8 +3,12 @@ var numOfQuiz = 0;
 var answerData=[];
 var widthOfItem = 350;
 var currentCard = 0;
-//누적할 키워드
+//누적할 변수
 var testResults = [];
+//값을 주고받기 위한 변수들
+var strResults = "";
+var date = null;
+var expires = null;
 
 var slider = null;
 var progressText = null;
@@ -97,14 +101,15 @@ function moveSlider(dir)
   updateProgressBar();
 }
 
-//결과페이지로 보내기
+//결과페이지로 로컬스토리지 보내기
 function finish(){
 	//선택한 답변을 담은 배열 finish.jsp로 보내기
 	let result = testResults;
-	console.log(result);
+	//console.log(result);
 	localStorage.setItem('results',result);
-  window.location.href = "test-finish.jsp";
+  	window.location.href = "test-short.jsp";
 }
+
 //내용 보여주는것
 function initElements()
 {
@@ -132,5 +137,4 @@ function answerSelected(question,answer)
   moveSlider(+1);
   testResults.push(but.innerText);
 }
-//console.log(testResults);
-
+console.log(testResults);
