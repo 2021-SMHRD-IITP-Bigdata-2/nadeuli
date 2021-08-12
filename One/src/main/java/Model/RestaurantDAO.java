@@ -52,6 +52,12 @@ public ArrayList<RestaurantDTO> rest_list(String city_name,String r_name, String
 		
 		ArrayList<RestaurantDTO> r_list =  new ArrayList<RestaurantDTO>();
 		String r_name1 = "%" + r_name + "%";
+		if(city_name.equals("전체보기")) {
+			city_name="";
+		}
+		if(r_type.equals("전체보기")) {
+			r_type="";
+		}
 		
 		try {
 

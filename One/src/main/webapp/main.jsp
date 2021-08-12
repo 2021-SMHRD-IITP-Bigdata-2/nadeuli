@@ -473,7 +473,7 @@
                                     <div class="col-xs-6 m-padding">
                                         <div class="welcome-estate" >
                                             <div class="welcome-icon"  >
-                                                <a class="pe-7s-home pe-4x" href="property-2.html" ></a>
+                                                <a class="pe-7s-home pe-4x" href="domitory.jsp" ></a>
                                             </div>
                                             <h3 >안심 숙소</h3>
                                         </div>
@@ -481,7 +481,7 @@
                                     <div class="col-xs-6 m-padding">
                                         <div class="welcome-estate">
                                             <div class="welcome-icon">
-                                                <a class="pe-7s-users pe-4x" href="property-3.html"></a>
+                                                <a class="pe-7s-users pe-4x" href="commu_list.jsp"></a>
                                             </div>
                                             <h3>게시판</h3>
                                         </div>
@@ -495,7 +495,7 @@
                                     <div class="col-xs-6 m-padding">
                                         <div class="welcome-estate">
                                             <div class="welcome-icon">
-                                                <a class="pe-7s-notebook pe-4x" href="property.html"></a>
+                                                <a class="pe-7s-notebook pe-4x" href="place.jsp"></a>
                                             </div>
                                             <h3>안심 여행지</h3>
                                         </div>
@@ -503,7 +503,7 @@
                                     <div class="col-xs-6 m-padding">
                                         <div class="welcome-estate">
                                             <div class="welcome-icon">
-                                                <a class="pe-7s-help2 pe-4x" href="property-1.html"></a>
+                                                <a class="pe-7s-help2 pe-4x" href="restaurant.jsp"></a>
                                             </div>
                                             <h3>안심 식당 </h3>
                                         </div>

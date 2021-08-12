@@ -192,3 +192,14 @@ insert into comments values(commu_no.nextval,3,'¸ÚÁö³×¿ä','test1',sysdate)
 update place set p_name='±¤»ê±¸ ±¹¹Î¿©°¡ Ä£È¯°æ Ä·ÇÎÀå' where p_tel = '010 3275 3450'
 
 select count(*) from comments where commu_no = 43;
+
+select manager_id ,count(*) as count
+from employees
+where manager_id like '1%' or manager_id like '2%'
+group by manager_id
+order by count desc
+/
+
+
+select city_name, count(*) as count from sns_data where tags like '%Èú¸µ%' or tags like '%¸ÀÁı%' group by city_name order by count desc
+
