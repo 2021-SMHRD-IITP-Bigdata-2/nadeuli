@@ -90,10 +90,17 @@ create table comments (
 	comment_no number(10) not null constraint comm_pk primary key,
 	commu_no number(10) not null,
 	comment_text varchar2(50) not null,
-	constraint comm_kf foreign key(commu_no) references community(commu_no)
+	email varchar2(50) NOT NULL,
+	comment_date date not null,
+	constraint comm_kf foreign key(commu_no) references community(commu_no),
+	constraint comm_email_fk foreign key(email) references members(email)
 )
 
-select from comments
+insert into comments values(,?,?,?,?)
+
+select * from comments
+
+drop table comments
 
 -- 만들었음
 create table place (
@@ -175,5 +182,11 @@ select * from restaurant
 select * from restaurant
 
 select * from place
+
+create sequence commu_no
+start with 1
+increment by 1;
+
+insert into comments values(commu_no.nextval,3,'멋지네요','test1',sysdate)
 
 update place set p_name='광산구 국민여가 친환경 캠핑장' where p_tel = '010 3275 3450'

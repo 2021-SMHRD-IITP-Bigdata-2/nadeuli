@@ -131,10 +131,13 @@
                         <% } %>
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
+                    	<% if(member!=null){
+                    		%>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
+                        <% }%>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심식당</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심숙소</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="restaurant.jsp">안심식당</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="domitory.jsp">안심숙소</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">게시판</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
@@ -230,8 +233,11 @@
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/11.jpg);"></div>                             
                               <div class="bt_wrap">
+                              <% if(member!=null){ %>
                             <blockquote><cite><a href="properties.html" class="on" style="text-align:center" > 테스트 시작하기!!</a></cite> 
-                              
+                              <%} else{%>
+                            <blockquote><cite><a href="register.html" class="on" style="text-align:center" > 테스트 시작하기!!</a></cite>  
+                              <%} %>
                                 <p style="text-align:center">광주·전남지역 맞춤여행 정보</p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
                                 <span class="proerty-price pull-right"> $ 300,000</span>

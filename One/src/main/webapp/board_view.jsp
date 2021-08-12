@@ -1,3 +1,6 @@
+<%@page import="Model.CommentDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.CommentDAO"%>
 <%@page import="Model.MemberDTO"%>
 <%@page import="Model.CommuDTO"%>
 <%@page import="Model.CommuDAO"%>
@@ -6,12 +9,24 @@
     
 <%
 	CommuDAO c_dao = new CommuDAO();
+
 	int commu_no = Integer.parseInt(request.getParameter("commu_no"));
 	CommuDTO commu = c_dao.get_data(commu_no);
+	
+	CommentDAO dao = new CommentDAO();
+	ArrayList<CommentDTO> comment_list = new ArrayList<>();
+	
+	comment_list = dao.comment_select(commu_no);
 	
 	c_dao.updateBoardCnt(commu_no);
 	
 	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+	String email = null;
+	if(member!=null){
+		email = member.getEmail();
+	}
+	session.setAttribute("commu_no", commu_no);
+	
 
 %>
 <!DOCTYPE html>
@@ -54,7 +69,28 @@
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css"> 
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-   
+
+ <style>
+ #comment-input{
+ 	width : 90%;
+ 	background-color : #F7FCFC;
+ }
+  .commentdate{
+ 	color : lightgrey;
+ 	font-size : 3px;
+ }
+ .comment1{
+ 	border-bottom : 1px solid gray ;
+ }
+ #info123{
+ 	text-align : center;
+ }
+  .on12{
+ 	color : lightgrey;
+ 	font-size : 3px;
+ }
+ 
+ </style>
 
 </head>
 <body>
@@ -102,7 +138,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index-2.html"><img src="assets/img/nadeuli-logo.png" alt=""></a>
+                    <a class="navbar-brand" href="index-2.html"><img src="assets/img/logo2.png" alt=""></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -116,13 +152,12 @@
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
+                      
+                    
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심숙소</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심식당</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">안심여행지</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-1.html">안심식당</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-2.html">안심숙소</a></li>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property-3.html">게시판</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="restaurant.jsp">안심식당</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="domitory.jsp">안심숙소</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">게시판</a></li>
                         <!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -238,7 +273,7 @@
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd><%=commu.getCommu_no() %></dd>
+                        <dd id='commu_no'><%=commu.getCommu_no() %></dd>
                     </dl>
                      <dl>
                         <dt>지역</dt>
@@ -246,8 +281,7 @@
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <% String email = commu.getEmail(); %>
-                        <dd><%=c_dao.get_Nick(email) %></dd>
+                        <dd><%=c_dao.get_Nick(commu.getEmail()) %></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
@@ -263,14 +297,61 @@
                 </div>
                 <div1 id="form-commentInfo"> <div id="comment-count">댓글 
   <span id="count">0</span></div> 
-  <input id="comment-input" placeholder="댓글을 입력해 주세요.">
-   <button id="submit">등록</button> 
+  
+  <div class = 'total'>
+  	<!-- 여기부터 -->
+  	<%
+  		if(!comment_list.isEmpty()){
+  			for(int i = 0; i<comment_list.size(); i++){
+  				%>
+  					<div class='comment1'>
+					  	<% String comment_email = comment_list.get(i).getEmail(); %>
+					  	<div class = 'comment_nickname'><%=c_dao.get_Nick(comment_email) %></div>
+					  	<div class = 'text123'><%=comment_list.get(i).getComment_text() %></div>
+					  	<div class = 'commentdate'><%=comment_list.get(i).getComment_date() %></div>
+					  	
+					  	<%
+					  		if(member!=null){
+					  			if(comment_email.equals(member.getEmail())){ 
+					  			out.print("<a href='CommentDelete?comment_num="+comment_list.get(i).getCommen_no()+"' class='on12'>삭제하기</a>");
+					  		}
+					  	} %>
+				  	</div>
+  				<%
+  			}
+  		}
+  	
+  	%>
+  	<!-- 여기까지 -->
+  </div> 
+  <% if(member!=null){ %>
+
+ <form action="CommentUpload" method="post">
+  <input id="comment-input" placeholder="댓글을 입력해 주세요." name = "comment_text">
+  <input type="submit" id="submit" value="등록">
+ </form>
+ <%
+  }else{ %>
+  
+  <div id="info123">비회원 손님은 댓글을 쓰실 수 없습니다. 로그인 해 주세요.</div>
+<% 	  
+  }
+	  %>
    </div> <div id=comments> 
     <script src="assets/js/index5.js"> </script>
            </div1>
             <div class="bt_wrap">
                 <a href="property-3.html" class="on">목록</a>
-                <a href="board_edit.html">수정</a>
+                
+                <%
+                if(member!=null){
+	                if(member.getEmail().equals(commu.getEmail())){
+	                	%>
+	                	<a href="CommuDelete">삭제</a>
+	             <% }
+                }
+             %> 
+                
             </div>
         </div>
     </div>
@@ -423,6 +504,7 @@
         <script src="assets/js/price-range.js"></script>
         <script type="text/javascript" src="assets/js/lightslider.min.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="jquery-3.6.0.min.js"></script>
 
         <script>
                             $(document).ready(function () {
@@ -440,6 +522,33 @@
                                     }
                                 });
                             });
+                            
+                            $("#btnReply").click(function(){
+                            	var comment_text = $("#comment-input").val(); // 댓글내용
+                            	var bno = $("#commu_no").val();// 게시물번호
+                            	var param = {'comment_text':replytext,"bno":bno};
+                            	
+                            	console.log("bno");
+                            	$.ajax({
+                            		type: "post",
+                            		url : "CommentUpload",
+                            		data : param,
+                            		
+                            		success: function(){
+                            			alert("댓글이 등로되었습니다.");
+                            	
+                            		},
+                            		error : function(){
+                            			alert("실패");
+                            		}
+                            	})
+                            	
+                            	
+                            })
+                            
+                            
+                            
+                            
         </script>
 
 </body>

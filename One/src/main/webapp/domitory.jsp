@@ -128,7 +128,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index-2.html"><img
-					src="assets/img/nadeuli-logo.png" alt=""></a>
+					src="assets/img/logo2.png" alt=""></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -180,7 +180,7 @@
 		<div class="container">
 			<div class="row">
 
-				<!--가운데 배치, 	위아래 간격 조절	  -->
+				<!--가운데 배치, 	위아래 간격 조절	  
 				<div class="col-md-12 pr0 padding-top-40 properties-page">
 					<div class="col-md-50 clear">
 						<div class="col-xs-10 page-subheader sorting pl0">
@@ -213,7 +213,7 @@
 						</div>
 					</div>
 				</div>
-
+-->
 
 				<!-- End page header -->
 

@@ -136,7 +136,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="main.jsp"><img
-					src="assets/img/nadeuli-logo.png" alt=""></a>
+					src="assets/img/logo2.png" alt=""></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -310,29 +310,7 @@
 								
 								
 								<!-- 여기서부터 -->
-								 <div class="col-sm-5 col-md-1 p0">
-									<div class="box-two proerty-item">
-										<div class="item-thumb">
-											<a href="#">
-											</a>
-										</div>
-										<h5>제주</h5>
-										<div class="dot-hr"></div>
-										<span class="pull-left"><b> 연돈 </b></span>
-										<div class="property-icon">
-											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											제주 서귀포시 일주서로 968-10
-											<div class="property-icon">
-												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"> 064-738-7060
-												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
+							
 								
 								<!-- 여기까지 -->
 							</div>

@@ -44,6 +44,26 @@
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css"> 
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+ #comment-input{
+ 	width : 90%;
+ 	background-color : #F7FCFC;
+ }
+ .commentdate{
+ 	color : lightgrey;
+ 	font-size : 3px;
+ }
+ .comment1{
+ 	border-bottom : 1px solid gray ;
+ }
+ .xxxx{
+ 	display : none;
+ }
+ .on12{
+ 	color : lightgrey;
+ 	font-size : 3px;
+ }
+ </style>
    
 
     </head>
@@ -248,9 +268,33 @@
                 
                 </div>
                 <div1 id="form-commentInfo"> <div id="comment-count">댓글 
-  <span id="count">0</span></div> 
-  <input id="comment-input" placeholder="댓글을 입력해 주세요.">
-   <button id="submit">등록</button> 
+  <span id="count">0</span></div>
+  
+  <div class = 'total'>
+  	<div class='comment1'>
+	  	<div class = 'comment_nickname'>닉네임</div>
+	  	<div class = 'text123'>댓글내용이 들어갑니다</div>
+	  	<div class='commentdate'>작성일자가 들어갑니다
+	  	<a></a>
+	  	</div>
+	  	<
+  	</div>
+  	<div class='comment1'>
+	  	<div class = 'comment_nickname'>닉네임</div>
+	  	<div class = 'text123'>댓글내용이 들어갑니다</div>
+	  	<div class='commentdate'>작성일자가 들어갑니다</div>
+	  	<a href="#" class="on12">삭제하기</a>
+	  	
+  	</div>
+  </div> 
+  
+  
+  
+  <form>
+  	<input id="comment-input" placeholder="댓글을 입력해 주세요.">
+  	<input class='xxxx' name = 'commu_no' value='' >
+   	<input type="submit" id="submit" value="등록"> 
+  </form>
    </div> <div id=comments> 
     <script src="assets/js/index5.js"> </script>
            </div1>
