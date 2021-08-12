@@ -14,8 +14,8 @@ body {
     /* font-weight: 300; */
     padding:0;
     margin:0;
-    font-size:14px;
-    line-height: 28px;
+    font-size:15px;
+    line-height: 35px;
     color: #000000; 
     background: #fff; 
     position: relative;
@@ -95,8 +95,8 @@ h1 .subtitle{
     margin: 15px 0 30px;
 }
 p { 
-    padding: 0px 0px 1em;
-    margin:0;
+    padding: 0px 0px 0px;
+    margin:0px;
 }
 a {
     color: #383838;
@@ -116,7 +116,7 @@ a:focus {
     text-decoration: none;
 }
 img {
-    height: 300%;
+    height: 80%;
     max-width: 300%;
     vertical-align: middle;
     border: 0px none; 
@@ -769,8 +769,8 @@ label small{
 }
 .navbar-brand {
 	float: right;
-    height: 50px;
-    padding: 15px 15px;
+    height: 90px;
+    padding: 0px 22px;
     font-size: 34px;
     line-height: 38px;
 }
@@ -2270,19 +2270,19 @@ single property page
 Welcom 
 ======================================*/
 .Welcome-area{
-    background: #F3F3F3 url("../../assets/img/welcome-bg.png") no-repeat scroll left top;
+    background: #d5f1e7   url("../../assets/img/welcome-bg.png") no-repeat scroll left top;
     position: relative;
 
 
 }
 .Welcome-area .container .Welcome-entry{    
     overflow: hidden;
-    padding: 50px 10px 45px; 
+    padding: 64px 0px 50px; 
 }
 .welcome-icon {
     height: 90px;
     width: 90px;
-    border: 2px solid #777;
+    border: 2px solid #1ABC9C;
     border-radius: 100%;
     display: inline-block;
     position: relative;
@@ -2300,7 +2300,7 @@ Welcom
 }
 .welcome-estate{
     background-color: #FFF;
-    padding: 35px 0px;
+    padding: 40px 0px;
     text-align: center;
     fill: #FFF;
 }
@@ -2333,16 +2333,16 @@ Welcom
     z-index: 1000;
 }
 .welcome_text .page-title h2 {
-    color: #9B9B9B;
+    color: #1abc9c;
     text-transform: uppercase;
     background-color: #FFF;
     position: absolute;
-    top: 126px;
-    right: 26px;
+    top: 125px;
+    right: -25px;
     font-weight: 500;
-    font-size: 35px;
+    font-size: 33px;
     border-radius: 50%;
-    padding: 35px 10px;
+    padding: 55px 10px;
     width: 170px;
     height: 160px;
 }
