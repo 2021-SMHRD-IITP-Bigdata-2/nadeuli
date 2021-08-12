@@ -315,13 +315,13 @@
 
 											<div class="property-icon">
 												<img src="assets/img/addr.png"
-													style="width: 20px; height: 20px;"><%=d_list.get(i).getD_address() %>
+													style="width: 20px; height: 20px;">&nbsp;<%=d_list.get(i).getD_address() %>
 												<div class="property-icon">
 													<img src="assets/img/tell.png"
-														style="width: 20px; height: 20px;"><%=d_list.get(i).getD_tel() %>
+														style="width: 20px; height: 20px;">&nbsp;<%=d_list.get(i).getD_tel() %>
 													<div class="property-icon">
-														<img src="assetss/img/shield.png"
-															style="width: 20px; height: 20px;"> 안심 여행지 안심여행지
+														<img src="assets/img/shield.png"
+															style="width: 20px; height: 20px;"> 안심여행지
 													</div>
 												</div>
 											</div>
