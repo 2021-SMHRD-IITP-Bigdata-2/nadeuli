@@ -10,36 +10,23 @@
 <meta property="og:image" content="trip-test/images/test_main.png">
 <meta property="og:description" content="심리테스트로 나만의 맞춤 여행을 추천 받아보세요!">
 <title>나만의 맞춤여행 추천!</title>
-
 <link rel="stylesheet" href="traveltest/css/finishStyle.css">
 <script type="text/javascript"
 	src="traveltest/js/finishPageScript.js?version=2"></script>
 <script src="assets/js/jquery-1.10.2.min.js"></script>
 
-<!-- <script type="text/javascript">
-
-	jQuery(document).ready(function() {
-		let strresults = localStorage.getItem('results'); //string형태
-		let results = strresults.split(','); //array형태
-		setCookie("why", strresults, 1)
-	});
-
-	function setCookie(name, value, days) {
-		if (days) {
-			var date = new Date();
-			date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-			var expires = "; expires=" + date.toGMTString();
-		} else{var expires = "";}
-			
-		document.cookie = name + "=" + value + expires + "; path=/";
-	}
-</script> -->
 </head>
 <body>
 	<%
 	String testResult = request.getParameter("result");
-	out.print(testResult);
-	//out.print(request.getParameter("result"));
+	//out.print(testResult);
+	
+	String[] arrResult = null;
+	arrResult = testResult.split(",");
+	/* for(int i=0; i<arrResult.length; i++){
+		out.print(arrResult[i]);
+	} */
+	
 	%>
 
 	<div id="main_contents">

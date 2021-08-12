@@ -1,3 +1,23 @@
+var data = `#당신이 여행을 떠나고 싶은 이유는?
+1힐링
+1데이트
+1관광
+#여행을 떠나는 당신 누구랑 떠날 것인가?
+2혼자
+2가족
+2연인 또는 친구
+#여행 중 포기 못하는 것은?
+3인증샷
+3이색 체험
+3맛집
+#여행 중 시간이 남는다면, 당신은 어디로 갈것인가?
+4카페
+4숙소
+4근교 드라이브
+#당신이 제일 선호하는 숙소 유형은?
+5호텔
+5게스트하우스
+5펜션`;
 var quizData = [];
 var numOfQuiz = 0;
 var answerData=[];
@@ -21,13 +41,13 @@ var backButton = null;
 window.addEventListener('DOMContentLoaded', function(){
   //질문과 답이 있는 텍스트 파일을 가져옴
   //var rawData = loadFile("quizData.txt");
-  var rawData = qdata;
+  var rawData = data;
+  
   //밑에 있는 기능 가져옴 틀 보여주는거 
   initElements();
 
   //init quizData & answerData & numOfQuiz
   var sentances = rawData.split('\n'); //엔터를 기준으로 잘라 넣음
-  //console.log(sentances);  해보면 배열로 들어간다.
 
   for (var i =0; i<sentances.length; i++) {
     let text = sentances[i];
@@ -137,4 +157,4 @@ function answerSelected(question,answer)
   moveSlider(+1);
   testResults.push(but.innerText);
 }
-console.log(testResults);
+//console.log(testResults);
