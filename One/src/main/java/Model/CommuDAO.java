@@ -278,5 +278,26 @@ public class CommuDAO {
       
       return cnt;
    }
+   public int commu_delete(int commu_no) {
+
+		try {
+
+			connection();
+			// 3. Äõ¸®¹® ½ÇÇà
+			String sql = "delete from community where commu_no=?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, commu_no);
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+
+			close();
+		}
+		return cnt;
+
+	}
 
 }

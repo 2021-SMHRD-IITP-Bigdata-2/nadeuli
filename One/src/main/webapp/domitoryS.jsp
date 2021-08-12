@@ -134,7 +134,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index-2.html"><img
-					src="assets/img/nadeuli-logo.png" alt=""></a>
+					src="assets/img/logo2.png" alt=""></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -153,9 +153,9 @@
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="place.jsp">안심여행지</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">안심식당</a></li>
+						href="restaurant.jsp">안심식당</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">안심숙소</a></li>
+						href="domitory.jsp">안심숙소</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="commu_list.jsp">게시판</a></li>
 
@@ -186,7 +186,7 @@
 		<div class="container">
 			<div class="row">
 
-				<!--가운데 배치, 	위아래 간격 조절	  -->
+				<!--가운데 배치, 	위아래 간격 조절	  
 				<div class="col-md-12 pr0 padding-top-40 properties-page">
 					<div class="col-md-50 clear">
 						<div class="col-xs-10 page-subheader sorting pl0">
@@ -220,7 +220,7 @@
 					</div>
 				</div>
 
-
+-->
 				<!-- End page header -->
 
 				<!-- property area -->

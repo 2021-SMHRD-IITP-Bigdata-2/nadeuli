@@ -130,7 +130,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="main.jsp"><img
-					src="assets/img/nadeuli-logo.png" alt=""></a>
+					src="assets/img/logo2.png" alt=""></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -146,13 +146,13 @@
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="properties.html">맞춤 여행 테스트</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property.html">안심여행지</a></li>
+						href="place.jsp">안심여행지</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">안심식당</a></li>
+						href="restaurant.jsp">안심식당</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">안심숙소</a></li>
+						href="domitory.jsp">안심숙소</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-3.html">게시판</a></li>
+						href="commu_list.jsp">게시판</a></li>
 
 				</ul>
 			</div>
