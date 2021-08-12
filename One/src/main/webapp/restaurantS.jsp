@@ -50,6 +50,11 @@
 .list1{
 	display : none;
 	}
+.p1{
+	padding:2px !important;
+	width:310px !important;
+	
+}
 </style>
 <head>
 <meta charset="EUC-KR">
@@ -271,7 +276,7 @@
 									if(!r_list.isEmpty()){
 										for(int i = 0; i<r_list.size();i++){ %>
 										
-										<div class="col-sm-5 col-md-1 p0 list1">
+										<div class="col-sm-5 col-md-1 p0 p1 list1">
 											<div class="box-two proerty-item" style="width:300px">
 												<div class="item-thumb">
 												<a href="#"></a>
@@ -282,10 +287,10 @@
 										<span class="pull-left"><b> <%=r_list.get(i).getR_name() %> </b></span>
 										<div class="property-icon">
 											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											<%= r_list.get(i).getR_address() %>
+											&nbsp;<%= r_list.get(i).getR_address() %>
 											<div class="property-icon">
 												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"><%=r_list.get(i).getR_tel() %>
+													style="width: 20px; height: 20px;">&nbsp;<%=r_list.get(i).getR_tel() %>
 												<div class="property-icon">
 													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
 												</div>

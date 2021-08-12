@@ -10,6 +10,32 @@
 %>
 <!DOCTYPE html>
 <html class="no-js">
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+        let num1 = 0;
+        let num2 = 6;
+        $(function () {
+            $(".list1").slice(num1, num2).attr("style", "display:flex");
+            $("#load1").click(function () {
+                num1 += 6;
+                num2 += 6;
+                if (num1 < $(".list1").length) {
+                    console.log("클릭됨");
+                    $(".list1").slice(num1, num2).attr("style", "display:flex");
+                }
+
+                else {
+                    alert("더이상 없습니다 !!! ");
+                }
+            });
+        });
+</script>
+
+<style>
+.list1{
+	display : none;
+	}
+</style>
 <head>
 <meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -497,11 +523,14 @@
 				<%
 					if(!plist.isEmpty()){
 						for(int i =0; i < plist.size();i++){ %>
-							<div class="col-sm-6 col-md-4 p0">
+							<div class="col-sm-6 col-md-4 p0 list1">
 						<div class="box-two proerty-item">
 							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-3.jpg"></a>
+							<% if(plist.get(i).getP_url() !=null){  %>
+								<a href=<%=plist.get(i).getP_url() %>>
+								<%} %>								
+								<img
+									src=<%=plist.get(i).getP_img() %>></a>
 							</div>
 
 							<div class="item-entry overflow">
@@ -515,9 +544,9 @@
 									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
 									commodo arcu nec pretium ...</p>
 										<div class="property-icon">
-										<img src="https://image.flaticon.com/icons/png/128/632/632339.png" 
-										style="width:20px; height:20px;"> <% out.print(plist.get(i).getCity_name()); %>
-										<img src="https://t3.ftcdn.net/jpg/02/96/81/02/240_F_296810230_LxDyPKE9kEWIFZM1vIpematredzEDRtP.jpg"
+										<img src="assets/img/addr.png" 
+										style="width:20px; height:20px;"> <% out.print(plist.get(i).getCity_name()); %>&nbsp;
+										<img src="assets/img/tell.png"
 										style="width:20px; height:20px;"> <% out.print(plist.get(i).getP_tel()); %>
 									</div>
 								</div>
@@ -528,263 +557,18 @@
 					}
 				
 				%> 
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-3.jpg"></a>
-							</div>
+					
+				<!--여기까지 반복문 돌리기  --> 
 
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 광주 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> 빛의 도시, 광주의 안심 여행지 </span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="https://image.flaticon.com/icons/png/128/632/632339.png" 
-									style="width:20px; height:20px;"> 12곳
-									<img src="https://t3.ftcdn.net/jpg/02/96/81/02/240_F_296810230_LxDyPKE9kEWIFZM1vIpematredzEDRtP.jpg"
-									style="width:20px; height:20px;"> 12곳
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-				<!-- 여기까지 반복문 돌리기  --> 
-				
-				
-				
-				
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-2.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 여수 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b>아름다운 섬과 힐링이 있는 도시 </span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="https://image.flaticon.com/icons/png/128/632/632339.png" 
-									style="width:20px; height:20px;"> 12곳
-									<img src="https://t3.ftcdn.net/jpg/02/96/81/02/240_F_296810230_LxDyPKE9kEWIFZM1vIpematredzEDRtP.jpg"
-									style="width:20px; height:20px;"> 12곳
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-1.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 순천 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/hotel.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-3.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 목포 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/bed.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-1.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 나주 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/bed.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-2.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 광양 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/bed.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-3.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 담양 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/bed.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-2.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 곡성 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/bed.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-sm-6 col-md-4 p0">
-						<div class="box-two proerty-item">
-							<div class="item-thumb">
-								<a href="property-1.html"><img
-									src="assets/img/demo/property-1.jpg"></a>
-							</div>
-
-							<div class="item-entry overflow">
-								<h5>
-									<a href="property-1.html"> 구례 </a>
-								</h5>
-								<div class="dot-hr"></div>
-								<span class="pull-left"><b> Area :</b> 120m </span> <span
-									class="proerty-price pull-right"> $ 300,000</span>
-								<p style="display: none;">Suspendisse ultricies Suspendisse
-									ultricies Nulla quis dapibus nisl. Suspendisse ultricies
-									commodo arcu nec pretium ...</p>
-								<div class="property-icon">
-									<img src="assets/img/icon/bed.png">(5)| <img
-										src="assets/img/icon/shawer.png">(2)| <img
-										src="assets/img/icon/cars.png">(1)
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
-
-			<div class="col-md-12">
-				<div class="pull-right">
-					<div class="pagination">
-						<ul>
-							<li><a href="#">Prev</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
+			<div class="section">
+						<div class="pull-right">
+							<div class="pagination">
+								<a href="#" class="btn_more" id = 'load1'>더보기</a>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	</div>

@@ -175,3 +175,5 @@ select * from restaurant
 select * from restaurant
 
 select * from place
+
+update place set p_name='±¤»ê±¸ ±¹¹Î¿©°¡ Ä£È¯°æ Ä·ÇÎÀå' where p_tel = '010 3275 3450'
