@@ -1,5 +1,12 @@
+<%@page import="Model.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    
+    <%
+    
+    MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+    
+    %>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -99,8 +106,12 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
-                        <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
-                        <!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+                    <%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">로그아웃</button>
+                        <% } %>
+                  
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
@@ -240,7 +251,7 @@
             </div>
             <div class="bt_wrap">
             	<input type="submit"  href="board_view.html" class="on" value ="등록">
-                <a href="property-3.html">취소</a>
+                <a href="commu_list.jsp">취소</a>
              </form>
             </div>
         </div>
