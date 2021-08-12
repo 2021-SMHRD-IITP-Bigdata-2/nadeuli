@@ -190,3 +190,5 @@ increment by 1;
 insert into comments values(commu_no.nextval,3,'멋지네요','test1',sysdate)
 
 update place set p_name='광산구 국민여가 친환경 캠핑장' where p_tel = '010 3275 3450'
+
+select count(*) from comments where commu_no = 43;

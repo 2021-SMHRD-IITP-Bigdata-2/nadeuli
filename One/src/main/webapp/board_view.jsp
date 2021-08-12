@@ -16,6 +16,8 @@
 	CommentDAO dao = new CommentDAO();
 	ArrayList<CommentDTO> comment_list = new ArrayList<>();
 	
+	int cnt = dao.comment_cnt(commu_no);
+	
 	comment_list = dao.comment_select(commu_no);
 	
 	c_dao.updateBoardCnt(commu_no);
@@ -138,7 +140,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index-2.html"><img src="assets/img/logo2.png" alt=""></a>
+                    <a class="navbar-brand" href="main.jsp"><img src="assets/img/logo2.png" alt=""></a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -294,9 +296,9 @@
                 </div>
                 <div class="cont">
                    <strong><%=commu.getContents() %></strong>                
-                </div>
+                </div>s
                 <div1 id="form-commentInfo"> <div id="comment-count">댓글 
-  <span id="count">0</span></div> 
+  <span id="count"><%=cnt %></span></div> 
   
   <div class = 'total'>
   	<!-- 여기부터 -->
