@@ -95,9 +95,12 @@ public class DomitoryDAO {
 		
 		ArrayList<DomitoryDTO> d_list =  new ArrayList<DomitoryDTO>();
 		
-		System.out.println("city_name>"+ city_name);
-		System.out.println("d_name>"+ d_name);
-		System.out.println("d_type>" + d_type);
+		if(city_name.equals("전체보기")) {
+			city_name = "";
+		}
+		if(d_type.equals("전체보기")) {
+			d_type = "";
+		}
 		
 		String d_name1 = "%" + d_name + "%";
 		

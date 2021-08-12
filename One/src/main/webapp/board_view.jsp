@@ -16,6 +16,8 @@
 	CommentDAO dao = new CommentDAO();
 	ArrayList<CommentDTO> comment_list = new ArrayList<>();
 	
+	int cnt = dao.comment_cnt(commu_no);
+	
 	comment_list = dao.comment_select(commu_no);
 	
 	c_dao.updateBoardCnt(commu_no);
@@ -294,9 +296,9 @@
                 </div>
                 <div class="cont">
                    <strong><%=commu.getContents() %></strong>                
-                </div>
+                </div>s
                 <div1 id="form-commentInfo"> <div id="comment-count">댓글 
-  <span id="count">0</span></div> 
+  <span id="count"><%=cnt %></span></div> 
   
   <div class = 'total'>
   	<!-- 여기부터 -->

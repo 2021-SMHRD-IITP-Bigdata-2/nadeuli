@@ -139,6 +139,40 @@ public class CommentDAO {
 			return cnt;
 
 		}
+	 
+	 public int comment_cnt(int commu_no) {
+		 int getCnt = 0;
+		 
+		 try {
+			 
+			 connection();
+			 
+			 String sql = "select count(*) from comments where commu_no = ?";
+			 
+			 psmt=conn.prepareStatement(sql);
+			 psmt.setInt(1, commu_no);
+			 
+			 rs = psmt.executeQuery();
+			 
+			 while (rs.next()) {
+					
+					getCnt = rs.getInt(1);
+		
+				}
+			 
+		 }catch (SQLException e) {
+				e.printStackTrace();
+			} finally {
+				close();
+
+			}
+		 
+		 return getCnt;
+	 
+		 
+		 
+		 
+	 }
 
 
 }
