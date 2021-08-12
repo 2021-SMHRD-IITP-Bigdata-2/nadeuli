@@ -918,24 +918,24 @@
                 </thead>
                 <tbody class="dataArr">
                     <tr>
-                        <th>목포시</th>
+                        <th>광주광역시</th>
                         <th>여수시</th>
                         <th>순천시</th>
                         <th>나주시</th>
                         <th>광양시</th>
-                        <th>담양군</th>
+                        <th>목포시</th>
                         <th>곡성군</th>
-                        <th>구례군</th>
+                        <th>담양군</th>
                     </tr>
                     <tr>
-                        <td>189</td>
+                        <td>3,619</td>
                         <td>393</td>
                         <td>508</td>
                         <td>126</td>
                         <td>175</td>
-                        <td>39</td>
+                        <td>189</td>
                         <td>16</td>
-                        <td>11</td>
+                        <td>39</td>
                     </tr>
                     <tr>
                         <th>고흥군</th>
@@ -964,7 +964,8 @@
                         <th>완도군</th>
                         <th>진도군</th>
                         <th>신안군</th>
-                        <th colspan="2">해외유입</th>
+                        <th>구례군</th>
+                        <th>해외유입</th>
                     </tr>
                     <tr>
                         <td>46</td>
@@ -973,7 +974,8 @@
                         <td>70</td>
                         <td>36</td>
                         <td>19</td>
-                        <td colspan="2">131</td>
+                        <td>11</td>
+                        <td>131</td>
                     </tr>
                     
                     </tbody>
@@ -997,10 +999,10 @@
                                 <!-- <div class="footer-title-line"></div> -->
 
                                 <img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse" data-wow-delay="1s">
-                                <p>사회이슈를 반영한 여행추천 서비스</p>
+                                <p>뉴노멀시대 맞춤여행 추천 서비스</p>
                                 <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> 스마트인재개발원</li>
-                                    <li><i class="pe-7s-mail strong"> </i> 나드리@mycompany.com</li>
+                                    <li><i class="pe-7s-map-marker strong"> </i> 광주광역시 남구 송암로 60</li>
+                                    <li><i class="pe-7s-mail strong"> </i> nadeuli@mycompany.com</li>
                                     <li><i class="pe-7s-call strong"> </i> 010-1234-5678</li>
                                 </ul>
                             </div>
