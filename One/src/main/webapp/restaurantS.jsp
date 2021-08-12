@@ -1,14 +1,65 @@
+<%@page import="Model.RestaurantDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.RestaurantDAO"%>
+<%@page import="Model.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+
+	request.setCharacterEncoding("EUC-KR");
+	MemberDTO member = (MemberDTO)session.getAttribute("login_member");
+	
+	RestaurantDAO r_dao = new RestaurantDAO();
+	
+	String city_name =  request.getParameter("city_name");
+	String r_name = request.getParameter("r_name");
+	String r_type = request.getParameter("r_type");
+	System.out.println("jsp city_name> " + city_name);
+	System.out.println("jsp r_name> " + r_name);
+	System.out.println("jsp r_type> " + r_type);
+	
+	ArrayList<RestaurantDTO> r_list =  r_dao.rest_list(city_name, r_name, r_type);
+	System.out.println(r_list.size());
+
+
+%>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js">
-<!--<![endif]-->
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+        let num1 = 0;
+        let num2 = 6;
+        $(function () {
+            $(".list1").slice(num1, num2).attr("style", "display:flex");
+            $("#load1").click(function () {
+                num1 += 6;
+                num2 += 6;
+                if (num1 < $(".list1").length) {
+                    console.log("Ŭ����");
+                    $(".list1").slice(num1, num2).attr("style", "display:flex");
+                }
+
+                else {
+                    alert("���̻� �����ϴ� !!! ");
+                }
+            });
+        });
+</script>
+
+<style>
+.list1{
+	display : none;
+	}
+.p1{
+	padding:2px !important;
+	width:310px !important;
+	
+}
+</style>
 <head>
-<meta charset="utf-8">
+<meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>나드리 | 안심식당</title>
+<title>���帮 | �ȽɽĴ�</title>
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
 <meta name="keyword"
@@ -41,8 +92,7 @@
 <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
-
-	<div id="preloader">
+<div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
 	<!-- Body content -->
@@ -64,7 +114,7 @@
 					<div class="header-half header-social">
 						<ul class="list-inline">
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<!-- 최상단 버튼 -->
+							<!-- �ֻ�� ��ư -->
 							<li><a href="#"><i class="fa fa-google"></i></a></li>
 							<li><a href="#"><i class="fa fa-comment"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -92,21 +142,23 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse yamm" id="navigation">
 				<div class="button navbar-right">
-					<button class="navbar-btn nav-button wow bounceInRight login"
-						onclick=" window.open('register.html')" data-wow-delay="0.4s">로그인/회원가입</button>
-					<!-- <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Submit</button> -->
+						<%if(member==null) {%>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')" data-wow-delay="0.4s">�α���/ȸ������</button>
+                        <% }else{ %>
+                        	<button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='logout.jsp'" data-wow-delay="0.4s">�α׾ƿ�</button>
+                        <% } %>
 				</div>
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="properties.html">맞춤 여행 테스트</a></li>
+						href="properties.html">���� ���� �׽�Ʈ</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property.html">안심여행지</a></li>
+						href="property.html">�Ƚɿ�����</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">안심식당</a></li>
+						href="property-1.html">�ȽɽĴ�</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">안심숙소</a></li>
+						href="property-2.html">�Ƚɼ���</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-3.html">게시판</a></li>
+						href="property-3.html">�Խ���</a></li>
 
 				</ul>
 			</div>
@@ -121,7 +173,7 @@
 			<div class="row">
 				<div class="page-head-content">
 					<div class="image-sky">
-						<h1 class="page-title">안심 식당</h1>
+						<h1 class="page-title">�Ƚ� �Ĵ�</h1>
 					</div>
 				</div>
 			</div>
@@ -135,7 +187,7 @@
 		<div class="container">
 			<div class="row">
 
-				<!--가운데 배치, 	위아래 간격 조절	  -->
+				<!--��� ��ġ, 	���Ʒ� ���� ����	  -->
 				<div class="col-md-12 pr0 padding-top-40 properties-page">
 					<div class="col-md-8 clear">
 						<div class="col-xs-10 page-subheader sorting pl0">
@@ -155,11 +207,11 @@
 							<h3 class="panel-title">Smart search</h3>
 						</div>
 						<div class="panel-body search-widget">
-							<form action="" class=" form-inline">
+							<form action="restaurantS.jsp" class=" form-inline">
 								<fieldset>
 									<div class="row">
 										<div class="col-xs-12">
-											<input type="text" class="form-control" placeholder="직접 검색">
+											<input type="text" class="form-control" placeholder="���� �˻�" name='r_name'>
 										</div>
 									</div>
 								</fieldset>
@@ -169,39 +221,38 @@
 										<div class="col-xs-6">
 											<select id="lunchBegins" class="selectpicker"
 												data-live-search="true" data-live-search-style="begins"
-												title="도시 선택">
-												<option>전체보기</option>
-												<option>광주광역시</option>
-												<option>여수시</option>
-												<option>목포시</option>
-												<option>순천시</option>
-												<option>광양시</option>
-												<option>강진군</option>
-												<option>고흥군</option>
-												<option>곡성군</option>
-												<option>보성군</option>
-												<option>영광군</option>
-												<option>영암군</option>
-												<option>완도군</option>
-												<option>장성군</option>
-												<option>장흥군</option>
-												<option>진도군</option>
-												<option>해남군</option>
+												title="���� ����" name = 'city_name'>
+												<option>��ü����</option>
+												<option>���ֱ�����</option>
+												<option>������</option>
+												<option>������</option>
+												<option>��õ��</option>
+												<option>�����</option>
+												<option>������</option>
+												<option>���ﱺ</option>
+												<option>���</option>
+												<option>������</option>
+												<option>������</option>
+												<option>���ϱ�</option>
+												<option>�ϵ���</option>
+												<option>�强��</option>
+												<option>���ﱺ</option>
+												<option>������</option>
+												<option>�س���</option>
 											</select>
 										</div>
 										<div class="col-xs-6">
 
 											<select id="lunchBegins" class="selectpicker"
 												data-live-search="true" data-live-search-style="begins"
-												title="음식 타입">
-												<option>전체보기</option>
-												<option>한식</option>
-												<option>일식</option>
-												<option>양식</option>
-												<option>중식</option>
-												<option>피자</option>
-												<option>횟집</option>
-												<option>카페/디저트</option>
+												title="���� Ÿ��" name = 'r_type'>
+												<option>��ü����</option>
+												<option>�ѽ�</option>
+												<option>�Ͻ�</option>
+												<option>�����</option>
+												<option>�߽�</option>
+												<option>��Ÿ �ܱ���</option>
+												<option>��Ÿ ��������</option>
 											</select>
 										</div>
 									</div>
@@ -211,7 +262,7 @@
 								<fieldset>
 									<div class="row">
 										<div class="col-xs-12">
-											<input class="button btn largesearch-btn" value="검색"
+											<input class="button btn largesearch-btn" value="�˻�"
 												type="submit">
 										</div>
 									</div>
@@ -219,134 +270,78 @@
 							</form>
 
 							<div class="item-entry overflow">
-								<h5>음식점 List</h5>
-								<div class="col-sm-5 col-md-1 p0">
-									<div class="box-two proerty-item">
-										<div class="item-thumb">
-											<a href="https://blog.naver.com/fpdh0922/222127504722">
-											</a>
-										</div>
-
-										<h5>제주</h5>
+								<h5>������ List</h5>
+								
+								<% 
+									if(!r_list.isEmpty()){
+										for(int i = 0; i<r_list.size();i++){ %>
+										
+										<div class="col-sm-5 col-md-1 p0 p1 list1">
+											<div class="box-two proerty-item" style="width:300px">
+												<div class="item-thumb">
+												<a href="#"></a>
+												
+											</div>
+											<h5><%=r_list.get(i).getCity_name() %></h5>
 										<div class="dot-hr"></div>
-										<span class="pull-left"><b> 연돈 </b></span>
+										<span class="pull-left"><b> <%=r_list.get(i).getR_name() %> </b></span>
 										<div class="property-icon">
 											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											제주 서귀포시 일주서로 968-10
+											&nbsp;<%= r_list.get(i).getR_address() %>
 											<div class="property-icon">
 												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"> 064-738-7060
+													style="width: 20px; height: 20px;">&nbsp;<%=r_list.get(i).getR_tel() %>
 												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
+													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> �ȽɽĴ�
 												</div>
 											</div>
 										</div>
 
 									</div>
 								</div>
-								<div class="col-sm-5 col-md-1 p0">
+										
+										
+								<%	
+										}
+									}
+								
+								%>
+								
+								
+								
+								<!-- ���⼭���� -->
+								 <div class="col-sm-5 col-md-1 p0">
 									<div class="box-two proerty-item">
 										<div class="item-thumb">
-											<a href="https://blog.naver.com/fpdh0922/222127504722">
+											<a href="#">
 											</a>
 										</div>
-
-										<h5>제주</h5>
+										<h5>����</h5>
 										<div class="dot-hr"></div>
-										<span class="pull-left"><b> 연돈 </b></span>
+										<span class="pull-left"><b> ���� </b></span>
 										<div class="property-icon">
 											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											제주 서귀포시 일주서로 968-10
+											���� �������� ���ּ��� 968-10
 											<div class="property-icon">
 												<img src="assets/img/tell.png"
 													style="width: 20px; height: 20px;"> 064-738-7060
 												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
+													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> �ȽɽĴ�
 												</div>
 											</div>
 										</div>
 
 									</div>
 								</div>
-								<div class="col-sm-5 col-md-1 p0">
-									<div class="box-two proerty-item">
-										<div class="item-thumb">
-											<a href="https://blog.naver.com/fpdh0922/222127504722">
-											</a>
-										</div>
-
-										<h5>제주</h5>
-										<div class="dot-hr"></div>
-										<span class="pull-left"><b> 연돈 </b></span>
-										<div class="property-icon">
-											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											제주 서귀포시 일주서로 968-10
-											<div class="property-icon">
-												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"> 064-738-7060
-												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-								<div class="col-sm-5 col-md-1 p0">
-									<div class="box-two proerty-item">
-										<div class="item-thumb">
-											<a href="https://blog.naver.com/fpdh0922/222127504722">
-											</a>
-										</div>
-
-										<h5>제주</h5>
-										<div class="dot-hr"></div>
-										<span class="pull-left"><b> 연돈 </b></span>
-										<div class="property-icon">
-											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											제주 서귀포시 일주서로 968-10
-											<div class="property-icon">
-												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"> 064-738-7060
-												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
-								<div class="col-sm-5 col-md-1 p0">
-									<div class="box-two proerty-item">
-										<div class="item-thumb">
-											<a href="https://blog.naver.com/fpdh0922/222127504722">
-											</a>
-										</div>
-
-										<h5>제주</h5>
-										<div class="dot-hr"></div>
-										<span class="pull-left"><b> 연돈 </b></span>
-										<div class="property-icon">
-											<img src="assets/img/addr.png" style="width: 20px; height: 20px;">
-											제주 서귀포시 일주서로 968-10
-											<div class="property-icon">
-												<img src="assets/img/tell.png"
-													style="width: 20px; height: 20px;"> 064-738-7060
-												<div class="property-icon">
-													<img src="assets/img/shield.png" style="width: 20px; height: 20px;"> 안심식당
-												</div>
-											</div>
-										</div>
-
-									</div>
-								</div>
+								
+								<!-- ������� -->
 							</div>
 						</div>
 					</div>
 					<div class="section">
 						<div class="pull-right">
 							<div class="pagination">
-								<a href="#" class="btn_more">더보기</a>
+								<a href="#" class="btn_more" id = 'load1'>������</a>
 							</div>
 						</div>
 					</div>
@@ -370,10 +365,10 @@
 
 							<img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse"
 								data-wow-delay="1s">
-							<!-- <p>사회이슈를 반영한 여행추천 서비스</p> -->
+							<!-- <p>��ȸ�̽��� �ݿ��� ������õ ����</p> -->
 							<!-- <ul class="footer-adress">
-                                    <li><i class="pe-7s-map-marker strong"> </i> 스마트인재개발원</li>
-                                    <li><i class="pe-7s-mail strong"> </i> 나드리@yourcompany.com</li>
+                                    <li><i class="pe-7s-map-marker strong"> </i> ����Ʈ���簳�߿�</li>
+                                    <li><i class="pe-7s-mail strong"> </i> ���帮@yourcompany.com</li>
                                     <li><i class="pe-7s-call strong"> </i> 010-0000-0000</li>
                                 </ul> -->
 						</div>
@@ -498,5 +493,7 @@
 	<script src="assets/js/icheck.min.js"></script>
 	<script src="assets/js/price-range.js"></script>
 	<script src="assets/js/main.js"></script>
+
+	
 </body>
 </html>

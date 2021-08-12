@@ -5,13 +5,37 @@
     pageEncoding="EUC-KR"%>
 <%
 	PlaceDAO p_dao = new PlaceDAO();
-	ArrayList<PlaceDTO> plist = p_dao.p_all();  
-	
-	
+	ArrayList<PlaceDTO> plist = p_dao.p_all();   
 
 %>
 <!DOCTYPE html>
 <html class="no-js">
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+        let num1 = 0;
+        let num2 = 6;
+        $(function () {
+            $(".list1").slice(num1, num2).attr("style", "display:flex");
+            $("#load1").click(function () {
+                num1 += 6;
+                num2 += 6;
+                if (num1 < $(".list1").length) {
+                    console.log("클릭됨");
+                    $(".list1").slice(num1, num2).attr("style", "display:flex");
+                }
+
+                else {
+                    alert("더이상 없습니다 !!! ");
+                }
+            });
+        });
+</script>
+
+<style>
+.list1{
+	display : none;
+	}
+</style>
 <head>
 <meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +137,7 @@
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="property-2.html">안심숙소</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="commu_list.jsp">게시판</a></li>
+						href="property-3.html">게시판</a></li>
 					<!-- <li class="dropdown yamm-fw" data-wow-delay="0.1s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -489,69 +513,61 @@
 				<!--/ .layout-switcher-->
 			</div>
 
-			<div class="col-md-12 clear"> <!-- 정렬 -->
+			<div class="col-md-12 clear">
 				<div id="list-type" class="proerty-th">
-	<
-			<%
-				if(!plist.isEmpty()){
-					for(int i = 0; i <plist.size(); i++){ %>
-						<div class="col-sm-6 col-md-4 p0">
+				
+				
+				
+				<!-- 여기서  -->
+				
+				<%
+					if(!plist.isEmpty()){
+						for(int i =0; i < plist.size();i++){ %>
+							<div class="col-sm-6 col-md-4 p0 list1">
 						<div class="box-two proerty-item">
 							<div class="item-thumb">
-							<%
-								if(plist.get(i).getP_url()!=null){
-									out.print("<a href="+plist.get(i).getP_url()+">");
-								}
-							
-								out.print("<img src="+plist.get(i).getP_img()+"></a>");
-							%>
+							<% if(plist.get(i).getP_url() !=null){  %>
+								<a href=<%=plist.get(i).getP_url() %>>
+								<%} %>								
+								<img
+									src=<%=plist.get(i).getP_img() %>></a>
 							</div>
 
 							<div class="item-entry overflow">
-			<%
-							out.print("<h5>"+plist.get(i).getCity_name()+"</h5>");
-							out.print("<div class='dot-hr'></div>");
-							out.print("<span class='pull-left'><b>" +plist.get(i).getP_name()+"</span>");
-							out.print("<p style='display: none;'>"+plist.get(i).getP_address()+"</p>");
-							out.print("<div class='property-icon'>");
-							out.print("<img src='assets/img/shield.png' style='width: 20px; height: 20px;'>안심여행지");
-							out.print("");
-							
-			%>
+								<h5>
+								<% out.print("<a href='property-1.html'>"+plist.get(i).getP_name() +"</a>");
+									out.print("</h5>");
+									out.print("<div class='dot-hr'></div>");
+									out.print("<span class='pull-left'><b>" +plist.get(i).getP_address() +"</span>");
+								%>
+									<p style="display: none;"></p>
+										<div class="property-icon">
+										<img src="assets/img/addr.png" 
+										style="width:20px; height:20px;"> <% out.print(plist.get(i).getCity_name()); %>&nbsp;
+										<img src="assets/img/tell.png"
+										style="width:20px; height:20px;"> <% out.print(plist.get(i).getP_tel()); %>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-			
-			
-			<%
+								
+				<%			}
 					}
-				}
-			
-			%>	
+				
+				%> 
 					
+				<!--여기까지 반복문 돌리기  --> 
 
-
-
-		</div>
-	</div>
-
-	<div class="col-md-12">
-		<div class="pull-right">
-			<div class="pagination">
-				<ul>
-					<li><a href="#">Prev</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">Next</a></li>
-					<a style="display:scroll;position:fixed;bottom:10px;right:5px;" href="#" title=”top">TOP</a>
-
-				</ul>
+				</div>
 			</div>
+			<div class="section">
+						<div class="pull-right">
+							<div class="pagination">
+								<a href="#" class="btn_more" id = 'load1'>더보기</a>
+							</div>
+						</div>
+					</div>
 		</div>
-	</div>
-	</div>
 	</div>
 	</div>
 	</div>
@@ -705,6 +721,5 @@
 		<script src="assets/js/icheck.min.js"></script>
 		<script src="assets/js/price-range.js"></script>
 		<script src="assets/js/main.js"></script>
-
 </body>
 </html>
