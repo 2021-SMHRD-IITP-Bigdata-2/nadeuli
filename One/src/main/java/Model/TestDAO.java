@@ -263,5 +263,41 @@ public class TestDAO {
 		
 		return d_list;
 	}
+	
+	public String get_wdc(String city_name) {
+		
+		String getwdc = null;
+		
+		try {
+
+	         connection();
+
+	         // 3. 쿼리문 실행
+	         String sql = "select city_no from city where city_name = ? ";
+
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, city_name);
+
+	         rs = psmt.executeQuery();
+	         
+
+	         // rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+	         if (rs.next()) {
+	        	 getwdc = rs.getString(1);
+	            // 회원정보를 저장할 수 있는 객체 생성
+	         } else {
+	            System.out.println("정보 조회 실패");
+	         }
+
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         // 데이터 베이스 연결 종료
+	         close();
+
+	      }
+		
+		return getwdc;
+	}
 
 }

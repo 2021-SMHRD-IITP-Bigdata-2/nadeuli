@@ -212,7 +212,57 @@ select * from place
 
 alter table place
 rename column place_name to city_name
+
+alter table city
+drop column wdc
+
+
 select * from place where city_name ='목포시';
 
 select * from place
+
+alter table city
+add city_no number(10)
+
+update city set wdc = 'https://drive.google.com/file/d/1VA-EZ09pURVKSS4P5iSlxiwBxIgB5yLV/view?usp=sharing' where city_name like'%강진%'
+
+update city set wdc = 'https://drive.google.com/file/d/1IJlakBtPYvrdUwszQjjcpyVsIbqS1sR1/view?usp=sharing' where city_name like'%고흥%'
+update city set wdc = 'https://drive.google.com/file/d/16_m48ehTZBp5vKuietozQJ7yN3mK9QhK/view?usp=sharing' where city_name like'%곡성%'
+update city set wdc = 'https://drive.google.com/file/d/1xZtOAIsK9q4aQ0YtxXC8SSP5V7xTdRWl/view?usp=sharing' where city_name like'%광양%'
+update city set wdc = 'https://drive.google.com/file/d/1WR9vliulC7ZQ6l-9Z8HX0iSIv-Xcc10a/view?usp=sharing' where city_name like'%광주%'
+update city set wdc = 'https://drive.google.com/file/d/1rRnvwTKR8MKPeVn0RCQGdkxAuFgvCLHg/view?usp=sharing' where city_name like'%구례%'
+update city set wdc = 'https://drive.google.com/file/d/1TmPzS_Xr1inkwO5lXLVWMFBds7c3YsM-/view?usp=sharing' where city_name like'%나주%'
+update city set wdc = 'https://drive.google.com/file/d/1QToeKYRnjA3C7gMgMBzwOmtZ5-If35iv/view?usp=sharing' where city_name like'%담양%'
+update city set wdc = 'https://drive.google.com/file/d/1Q8sCc7YW_-_XH623Y5BwtogtuEy05t_w/view?usp=sharing' where city_name like'%목포%';
+update city set wdc = 'https://drive.google.com/file/d/1W4BL92eYtLHSkfcEsTNoG7jO-Ouxk_VV/view?usp=sharing' where city_name like'%무안%';
+update city set wdc = 'https://drive.google.com/file/d/1Ykuct0QV2JzGAGIoDUGVvanHtzB5Q_-q/view?usp=sharing' where city_name like'%보성%';
+update city set wdc = 'https://drive.google.com/file/d/1pliF4St4fNyr4x1DiSy0jjrf2F4OXm2E/view?usp=sharing' where city_name like'%순천%';
+update city set wdc = 'https://drive.google.com/file/d/17EN2Ta1ytApOArm15Vk4z6ejFKjN1is_/view?usp=sharing' where city_name like'%신안%';
+update city set wdc = 'https://drive.google.com/file/d/1kwwnVH8j2Cm0hKXkf9wYV3gyx559VMt8/view?usp=sharing' where city_name like'%여수%';
+update city set wdc = 'https://drive.google.com/file/d/1Rgg2mEI3-8FK799qyORjM9J-TO3aVbJe/view?usp=sharing' where city_name like'%영암%';
+update city set wdc = 'https://drive.google.com/file/d/1AB2L52UzHf9zTviyqd9Fa3Xtd80Eg84D/view?usp=sharing' where city_name like'%완도%';
+update city set wdc = 'https://drive.google.com/file/d/1Vbz8sqSIyJTI_eni-6CWRDAlYGT7NMfT/view?usp=sharing' where city_name like'%장성%';
+update city set wdc = 'https://drive.google.com/file/d/1fBMTkpZhr9MW4S4tJUyfOZRkV_Gx45Di/view?usp=sharing' where city_name like'%장흥%';
+update city set wdc = 'https://drive.google.com/file/d/103wBiMfkaUcgyBhnhKeCFz6rcM893Kmj/view?usp=sharing' where city_name like'%진도%';
+update city set wdc = 'https://drive.google.com/file/d/19F3YSxtcyoP5Hg7Mb4YUNkyC7MZBZdD6/view?usp=sharing' where city_name like'%함평%';
+update city set wdc = 'https://drive.google.com/file/d/1Plc7Urcv3sbdoVQWQUyBSCF_NX6CsJbp/view?usp=sharing' where city_name like'%해남%';
+update city set wdc = 'https://drive.google.com/file/d/1Upd6fB9-lAzcpsLtp1q_H28dIvs04RyB/view?usp=sharing' where city_name like'%화순%';
+
+select * from city
+
+select * from city
+
+update city set c_introduce = '다도해의 수려한 자연경관을 자랑하는 곳' where city_name ='신안군'
+
+select * from city
+
+update city set city_no = 23 where city_name ='신안군';
+select * from city;
+
+
+
+
+
+
+
 

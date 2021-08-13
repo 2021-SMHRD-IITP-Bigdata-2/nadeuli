@@ -20,6 +20,14 @@
 <script type="text/javascript"
 	src="traveltest/js/finishPageScript.js?version=2"></script>
 <script src="assets/js/jquery-1.10.2.min.js"></script>
+<style>
+#wdc123{
+	width : 1000px;
+	height : 500px;
+}
+
+
+</style>
 
 </head>
 <body>
@@ -76,6 +84,8 @@
 	d_list = t_dao.get_dom(city); // 결과값에따른 숙소값 들어가 있음.
 	
 	
+	
+	
 	%>
 
 	<div id="main_contents">
@@ -86,8 +96,8 @@
 		<p id="cityIntroduce" class="scrollAnim introduce">
 		<%=t_dao.get_intro(city)%>	
 		</p>
-		<p id="word-cloud" class="scrollAnim">ㅇㅇ
-		<!-- 워드클라우드 -->	
+		<p id="word-cloud" class="scrollAnim">
+		<img src='assets/img/wdc/<%=t_dao.get_wdc(city) %>.png' id = 'wdc123'>	
 		</p>
 		<div class="scrollAnim">
 			<p id="startText">나만의 맞춤여행 추천!</p>
