@@ -214,3 +214,5 @@ alter table place
 rename column place_name to city_name
 select * from place where city_name ='¸ñÆ÷½Ã';
 
+select * from place
+
