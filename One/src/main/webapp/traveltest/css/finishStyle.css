@@ -69,7 +69,7 @@ body{
   margin : 0;
   font-size : 20px;
 }
-#badPower, #goodPower{
+.results{
   font-size: 24px;
   color : #079992;
 }

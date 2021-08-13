@@ -46,23 +46,31 @@
 		<div id="resultWrapper">
 			<div class="results scrollAnim" id="good">
 				<p id="corona">코로나 현황</p>
-				<p id="goodPower"></p>
+				<p class="results corona"></p>
 			</div>
 			<div class="results scrollAnim" id="good">
 				<p id="place">안심 여행지</p>
-				<p id="goodPower">
+				<p class="results place">
 					<%
-					/*  */
+					/* 여행지 가져오기 */
 					%>
 				</p>
 			</div>
 			<div class="results scrollAnim" id="bad">
 				<p id="restaurant">안심 식당</p>
-				<p id="badPower"></p>
+				<p class="results restaurant">
+				<%
+				/* 식당 가져오기 */
+				%>
+				</p>
 			</div>
 			<div class="results scrollAnim" id="bad">
 				<p id="domitory">안심 숙소</p>
-				<p id="badPower"></p>
+				<p class="results domitory">
+				<%
+				/* 숙소 가져오기 */
+				%>
+				</p>
 			</div>
 		</div>
 		<div class="scrollAnim">
