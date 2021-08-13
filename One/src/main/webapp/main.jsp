@@ -133,7 +133,7 @@
                     <ul class="main-nav nav navbar-nav navbar-right">
                     	<% if(member!=null){
                     		%>
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="test-start.jsp">맞춤 여행 테스트</a></li>
                         <% }%>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="restaurant.jsp">안심식당</a></li>
@@ -234,7 +234,7 @@
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/11.jpg);"></div>                             
                               <div class="bt_wrap">
                               <% if(member!=null){ %>
-                            <blockquote><cite><a href="properties.html" class="on" style="text-align:center" > 테스트 시작하기!!</a></cite> 
+                            <blockquote><cite><a href="test-start.jsp" class="on" style="text-align:center" > 테스트 시작하기!!</a></cite> 
                               <%} else{%>
                             <blockquote><cite><a href="register.html" class="on" style="text-align:center" > 테스트 시작하기!!</a></cite>  
                               <%} %>

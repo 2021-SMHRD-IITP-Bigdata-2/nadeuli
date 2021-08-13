@@ -3,11 +3,11 @@ package Model;
 public class CommentDTO {
 	
 	
-	private int commen_no;
-	private int commu_no;
-	private String comment_text;
-	private String email;
-	private String comment_date;
+	private int commen_no; // pk
+	private int commu_no; // 댓글이 작성된 게시글의 번호
+	private String comment_text; // 댓글내용
+	private String email; // 작성한 사람의 email
+	private String comment_date; // 작성날짜
 	
 	public CommentDTO() {}
 	

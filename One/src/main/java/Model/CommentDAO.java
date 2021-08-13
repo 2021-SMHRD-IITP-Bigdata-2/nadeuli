@@ -56,7 +56,7 @@ public class CommentDAO {
 
 			connection();
 
-			String sql = "insert into comments values(commu_no.nextval,?,?,?,sysdate)";
+			String sql = "insert into comments values(commu_no.nextval,?,?,?,sysdate)"; // commu_no는 시퀀스. 자동으로 1씩 증가한다.
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, comment.getCommu_no());
@@ -89,7 +89,7 @@ public class CommentDAO {
 			connection();
 
 			// 3. 쿼리문 실행
-			String sql = "Select * from comments where commu_no = ?";
+			String sql = "Select * from comments where commu_no = ?"; // 게시글 번호를 조건으로 걸어서 코멘트 가져오기
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, commu_no);
@@ -118,13 +118,14 @@ public class CommentDAO {
 		return comment_list;
 	}
 	
+	//코멘트 지우는 기능
 	 public int comment_delete(int comment_no) {
 
 			try {
 
 				connection();
 				// 3. 쿼리문 실행
-				String sql = "delete from comments where comment_no=?";
+				String sql = "delete from comments where comment_no=?"; // 코멘트 번호를 비교해서 지운다
 
 				psmt = conn.prepareStatement(sql);
 				psmt.setInt(1, comment_no);
@@ -140,6 +141,7 @@ public class CommentDAO {
 
 		}
 	 
+	 // 코멘트 갯수세는거.
 	 public int comment_cnt(int commu_no) {
 		 int getCnt = 0;
 		 

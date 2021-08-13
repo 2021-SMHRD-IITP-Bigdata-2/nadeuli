@@ -114,7 +114,10 @@
                   
                     </div>
                     <ul class="main-nav nav navbar-nav navbar-right">
-                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
+                        <% if(member!=null){
+                    		%>
+                        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="test-start.jsp">맞춤 여행 테스트</a></li>
+                        <% }%>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="restaurant.jsp">안심식당</a></li>
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="domitory.jsp">안심숙소</a></li>
