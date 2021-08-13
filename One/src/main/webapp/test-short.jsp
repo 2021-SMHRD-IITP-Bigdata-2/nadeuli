@@ -24,11 +24,14 @@
 <body>
 	<script type="text/javascript">
 		let strresults = localStorage.getItem('results');
+		setTimeout(finish,1)
+		function finish(){
 		location.href = "test-finish.jsp?result="+strresults;
+		}
 	</script>
 	<div class="parent">
 		<div class="child">
-			<img alt="" src="traveltest/images/loading.png" style="height:300px; width:300px;">
+			<img alt="" src="traveltest/images/loading.png" style="height:200px; width:200px;">
 			<p>페이지 이동중입니다~</p>
 		</div>
 	</div>

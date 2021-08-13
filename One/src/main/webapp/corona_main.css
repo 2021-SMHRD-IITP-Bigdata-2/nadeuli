@@ -22,7 +22,7 @@ button{
 	background:0;
 	cursor:pointer;
 	vertical-align:middle;
-	font-family:'Noto Sans',"Malgun Gothic",'¸¼Àº °íµñ', 'Dotum', 'µ¸¿ò', verdana, sans-serif;
+	/* font-family:'Noto Sans',"Malgun Gothic",'¸¼Àº °íµñ', 'Dotum', 'µ¸¿ò', verdana, sans-serif; */
 	line-height:1.2;
 	color:#333;
 	letter-spacing:-0.02em;

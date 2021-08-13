@@ -50,7 +50,7 @@
 </style>
 <meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>GARO ESTATE | Properties page</title>
+<title>나드리 | 안심숙소</title>
 
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
@@ -142,17 +142,11 @@
 					
 				</div>
 				<ul class="main-nav nav navbar-nav navbar-right">
-					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="properties.html">맞춤 여행 테스트</a></li>
-					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="place.jsp">안심여행지</a></li>
-					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="restaurant.jsp">안심식당</a></li>
-					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="domitory.jsp">안심숙소</a></li>
-					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="commu_list.jsp">게시판</a></li>
-
+					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">맞춤 여행 테스트</a></li>
+					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="place.jsp">안심여행지</a></li>
+					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="restaurant.jsp">안심식당</a></li>
+					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="domitory.jsp">안심숙소</a></li>
+					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="commu_list.jsp">게시판</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->

@@ -13,7 +13,7 @@
 <head class="no-js">
 <meta charset="EUC-KR">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>nadeuli | Main</title>
+        <title>나드리 | 나만의 맞춤여행 추천 서비스!</title>
 <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
@@ -255,7 +255,7 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/22.jpg);"></div>                             
-                           <blockquote><cite><a href="property.html" style="text-align:center"> 안심 여행지 추천</a></cite>
+                           <blockquote><cite><a href="place.jsp" style="text-align:center"> 안심 여행지 추천</a></cite>
                                 <p style="text-align:center">광주·전남의 안전한 여행지
                                 </p> 
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
@@ -274,7 +274,7 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/44.jpg);"></div>                             
-                           <blockquote><cite><a href="property-1.html" style="text-align:center">　안심식당 추천</a></cite>
+                           <blockquote><cite><a href="restaurant.jsp" style="text-align:center">　안심식당 추천</a></cite>
                                 <p style="text-align:center">광주·전남의 안전한 식당
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>
@@ -294,7 +294,7 @@
                         <div class="sl-slide-inner ">
 
                             <div class="bg-img bg-img-1" style="background-image: url(assets/img/slide2/33.jpg);"></div>                             
-                            <blockquote><cite><a href="property-2.html" style="text-align:center">　안심숙소 추천</a></cite>
+                            <blockquote><cite><a href="domitory.jsp" style="text-align:center">　안심숙소 추천</a></cite>
                                 <p style="text-align:center">광주·전남의 안전한 숙소
                                 </p>
                                 <!-- <span class="pull-left"><b> Area :</b> 120m </span>

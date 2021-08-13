@@ -11,24 +11,32 @@
 <!DOCTYPE html>
 <html class="no-js">
 <script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
         let num1 = 0;
         let num2 = 6;
         $(function () {
             $(".list1").slice(num1, num2).attr("style", "display:flex");
+           
             $("#load1").click(function () {
-                num1 += 6;
+            	
+            	num1 += 6;
                 num2 += 6;
                 if (num1 < $(".list1").length) {
                     console.log("클릭됨");
                     $(".list1").slice(num1, num2).attr("style", "display:flex");
                 }
-
+                
+                
+                
                 else {
                     alert("더이상 없습니다 !!! ");
                 }
             });
         });
+       
+        
+        
 </script>
 
 <style>
@@ -39,7 +47,7 @@
 <head>
 <meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>GARO ESTATE | Properties page</title>
+<title>나드리 | 안심 여행지</title>
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
 <meta name="keyword"
@@ -546,7 +554,7 @@
 										style="width:20px; height:20px;"> <% out.print(plist.get(i).getCity_name()); %>&nbsp;
 										<img src="assets/img/tell.png"
 										style="width:20px; height:20px;"> <% out.print(plist.get(i).getP_tel()); %>
-									</div>
+										</div>
 								</div>
 							</div>
 						</div>
@@ -563,14 +571,15 @@
 			<div class="section">
 						<div class="pull-right">
 							<div class="pagination">
-								<a href="#" class="btn_more" id = 'load1'>더보기</a>
+								<div id="div1">
+								<a href="#" class="btn_more" id = 'load1' onclick="fnMove('1')">더보기</a>				 
+							</div>
 							</div>
 						</div>
 					</div>
 		</div>
 	</div>
-	</div>
-	</div>
+
 
 	<!-- Footer area-->
 	<div class="footer-area">
@@ -721,5 +730,13 @@
 		<script src="assets/js/icheck.min.js"></script>
 		<script src="assets/js/price-range.js"></script>
 		<script src="assets/js/main.js"></script>
+		
+
+	<script>
+    function fnMove(seq){
+        var offset = $("#div" + seq).offset();
+        $('html, body').animate({scrollTop : offset.top}, 1000);
+    }
+</script>
 </body>
 </html>

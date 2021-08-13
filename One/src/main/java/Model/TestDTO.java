@@ -8,7 +8,6 @@ public class TestDTO {
 	public TestDTO() {}
 
 	public TestDTO(String city_name, int cnt) {
-		super();
 		this.city_name = city_name;
 		this.cnt = cnt;
 	}

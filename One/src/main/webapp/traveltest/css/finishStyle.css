@@ -9,15 +9,57 @@
 body{
 	font-family: "Cafe24Ssurround";
 }
-
-/* #city-introduce li  {
-  text-align: left;
+img{
+	width : 300px;
+	height : 200px;
+}
+.dadd{
+	border : 0;
+}
+#cityIintroduce{
+  margin-top : 70px;
+  margin-bottom : 50px;
+  text-align: center;
   margin-bottom : 20px;
   font-size : 18px;
   color : #2f3640;
-} */
-
-#text1{
+}
+.scrollAnim{
+  margin-top : 70px;
+  margin-bottom : 50px;
+  font-size : 24px;
+  text-align: center;
+  color : #60a3bc;
+}
+.cityname{
+	font-size : 26px;
+	color : rgb(22, 46, 54);
+}
+.introduce{
+	font-size : 22px;
+	color : rgb(22, 46, 54);
+}
+tr> td{
+	max-width : 700px;
+	border : 0;
+	font-size : 18px;
+	text-align : left;
+	color : #2f3640;
+}
+tr > td:nth-child(1){
+	vertical-align: top;
+}
+tr> td:nth-child(2){
+	vertical-align: bottom;
+}
+#resultWrapper > div:nth-child(3) > div > table > tbody > tr:nth-child(1) > td{
+	text-align : center !important;
+}
+#resultWrapper > div:nth-child(3) > div > table > tbody > tr:nth-child(2) > td{
+	text-align : center !important;
+	font-size : 15px !important;
+}
+/* #text1{
   margin-top : 70px;
   margin-bottom : 50px;
   font-size : 24px;
@@ -31,14 +73,8 @@ body{
   font-size : 32px;
   text-align: center;
   color : #3c6382;
-}
-#city-introduce li{
-  margin : 0px;
-  font-size : 18px;
-  margin-bottom : 80px;
-  text-align: center;
-  color : #2f3640;
-}
+} */
+
 #resultImage{
   max-width : 100%;
   max-height: 320px;
@@ -52,7 +88,7 @@ body{
 .results{
   /* //position : relative;
   //display:inline-block; */
-  width : 60%;
+  /* width : 60%; */
   margin:auto;
   /* //height : 200px;
   //max-height : 200px; */
@@ -60,6 +96,12 @@ body{
   margin-bottom : 40px;
 
 }
+.dadd{
+	margin:auto;
+	text-align: center;
+  	margin-bottom : 40px;
+}
+
 .harmony img{
   margin-top : 10px;
   max-width : 100%;
@@ -107,7 +149,7 @@ color :#2f3640;
 
 #startButton1{
   display:block;
-  width : 27%;
+  width : 17%;
   margin : auto;
     margin-bottom : 50px;
   font-size : 22px;
@@ -125,12 +167,7 @@ color :#2f3640;
   height : 200px;
 
 }
-/* .scrollAnim {
-  opacity : 0;
-  transition : all 1s ease;
-  -webkit-transition : all 1s ease;
-}
- */
+
 #dev{
   margin-top : 60px;
   color : #CCD1D1;

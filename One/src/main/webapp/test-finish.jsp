@@ -71,40 +71,38 @@
 	ArrayList<PlaceDTO> p_list = new ArrayList<>();
 	p_list = t_dao.get_place(city); // 결과값에 따른 place 값들 들어가있음..
 	
-	ArrayList<RestaurantDTO> r_list =  new ArrayList<>();
-	r_list = t_dao.get_rest(city); // 결과값에 따른 식당값 들어있음
-	
 	
 	ArrayList<DomitoryDTO> d_list = new ArrayList<>();
 	d_list = t_dao.get_dom(city); // 결과값에따른 숙소값 들어가 있음.
-	
-	
-	
 	
 	
 	%>
 
 	<div id="main_contents">
 		<p id="text1" class="scrollAnim">나에게 맞는 여행지는..?</p>
-		<p id="text2" class="scrollAnim">
+		<p id="text2" class="scrollAnim cityname">
 			<%=city%>
 		</p>
-		<p id="city-introduce">
+		<p id="cityIntroduce" class="scrollAnim introduce">
 		<%=t_dao.get_intro(city)%>	
+		</p>
+		<p id="word-cloud" class="scrollAnim">ㅇㅇ
+		<!-- 워드클라우드 -->	
 		</p>
 		<div class="scrollAnim">
 			<p id="startText">나만의 맞춤여행 추천!</p>
 			<button id="startButton1" onclick="start()">테스트 다시 하기</button>
 		</div>
 		<div id="resultWrapper">
-			<div class="results scrollAnim" id="good">
+			<div class="results scrollAnim" >
 				<p id="corona">코로나 현황</p>
 				<p class="results corona"></p>
 			</div>
-			<div class="results scrollAnim" id="good">
+           <%if(!p_list.isEmpty()){ %>
+			<div class="results scrollAnim" >
 				<p id="place">안심 여행지</p>
-				<p class="results place">
-				<table border="1" class="dadd">
+				<div class="results place">
+				<table class="dadd">
         			<tr>
             			<td rowspan="2">
                 			<img src=<%=p_list.get(0).getP_img() %>>
@@ -116,26 +114,13 @@
         			</tr>
 
     			</table>
-				</p>
+				</div>
 			</div>
-			<div class="results scrollAnim" id="bad">
-				<p id="restaurant">안심 식당</p>
-				<p class="results restaurant">
-				<table border="1" class="dadd">
-        			<tr>
-            			<td><%=r_list.get(0).getR_name()%></td>
-        			</tr>
-        			<tr>
-            			<td><%=r_list.get(0).getR_address() %></td>
-        			</tr>
-
-    			</table>
-				</p>
-			</div>
-			<div class="results scrollAnim" id="bad">
+			<%} %>
+			<div class="results scrollAnim">
 				<p id="domitory">안심 숙소</p>
-				<p class="results domitory">
-				<table border="1" class="dadd">
+				<div class="results domitory">
+				<table class="dadd">
         			<tr>
             			<td rowspan="2">
                 			<img src=<%=d_list.get(0).getD_img() %>>
@@ -147,7 +132,7 @@
         			</tr>
 
     			</table>
-				</p>
+				</div>
 			</div>
 		</div>
 		<div class="scrollAnim">

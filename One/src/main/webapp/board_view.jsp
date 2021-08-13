@@ -36,7 +36,7 @@
 <head>
 <meta charset="EUC-KR">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>GARO ESTATE | Property  page</title>
+        <title>나드리 | 게시판 읽기</title>
         <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
@@ -343,7 +343,7 @@
     <script src="assets/js/index5.js"> </script>
            </div1>
             <div class="bt_wrap">
-                <a href="property-3.html" class="on">목록</a>
+                <a href="commu_list.jsp" class="on">목록</a>
                 
                 <%
                 if(member!=null){
