@@ -22,8 +22,9 @@
 <script src="assets/js/jquery-1.10.2.min.js"></script>
 <style>
 #wdc123{
-	width : 1000px;
-	height : 500px;
+	position : relative;
+	width : 100%;
+	height : 100%;
 }
 
 
@@ -91,11 +92,12 @@
 	<div id="main_contents">
 		<p id="text1" class="scrollAnim">나에게 맞는 여행지는..?</p>
 		<p id="text2" class="scrollAnim cityname">
-			<%=city%>
+			<%=city%>!
 		</p>
 		<p id="cityIntroduce" class="scrollAnim introduce">
 		<%=t_dao.get_intro(city)%>	
 		</p>
+		<hr>
 		<p id="word-cloud" class="scrollAnim">
 		<img src='assets/img/wdc/<%=t_dao.get_wdc(city) %>.png' id = 'wdc123'>	
 		</p>
@@ -103,11 +105,16 @@
 			<p id="startText">나만의 맞춤여행 추천!</p>
 			<button id="startButton1" onclick="start()">테스트 다시 하기</button>
 		</div>
+		<hr>
 		<div id="resultWrapper">
-			<div class="results scrollAnim" >
+			<div class="results scrollAnim">
 				<p id="corona">코로나 현황</p>
-				<p class="results corona"></p>
+				<div class="coronacontents">
+					<iframe class="coronaframe" src="coronamap.html" width="1397px"
+						height="800px" scrolling="no" frameborder="0"></iframe>
+				</div>
 			</div>
+			<hr>
            <%if(!p_list.isEmpty()){ %>
 			<div class="results scrollAnim" >
 				<p id="place">안심 여행지</p>
@@ -127,6 +134,8 @@
 				</div>
 			</div>
 			<%} %>
+			<hr>
+			<%if(!d_list.isEmpty()){ %>
 			<div class="results scrollAnim">
 				<p id="domitory">안심 숙소</p>
 				<div class="results domitory">
@@ -144,7 +153,9 @@
     			</table>
 				</div>
 			</div>
+				<%} %>
 		</div>
+		<hr>
 		<div class="scrollAnim">
 			<p id="copyText">친구에게 공유해봐요!</p>
 			<button id="copyButton" onclick="copy()">주소 복사하기</button>

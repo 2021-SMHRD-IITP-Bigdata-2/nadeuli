@@ -50,84 +50,7 @@
 
 <!--  corona -->
 <link href="corona_stylesheet.css" rel="stylesheet">
-<link href="https://www.jeonnam.go.kr/home/site/jeonnam/css/mobile.css"
-	media="all and (min-width:769px)" rel="stylesheet">
-<link href="corona_layout.css" media="all and (max-width:768px)"
-	rel="stylesheet">
-<link href="corona_main.css" rel="stylesheet">
-<link href="corona_board.css" media="all and (min-width:769px)"
-	rel="stylesheet">
-<link href="corona_board.css" media="all and (max-width:768px)"
-	rel="stylesheet">
-<link rel="stylesheet" href="corona_index.css">
 
-<style>
-.corona_path .info {
-	background-color: #fafafa;
-	padding: 7px 20px;
-	font-size: 16px;
-}
-
-.img_icon {
-	margin-top: -3px;
-}
-
-.covid-19-wrap .con-t-box .ro-b .rb-con ul {
-	height: auto;
-	list-style: none;
-}
-
-.covid-19-wrap .con-t-box .ro-b .lb-tit {
-	height: auto;
-	list-style: none;
-}
-
-.covid-19-wrap .con-t-box .ro-b .rb-con ul li {
-	height: auto;
-	list-style: none;
-}
-
-.txTopBtn_box {
-	right: 300px;
-}
-
-@media screen and (max-width:1000px) {
-	.text_left a {
-		margin: 5px;
-	}
-}
-
-@media screen and (max-width:1200px) {
-	.txTopBtn_box {
-		right: 30px;
-	}
-}
-
-.corona_sigun a {
-	color: #fff;
-	list-style: none;
-}
-
-.tb_condition.tb_color2 thead tr th {
-	background-color: #054c3e;
-	font-size: 20px;
-}
-
-.tb_condition.tb_color2 tbody tr th {
-	background-color: #1abc9c;;
-	color: #fff;
-	font-family: 'GmarketSansMedium';
-}
-
-.tb_condition tbody tr th, .tb_condition tbody tr td {
-	padding: 5px 0;
-	list-style: none;
-}
-
-.ulist {
-	list-style: none;
-}
-</style>
 </head>
 <body>
 	<div id="preloader">
@@ -193,7 +116,7 @@
 					<% if(member!=null){
                     		%>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="test-start.jsp">맞춤 여행 테스트</a></li>
+						href="properties.html">맞춤 여행 테스트</a></li>
 					<% }%>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
 						href="place.jsp">안심여행지</a></li>
@@ -226,19 +149,15 @@
 						<div class="bt_wrap">
 							<% if(member!=null){ %>
 							<blockquote>
-								<cite><a href="test-start.jsp" class="on"
+								<cite><a href="properties.html" class="on"
 									style="text-align: center"> 테스트 시작하기!!</a></cite>
 								<%} else{%>
 								<blockquote>
-									<cite><a href="register.html" class="on" onclick="dojoin()"
+									<cite><a href="register.html" class="on"
 										style="text-align: center"> 테스트 시작하기!!</a></cite>
 									<%} %>
 									<p style="text-align: center">광주·전남지역 맞춤여행 정보</p>
-									<script type="text/javascript">
-										function dojoin(){
-											alert("로그인한 다음에 이용하실 수 있습니다");
-										}
-									</script>
+
 								</blockquote>
 						</div>
 					</div>
@@ -255,13 +174,7 @@
 							<cite><a href="place.jsp" style="text-align: center">
 									안심 여행지 추천</a></cite>
 							<p style="text-align: center">광주·전남의 안전한 여행지</p>
-							<!-- <span class="pull-left"><b> Area :</b> 120m </span>
-                                <span class="proerty-price pull-right"> $ 250,000</span>
-                                <div class="property-icon">
-                                    <img src="assets/img/icon/bed.png">(5)|
-                                    <img src="assets/img/icon/shawer.png">(2)|
-                                    <img src="assets/img/icon/cars.png">(1)  
-                                </div> -->
+
 						</blockquote>
 					</div>
 				</div>
@@ -278,6 +191,7 @@
 							<cite><a href="restaurant.jsp" style="text-align: center">
 									안심식당 추천</a></cite>
 							<p style="text-align: center">광주·전남의 안전한 식당</p>
+
 						</blockquote>
 					</div>
 				</div>
@@ -295,6 +209,7 @@
 							<cite><a href="domitory.jsp" style="text-align: center">
 									안심숙소 추천</a></cite>
 							<p style="text-align: center">광주·전남의 안전한 숙소</p>
+
 						</blockquote>
 					</div>
 				</div>
@@ -391,80 +306,76 @@
 				</div>
 			</div>
 
-		</div>
-	</div>
-
-	<!--  corona -->
-
-	<!-- wrap-->
-
-	<!-- 코로나 19 전라남도 상황판 -->
-	<div class="covid-19-wrap">
-		<div class="coronacontents" align="middle" >
-			<iframe class="coronaframe" src="coronainfo.html" width="1100px"
-				height="1900px" scrolling="no" frameborder="0"></iframe>
-		</div>
-	</div>
 
 
-	<!-- Footer area-->
-	<div class="footer-area">
+			<!-- wrap-->
 
-		<div class=" footer">
-			<div class="container">
-				<div class="row">
+			<!-- 코로나 19 전라남도 상황판 -->
+			<div class="covid-19-wrap">
+				<div class="coronacontents">
+					<iframe class="coronaframe" src="coronamap.html" width="1100px"
+						height="800px" scrolling="no" frameborder="0"></iframe>
+				</div>
 
-					<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-						<div class="single-footer">
-							<!-- <h4>About us </h4> -->
-							<!-- <div class="footer-title-line"></div> -->
 
-							<img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse"
-								data-wow-delay="1s">
-							<p>뉴노멀시대 맞춤여행 추천 서비스</p>
-							<ul class="footer-adress">
-								<li><i class="pe-7s-map-marker strong"> </i> 광주광역시 남구 송암로
-									60</li>
-								<li><i class="pe-7s-mail strong"> </i>
-									nadeuli@mycompany.com</li>
-								<li><i class="pe-7s-call strong"> </i> 010-1234-5678</li>
-							</ul>
+			</div>
+			<!-- Footer area-->
+			<div class="footer-area">
+
+				<div class=" footer">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-md-3 col-sm-6 wow fadeInRight animated">
+								<div class="single-footer">
+									<!-- <h4>About us </h4> -->
+									<!-- <div class="footer-title-line"></div> -->
+
+									<img src="assets/img/nadeuli-logo.png" alt="" class="wow pulse"
+										data-wow-delay="1s">
+									<p>뉴노멀시대 맞춤여행 추천 서비스</p>
+									<ul class="footer-adress">
+										<li><i class="pe-7s-map-marker strong"> </i> 광주광역시 남구 송암로
+											60</li>
+										<li><i class="pe-7s-mail strong"> </i>
+											nadeuli@mycompany.com</li>
+										<li><i class="pe-7s-call strong"> </i> 010-1234-5678</li>
+									</ul>
+								</div>
+							</div>
+
+
 						</div>
 					</div>
-					
-
 				</div>
 			</div>
-		</div>
-
-		
-
-	</div>
-
-	<script src="assets/js/modernizr-2.6.2.min.js"></script>
-
-	<script src="assets/js/jquery-1.10.2.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/js/bootstrap-select.min.js"></script>
-	<script src="assets/js/bootstrap-hover-dropdown.js"></script>
-
-	<script src="assets/js/easypiechart.min.js"></script>
-	<script src="assets/js/jquery.easypiechart.min.js"></script>
-
-	<script src="assets/js/owl.carousel.min.js"></script>
-
-	<script src="assets/js/wow.js"></script>
-
-	<script src="assets/js/icheck.min.js"></script>
-	<script src="assets/js/price-range.js"></script>
 
 
-	<script src="assets/js/jquery.ba-cond.min.js"></script>
-	<script src="assets/js/jquery.slitslider.js"></script>
 
-	<script src="assets/js/main.js"></script>
+			<script src="assets/js/modernizr-2.6.2.min.js"></script>
 
-	<script type="text/javascript">
+			<script src="assets/js/jquery-1.10.2.min.js"></script>
+			<script src="bootstrap/js/bootstrap.min.js"></script>
+			<script src="assets/js/bootstrap-select.min.js"></script>
+			<script src="assets/js/bootstrap-hover-dropdown.js"></script>
+
+			<script src="assets/js/easypiechart.min.js"></script>
+			<script src="assets/js/jquery.easypiechart.min.js"></script>
+
+			<script src="assets/js/owl.carousel.min.js"></script>
+
+			<script src="assets/js/wow.js"></script>
+
+			<script src="assets/js/icheck.min.js"></script>
+			<script src="assets/js/price-range.js"></script>
+
+
+			<script src="assets/js/jquery.ba-cond.min.js"></script>
+			<script src="assets/js/jquery.slitslider.js"></script>
+
+			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript">
                             $(function () {
 
                                 var Page = (function () {

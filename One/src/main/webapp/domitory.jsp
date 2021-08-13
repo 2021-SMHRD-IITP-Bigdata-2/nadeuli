@@ -20,6 +20,7 @@
 <html class="no-js">
 <head>
 <script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
         let num1 = 0;
         let num2 = 6;
@@ -338,7 +339,9 @@
 					<div class="section">
 						<div class="pull-right">
 							<div class="pagination">
-								<a href="#" class="btn_more" id = 'load1'>더보기</a>
+								<div id="div1">
+								<a href="#" class="btn_more" id = 'load1' onclick="fnMove('1')">더보기</a>				 
+							</div>
 							</div>
 						</div>
 					</div>
@@ -495,7 +498,12 @@
 	<script src="assets/js/icheck.min.js"></script>
 	<script src="assets/js/price-range.js"></script>
 	<script src="assets/js/main.js"></script>
-	
+	<script>
+    function fnMove(seq){
+        var offset = $("#div" + seq).offset();
+        $('html, body').animate({scrollTop : offset.top}, 1000);
+    }
+</script>
 
 </body>
 </html>

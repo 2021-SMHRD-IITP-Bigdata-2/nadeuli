@@ -13,6 +13,14 @@ img{
 	width : 300px;
 	height : 200px;
 }
+hr{
+	height: 5px;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: 3px 10px 22px -2px #bbb;
+    width: 25%;
+    background-color: #D5F1E7;
+}
 .dadd{
 	border : 0;
 }
@@ -32,7 +40,7 @@ img{
   color : #60a3bc;
 }
 .cityname{
-	font-size : 26px;
+	font-size : 60px;
 	color : rgb(22, 46, 54);
 }
 .introduce{
@@ -121,7 +129,9 @@ tr> td:nth-child(2){
 #place, #restaurant, #domitory{
   color : #78e08f;
 }
-
+button{
+	cursor:pointer;
+}
 #startText,#copyText{
 color :#2f3640;
   text-align: center;

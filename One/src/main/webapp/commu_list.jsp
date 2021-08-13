@@ -303,7 +303,7 @@
             <div class="board_page">
                 <a href="#" class="bt first"><<</a>
                 <a href="#" class="bt prev"><</a>
-                <a href="#" class="num check" style="background-color: #000; color= #fff;">1</a>
+                <a href="#" class="num check" style="background-color: #000; color: white;">1</a>
                 <a href="#" class="num">2</a>
                 <a href="#" class="num">3</a>
                 <a href="#" class="num">4</a>

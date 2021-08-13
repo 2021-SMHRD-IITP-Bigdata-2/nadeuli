@@ -45,6 +45,9 @@
 .list1{
 	display : none;
 	}
+.p0{
+	height:461px !important;
+}
 </style>
 <head>
 <meta charset="EUC-KR">
@@ -538,7 +541,7 @@
 				<%
 					if(!plist.isEmpty()){
 						for(int i =0; i < plist.size();i++){ %>
-							<div class="col-sm-6 col-md-4 p0 list1">
+							<div class="col-sm-6 col-md-4 p0 p1 list1">
 						<div class="box-two proerty-item">
 							<div class="item-thumb">
 							<% if(plist.get(i).getP_url() !=null){  %>
