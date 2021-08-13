@@ -200,6 +200,17 @@ group by manager_id
 order by count desc
 /
 
+select * from city
+
+select c_introduce from city where city_name = '±¤ÁÖ±¤¿ª½Ã'
 
 select city_name, count(*) as count from sns_data where tags like '%Èú¸µ%' or tags like '%¸ÀÁı%' group by city_name order by count desc
+
+select city_name, count(*) as count from sns_data where tags like '% %' group by city_name order by count desc
+
+select * from place
+
+alter table place
+rename column place_name to city_name
+select * from place where city_name ='¸ñÆ÷½Ã';
 

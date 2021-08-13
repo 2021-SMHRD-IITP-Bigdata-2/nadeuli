@@ -97,8 +97,171 @@ public class TestDAO {
 		 return t_list;
 		
 		
+	}
+	
+	public String get_intro(String city_name) {
+		
+		String getIntro = null;
+		
+		try {
+
+	         connection();
+
+	         // 3. 쿼리문 실행
+	         String sql = "select c_introduce from city where city_name = ? ";
+
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, city_name);
+
+	         rs = psmt.executeQuery();
+	         
+
+	         // rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+	         if (rs.next()) {
+	        	 getIntro = rs.getString(1);
+	            // 회원정보를 저장할 수 있는 객체 생성
+	         } else {
+	            System.out.println("정보 조회 실패");
+	         }
+
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         // 데이터 베이스 연결 종료
+	         close();
+
+	      }
+		
+		return getIntro;
+	}
+	
+	public ArrayList<PlaceDTO> get_place(String city_name) {
+		 ArrayList<PlaceDTO> p_list = new ArrayList<PlaceDTO>();
+		
+		try {
+
+	         connection();
+
+	         // 3. 쿼리문 실행
+	         String sql = "Select * from place where city_name = ?";
+
+	         psmt = conn.prepareStatement(sql);
+	         psmt.setString(1, city_name);
+
+	         rs = psmt.executeQuery();
+	         
+
+	         // rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+	         while (rs.next()) {
+
+					String getCity = rs.getString(1);
+					String getPname = rs.getString(2);
+					String getPaddress = rs.getString(3);
+					String getPtel = rs.getString(4);
+					String getPurl = rs.getString(5);
+					String getPimg = rs.getString(6);
+
+					PlaceDTO place = new PlaceDTO(getCity, getPname, getPaddress, getPtel, getPurl, getPimg);
+					p_list.add(place);
+				}
+
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         // 데이터 베이스 연결 종료
+	         close();
+
+	      }
+		
+		return p_list;
+	}
+	
+	public ArrayList<RestaurantDTO> get_rest(String city_name){
+		ArrayList<RestaurantDTO> r_list =  new ArrayList<RestaurantDTO>();
+		
+		try {
+
+			connection();
+
+			// 3. 쿼리문 실행
+			String sql = "select * from restaurant where city_name = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1,city_name);
+			rs = psmt.executeQuery();
+		
+
+			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+			while (rs.next()) {
+
+				int getRnum = rs.getInt(1);
+				String getcity_name = rs.getString(2);
+				String getRname = rs.getString(3);
+				String getRaddr = rs.getString(4);
+				String getRTel = rs.getString(5);
+				String getRType = rs.getString(6); 
+			
+				
+
+				RestaurantDTO rest = new RestaurantDTO(getRnum, getcity_name, getRname, getRaddr, getRTel, getRType);
+				r_list.add(rest);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("오류오류오류");
+			e.printStackTrace();
+			
+		} finally {
+			close();
+
+		}
+		
+		return r_list;
 		
 		
+	}
+	
+	public ArrayList<DomitoryDTO> get_dom(String city_name){
+		ArrayList<DomitoryDTO> d_list = new ArrayList<DomitoryDTO>();
+		
+		try {
+
+			connection();
+
+			// 3. 쿼리문 실행
+				
+			String sql = "Select * from domitory where city_name = ? ";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, city_name);
+			rs = psmt.executeQuery();
+		
+
+			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
+			while (rs.next()) {
+
+				String getDname = rs.getString(1);
+				String getCity = rs.getString(2);
+				String getDaddr = rs.getString(3);
+				String getDtel = rs.getString(4);
+				String getDtype = rs.getString(5);
+				String getDurl = rs.getString(6);
+				String getDimg = rs.getString(7);
+				
+
+				DomitoryDTO dom = new DomitoryDTO(getDname, getCity, getDaddr, getDtel, getDtype, getDurl, getDimg);
+				d_list.add(dom);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+
+		}
+		
+		
+		
+		return d_list;
 	}
 
 }

@@ -64,18 +64,7 @@ public class PlaceDAO {
 			rs = psmt.executeQuery();
 
 			// rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
-			while (rs.next()) {
-
-				String getCity = rs.getString(1);
-				String getPname = rs.getString(2);
-				String getPaddress = rs.getString(3);
-				String getPtel = rs.getString(4);
-				String getPurl = rs.getString(5);
-				String getPimg = rs.getString(6);
-
-				PlaceDTO place = new PlaceDTO(getCity, getPname, getPaddress, getPtel, getPurl, getPimg);
-				p_list.add(place);
-			}
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
