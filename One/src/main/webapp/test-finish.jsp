@@ -23,8 +23,8 @@
 <style>
 #wdc123{
 	position : relative;
-	width : 100%;
-	height : 100%;
+	width : 900px;
+	height : 550px;
 }
 
 

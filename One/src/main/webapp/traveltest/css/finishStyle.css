@@ -10,8 +10,8 @@ body{
 	font-family: "Cafe24Ssurround";
 }
 img{
-	width : 300px;
-	height : 200px;
+	width : 200px;
+	height : 130px;
 }
 hr{
 	height: 5px;
@@ -60,11 +60,7 @@ tr > td:nth-child(1){
 tr> td:nth-child(2){
 	vertical-align: bottom;
 }
-#resultWrapper > div:nth-child(3) > div > table > tbody > tr:nth-child(1) > td{
-	text-align : center !important;
-}
 #resultWrapper > div:nth-child(3) > div > table > tbody > tr:nth-child(2) > td{
-	text-align : center !important;
 	font-size : 15px !important;
 }
 /* #text1{

@@ -259,8 +259,8 @@ select * from city
 update city set city_no = 23 where city_name ='½Å¾È±º';
 select * from city;
 
-
-
+SELECT * FROM tabs;
+select * from sns_data;
 
 
 
