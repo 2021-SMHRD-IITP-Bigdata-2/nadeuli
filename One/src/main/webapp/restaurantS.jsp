@@ -155,13 +155,13 @@
                         <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="test-start.jsp">맞춤 여행 테스트</a></li>
                         <% }%>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property.html">안심여행지</a></li>
+						href="place.jsp">안심여행지</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-1.html">안심식당</a></li>
+						href="restaurant.jsp">안심식당</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-2.html">안심숙소</a></li>
+						href="domitory.jsp">안심숙소</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.1s"><a class=""
-						href="property-3.html">게시판</a></li>
+						href="commu_list.jsp">게시판</a></li>
 
 				</ul>
 			</div>

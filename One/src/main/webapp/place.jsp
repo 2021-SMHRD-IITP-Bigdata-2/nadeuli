@@ -553,7 +553,7 @@
 
 							<div class="item-entry overflow">
 								<h5>
-								<% out.print("<a href='property-1.html'>"+plist.get(i).getP_name() +"</a>");
+								<% out.print("<a href='place.jsp'>"+plist.get(i).getP_name() +"</a>");
 									out.print("</h5>");
 									out.print("<div class='dot-hr'></div>");
 									out.print("<span class='pull-left'><b>" +plist.get(i).getP_address() +"</span>");
