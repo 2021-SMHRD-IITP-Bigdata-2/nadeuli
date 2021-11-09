@@ -79,7 +79,6 @@ public class TestDAO {
 
 	         // rs.next() : 아래 행으로 이동하여 데이터 존재 여부 판단
 	         while (rs.next()) {
-
 	            String getCity = rs.getString(1);
 	            int getCnt = rs.getInt(2);
 

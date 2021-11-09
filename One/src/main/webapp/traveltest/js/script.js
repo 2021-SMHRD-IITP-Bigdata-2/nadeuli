@@ -39,12 +39,9 @@ var backButton = null;
 
 
 window.addEventListener('DOMContentLoaded', function(){
-  //질문과 답이 있는 텍스트 파일을 가져옴
-  //var rawData = loadFile("quizData.txt");
-  var rawData = data;
+  var rawData = data;//질문과 답이 있는 텍스트 파일을 가져옴
   
-  //밑에 있는 기능 가져옴 틀 보여주는거 
-  initElements();
+  initElements();//밑에 있는 기능 가져옴 틀 보여주는거 
 
   //init quizData & answerData & numOfQuiz
   var sentances = rawData.split('\n'); //엔터를 기준으로 잘라 넣음
@@ -79,7 +76,6 @@ window.addEventListener('DOMContentLoaded', function(){
   slider.style.width = ""+ widthOfItem * (quizData.length) + "px";
 
   updateProgressBar();
-
 });
 
 window.onload = function()  {
